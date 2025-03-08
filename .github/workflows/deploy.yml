@@ -24,7 +24,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci  # Use 'npm install' if 'npm ci' doesn't work
+        run: npm ci
 
       - name: Build project
         run: npm run build
@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist  # The built output folder
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
