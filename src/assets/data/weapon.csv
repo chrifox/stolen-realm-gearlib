@@ -1,0 +1,844 @@
+Name,Rarity,Type,Attack Power,Damage Type,Base Stats,Attributes,Dropped By,Locations
+Iron Breaker,2: Rare,Axe_2H,"{19.5, 129.5}",Physical,"- Might {3, 17}
+   - Vitality {3, 17}",,- Global Loot,
+Iron Greatsword,1: Uncommon,Sword_2H,"{17.5, 113.5}",Physical,"- Might {3, 15}
+   - Vitality {3, 15}",,- Global Loot,
+Iron Longsword,1: Uncommon,Sword_1H,"{7.5, 45.5}",Physical,"- Might {3, 15}
+   - Vitality {3, 15}",,- Global Loot,
+Iron Mace,1: Uncommon,Mace_1H,"{8.5, 50.5}",Physical,"- Vitality {3, 15}",,- Global Loot,
+Iron Mallet,1: Uncommon,Mace_2H,"{19.5, 124.5}",Physical,"- Vitality {4, 23}",,- Global Loot,
+Iron Sabre,1: Uncommon,Sword_1H,"{8.5, 52.5}",Physical,"- Dexterity {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Iron Spear,2: Rare,Polearm,"{20.0, 135.5}",Physical,"- Might {3, 17}
+   - Vitality {3, 17}",,- Global Loot,
+Iron Sword,1: Uncommon,Sword_1H,"{8.5, 52.5}",Physical,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Silver-Edged Axe,2: Rare,Axe_1H,"{9.5, 62.5}",Physical,,,- Global Loot,
+Copper Scepter,1: Uncommon,Wand,"{5.5, 30.5}",Lightning,"- Vitality {2, 8}
+   - Intelligence {2, 8}",,- Global Loot,
+Beatin' stick,0: Common,Mace_1H,"{6.5, 41.5}",Physical,,,- Global Loot,
+Bent Rod,0: Common,Mace_1H,"{6.5, 35.5}",Physical,,,- Global Loot,
+Boot Blade,0: Common,Sword_1H,"{7.5, 43.5}",Physical,"- Dexterity {2, 14}",,- Global Loot,
+Broken Blade,0: Common,Sword_1H,"{6.5, 41.5}",Physical,,,- Global Loot,
+Broken Sword,0: Common,Sword_1H,"{6.5, 41.5}",Physical,,,- Global Loot,
+Fishing Spear,0: Common,Polearm,"{15.5, 102.5}",Physical,"- Reflex {1, 7}",,- Global Loot,
+Fork,0: Common,Polearm,"{15.5, 102.5}",Physical,"- Dexterity {4, 28}",,- Global Loot,
+Goblin Shortsword,0: Common,Sword_1H,"{6.5, 41.5}",Physical,"- Dexterity {2, 14}",,- Global Loot,
+Kitchen Knife,0: Common,Sword_1H,"{6.5, 37.5}",Physical,"- Dexterity {2, 14}",,- Global Loot,
+Musket,0: Common,Gun_2H,"{16.5, 107.5}",Physical,"- Might {2, 14}",,- Global Loot,
+Peashooter,0: Common,Gun_1H,"{4.5, 28.5}",Physical,"- Dexterity {2, 14}",,- Global Loot,
+Primitive Spear,0: Common,Polearm,"{13.5, 87.5}",Physical,"- Dexterity {3, 21}",,- Global Loot,
+Sharpened Stick,0: Common,Polearm,"{14.5, 92.5}",Physical,"- Might {2, 9}",,- Global Loot,
+Shortbow,0: Common,Bow,"{15.5, 98.5}",Physical,"- Might {2, 14}
+   - Dexterity {1, 7}",,- Global Loot,
+Shortsword,0: Common,Sword_1H,"{6.5, 41.5}",Physical,"- Might {1, 5}
+   - Dexterity {1, 5}",,- Global Loot,
+Spiked Axe,0: Common,Axe_1H,"{6.5, 41.5}",Physical,"- Reflex {1, 7}",,- Global Loot,
+Spiked Club,0: Common,Mace_1H,"{7.5, 45.5}",Physical,"- Might {2, 9}",,- Global Loot,
+Spiked Rolling Pin,0: Common,Mace_1H,"{6.5, 41.5}",Physical,"- Intelligence {2, 9}",,- Global Loot,
+Staff,0: Common,Staff,"{10.5, 68.5}",Fire,"- Might {2, 14}
+   - Intelligence {2, 14}",,- Global Loot,
+Stone Axe,0: Common,Axe_1H,"{6.5, 39.5}",Physical,"- Vitality {2, 9}",,- Global Loot,
+Stone Dagger,0: Common,Sword_1H,"{6.5, 39.5}",Physical,"- Dexterity {2, 14}",,- Global Loot,
+Stone Hammer,0: Common,Mace_1H,"{6.5, 41.5}",Physical,,,- Global Loot,
+Two-Handed Axe,0: Common,Axe_2H,"{17.5, 113.5}",Physical,"- Vitality {3, 21}",,- Global Loot,
+Walking Stick,0: Common,Staff,"{10.5, 68.5}",Fire,"- Vitality {1, 7}
+   - Intelligence {3, 21}",,- Global Loot,
+Wand,0: Common,Wand,"{4.5, 28.5}",Fire,"- Might {2, 9}
+   - Intelligence {2, 9}",,- Global Loot,
+Wooden Mallet,0: Common,Mace_2H,"{17.5, 113.5}",Physical,,,- Global Loot,
+Boarding Axe,1: Uncommon,Axe_1H,"{7.5, 48.5}",Physical,"- Might {3, 15}",,- Global Loot,
+Bone Shiv,1: Uncommon,Sword_1H,"{7.5, 43.5}",Shadow,"- Dexterity {3, 15}",,- Global Loot,
+Bowie Knife,1: Uncommon,Sword_1H,"{8.5, 54.5}",Physical,,,- Global Loot,
+Brass Knuckles,1: Uncommon,FistWeapon,"{7.5, 45.5}",Physical,"- Might {2, 8}
+   - Dexterity {2, 8}",,- Global Loot,
+Broadsword,1: Uncommon,Sword_1H,"{8.5, 50.5}",Physical,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Concealed Pistol,1: Uncommon,Gun_1H,"{6.5, 38.5}",Physical,"- Dexterity {3, 15}",,- Global Loot,
+Copper Knuckles,1: Uncommon,FistWeapon,"{7.5, 45.5}",Physical,"- Dexterity {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Cutlass,1: Uncommon,Sword_1H,"{7.5, 45.5}",Physical,"- Might {2, 8}
+   - Dexterity {2, 8}",,- Global Loot,
+Femur,1: Uncommon,Wand,"{4.5, 21.5}",Shadow,"- Might {2, 8}","- Summon Damage {1.5,7.5}%",- Global Loot,
+Flintlock Pistol,1: Uncommon,Gun_1H,"{6.5, 38.5}",Physical,"- Might {2, 8}
+   - Dexterity {2, 8}",,- Global Loot,
+Forkaxe,1: Uncommon,Polearm,"{17.5, 113.5}",Physical,"- Dexterity {3, 15}
+   - Vitality {3, 15}",,- Global Loot,
+Gemstone Baton,1: Uncommon,Staff,"{11.5, 75.5}",Cold,"- Reflex {7, 45}",,- Global Loot,
+Gemstone Cane,1: Uncommon,Staff,"{11.5, 75.5}",Cold,"- Vitality {3, 15}
+   - Intelligence {3, 15}
+   - Reflex {3, 15}",,- Global Loot,
+Gemstone Ritual Staff,1: Uncommon,Staff,"{11.5, 75.5}",Lightning,"- Might {3, 15}
+   - Intelligence {3, 15}","- Summon Damage {2,10}%
+   - Summon Health {2,10}%",- Global Loot,
+Gemstone Shillelagh,1: Uncommon,Staff,"{11.5, 75.5}",Fire,"- Might {7, 45}",,- Global Loot,
+Gemstone Staff,1: Uncommon,Staff,"{11.5, 75.5}",Lightning,"- Intelligence {7, 45}",,- Global Loot,
+Gemstone Wand,1: Uncommon,Wand,"{5.5, 30.5}",Fire,"- Might {4, 23}",,- Global Loot,
+Gemstone Wand Rod,1: Uncommon,Wand,"{5.5, 30.5}",Lightning,"- Intelligence {4, 23}",,- Global Loot,
+Gemstone Wand Sprig,1: Uncommon,Wand,"{5.5, 30.5}",Cold,"- Reflex {4, 23}",,- Global Loot,
+Glaive,1: Uncommon,Polearm,"{19.5, 124.5}",Physical,"- Might {4, 23}
+   - Dexterity {2, 8}",,- Global Loot,
+Goblin Club,1: Uncommon,Mace_1H,"{7.5, 48.5}",Physical,"- Might {3, 15}",,- Global Loot,
+Goblin Matchete,1: Uncommon,Sword_1H,"{8.5, 54.5}",Physical,,,- Global Loot,
+Goblin Spear,1: Uncommon,Polearm,"{17.5, 113.5}",Physical,"- Might {3, 15}
+   - Dexterity {3, 15}",,- Global Loot,
+Guard's Spear,1: Uncommon,Polearm,"{17.5, 113.5}",Physical,"- Vitality {5, 30}",,- Global Loot,
+Halberd,1: Uncommon,Polearm,"{19.5, 124.5}",Physical,"- Might {4, 23}
+   - Vitality {2, 8}",,- Global Loot,
+Half-Halberd,1: Uncommon,Polearm,"{17.5, 113.5}",Physical,"- Might {5, 30}",,- Global Loot,
+Hand Axe,1: Uncommon,Axe_1H,"{6.5, 41.5}",Physical,"- Might {2, 9}
+   - Dexterity {2, 9}",,- Global Loot,
+Harpoon,1: Uncommon,Polearm,"{17.5, 113.5}",Physical,"- Dexterity {5, 30}",,- Global Loot,
+Hatchet,1: Uncommon,Axe_1H,"{7.5, 45.5}",Physical,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Hunting Knife,1: Uncommon,Sword_1H,"{7.5, 45.5}",Physical,"- Dexterity {3, 15}",,- Global Loot,
+Kunai,1: Uncommon,Sword_1H,"{8.5, 50.5}",Physical,"- Dexterity {3, 15}",,- Global Loot,
+Longbow,1: Uncommon,Bow,"{14.5, 95.5}",Physical,"- Might {3, 15}
+   - Dexterity {3, 15}",,- Global Loot,
+Longsword,1: Uncommon,Sword_1H,"{7.5, 48.5}",Physical,"- Might {3, 15}",,- Global Loot,
+Mace,1: Uncommon,Mace_1H,"{6.5, 36.5}",Physical,"- Might {2, 8}","- Return Damage Physical {2, 26}",- Global Loot,
+Musket Pistol,1: Uncommon,Gun_1H,"{6.5, 38.5}",Physical,"- Might {2, 8}
+   - Dexterity {2, 8}",,- Global Loot,
+Musketoon,1: Uncommon,Gun_2H,"{14.5, 90.5}",Physical,"- Might {3, 15}
+   - Dexterity {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Mystic Blade,1: Uncommon,Sword_1H,"{6.5, 36.5}",Physical,"- Intelligence {3, 15}
+   - Reflex {2, 8}",,- Global Loot,
+Pike,1: Uncommon,Polearm,"{19.5, 124.5}",Physical,"- Might {3, 15}
+   - Dexterity {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Pirate's Cutlass,1: Uncommon,Sword_1H,"{8.5, 50.5}",Physical,"- Dexterity {3, 15}",,- Global Loot,
+Poleaxe,1: Uncommon,Polearm,"{17.5, 109.5}",Physical,"- Might {2, 8}
+   - Dexterity {2, 8}
+   - Vitality {3, 15}",,- Global Loot,
+Raider Axe,1: Uncommon,Axe_2H,"{21.5, 137.5}",Physical,,,- Global Loot,
+Ritual Blade,1: Uncommon,Sword_1H,"{6.5, 39.5}",Physical,"- Might {2, 8}
+   - Vitality {3, 15}
+   - Intelligence {3, 15}",,- Global Loot,
+Sabre,1: Uncommon,Sword_1H,"{8.5, 51.5}",Physical,"- Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Sand Sultan Simitar,1: Uncommon,Sword_1H,"{7.5, 45.5}",Physical,"- Dexterity {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Scimitar,1: Uncommon,Sword_1H,"{6.5, 41.5}",Physical,"- Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Shovel,1: Uncommon,Polearm,"{20.0, 135.5}",Cold,,,- Grave Digger,"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Snub Nose Musket,1: Uncommon,Gun_2H,"{15.5, 101.5}",Physical,"- Might {3, 15}
+   - Vitality {3, 15}",,- Global Loot,
+Spear,1: Uncommon,Polearm,"{16.5, 107.5}",Physical,"- Dexterity {3, 15}",,- Global Loot,
+Spiked Mace,1: Uncommon,Mace_1H,"{6.5, 36.5}",Physical,"- Vitality {2, 8}","- Return Damage Physical {2, 26}",- Global Loot,
+Steel Knuckles,1: Uncommon,FistWeapon,"{8.5, 54.5}",Physical,"- Might {2, 8}",,- Global Loot,
+Straight Sword,1: Uncommon,Sword_1H,"{9.5, 57.5}",Physical,,,- Global Loot,
+Viking Axe,1: Uncommon,Axe_1H,"{8.5, 52.5}",Physical,"- Might {3, 15}",,- Global Loot,
+Viking Hammer,1: Uncommon,Mace_1H,"{8.5, 52.5}",Physical,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Viking Warhammer,1: Uncommon,Mace_2H,"{18.5, 118.5}",Physical,"- Might {3, 15}
+   - Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Warhammer,1: Uncommon,Mace_1H,"{6.5, 41.5}",Physical,"- Might {2, 8}
+   - Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Battle Hammer,2: Rare,Mace_1H,"{8.5, 49.5}",Physical,"- Might {3, 17}",,- Global Loot,
+Blade Fist,2: Rare,FistWeapon,"{8.5, 49.5}",Physical,"- Might {1, 7}
+   - Dexterity {1, 7}
+   - Reflex {1, 7}",,- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Blood Runed Cleaver,2: Rare,Axe_1H,"{10.5, 64.5}",Physical,,- % Life Steal 3,- The Baron,- CastleGloom Day
+Bloodletter,2: Rare,Sword_1H,"{8.5, 54.5}",Physical,,- % Life Steal 3,"- Samare the Vampire (Event)
+   - The Duke
+   - Avatar of Xotec
+   - Medusa","- WaterTempleRuins Night
+   - EmeraldJungle Day
+   - CastleGloom Day
+   - WaterTempleRuins Day
+   - EmeraldJungle Night"
+Blunderbuss,2: Rare,Gun_2H,"{16.5, 108.5}",Physical,"- Might {4, 25}",,- The Ember King,- Emberlands Day
+Bone Shard,2: Rare,Wand,"{5.5, 33.5}",Shadow,"- Vitality {2, 9}
+   - Intelligence {2, 9}","- Summon Damage {2,10}%
+   - Summon Limit 1","- Dark Cultist Conjuror
+   - The Bishop (Event)
+   - The Butcher","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Captain's Sidearm,2: Rare,Gun_1H,"{7.5, 45.5}",Physical,"- Reflex {3, 17}","- Dodge Counter Damage {5,25}%","- Admiral Blackbeard
+   - Captain of the Emerald Eel
+   - Captain of the Ruby Rum
+   - Captain of the Sapphire Sea","- WaterTempleRuins Night
+   - WaterTempleRuins Day"
+Ceremonial Spear,2: Rare,Polearm,"{21.5, 141.5}",Physical,"- Dexterity {4, 25}",,- Global Loot,
+Cestus,2: Rare,FistWeapon,"{7.5, 45.5}",Physical,"- Dexterity {2, 13}","- Additional Weapon Damage Source[""Dexterity""] * .05f
+   - Gain Additional Weapon Damage equal to 5% of your Dexterity.",- Unchained Efreet,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Cleric's Hammer,2: Rare,Mace_1H,"{6.5, 40.0}",Physical,"- Vitality {2, 9}
+   - Intelligence {2, 9}","- Holy Power {1.5,7.5}%","- The Countess
+   - Cleric","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - WaterTempleRuins Night
+   - CastleGloom Day
+   - WaterTempleRuins Day"
+Coach Gun,2: Rare,Gun_2H,"{17.5, 113.5}",Physical,"- Might {5, 33}",,- Global Loot,
+Composite Longbow,2: Rare,Bow,"{15.5, 98.5}",Physical,"- Might {4, 25}
+   - Dexterity {2, 9}",,- Global Loot,
+Conduit Rod,2: Rare,Staff,"{12.5, 82.5}",Lightning,"- Dexterity {3, 17}
+   - Intelligence {2, 9}
+   - Reflex {2, 9}","- Lightning Damage {3,15}%","- Ragnar
+   - Apparition","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Corrupted Shard,2: Rare,Sword_1H,"{6.5, 40.0}",Shadow,,- Striking with this weapon applies 1 stack of poison.,"- The Risen Witch (Event)
+   - The Witch
+   - Twisted Soul of the Swamp","- SunkenSwamplands Day
+   - SunkenSwamplands Night"
+Cruel Blade,2: Rare,Sword_1H,"{6.5, 40.0}",Physical,"- Might {2, 9}","- Return Damage Physical {2, 29}","- The Gobfather
+   - The Pale Goblin
+   - The Broker","- DwarvenHalls Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - Emberlands Day"
+Crystal Baton,2: Rare,Staff,"{12.5, 82.5}",Fire,"- Might {3, 17}
+   - Dexterity {3, 17}
+   - Intelligence {3, 17}",,"- Lord Infernicus (Event)
+   - The Forgemaster",- Emberlands Day
+Crystal Cane,2: Rare,Staff,"{12.5, 82.5}",Cold,"- Reflex {8, 49}",,- Global Loot,
+Crystal Rod,2: Rare,Staff,"{12.5, 82.5}",Lightning,"- Intelligence {8, 49}",,- Dwarven Warmachine,- DwarvenHalls Day
+Crystal Shillelagh,2: Rare,Staff,"{12.5, 82.5}",Lightning,"- Might {8, 49}",,- Crystal Golem,- ForgottenMines Day
+Crystal Staff,2: Rare,Staff,"{12.5, 82.5}",Fire,"- Vitality {3, 17}
+   - Intelligence {3, 17}
+   - Reflex {3, 17}",,- Global Loot,
+Dwarven Greatsword,2: Rare,Sword_2H,"{23.5, 154.5}",Physical,"- Vitality {4, 25}",,"- Dwarven Sword Maiden
+   - Mountain King Ironheart",- DwarvenHalls Day
+Dwarven Handaxe,2: Rare,Axe_1H,"{9.5, 57.5}",Physical,,"- Basic attacks have a 15% chance to proc an additional attack once per 
+   turn.","- Dwarven Flamesmith
+   - Mountain King Ironheart",- DwarvenHalls Day
+Dwarven Morningstar,2: Rare,Sword_1H,"{6.5, 40.0}",Physical,"- Might {2, 9}
+   - Vitality {2, 9}","- Return Damage Physical {2, 29}","- Dwarven Shield
+   - Mountain King Ironheart",- DwarvenHalls Day
+Dwarven Pickaxe,2: Rare,Axe_2H,"{20.0, 135.5}",Physical,"- Might {3, 17}
+   - Vitality {3, 17}",,"- Mountain King Ironheart
+   - Dwarven Miner
+   - The Prospector","- ForgottenMines Day
+   - DwarvenHalls Day"
+Dwarven Sceptre,2: Rare,Staff,"{12.5, 82.5}",Fire,"- Might {3, 17}
+   - Vitality {3, 17}
+   - Intelligence {3, 17}",,- Mountain King Ironheart,- DwarvenHalls Day
+Dwarven Spellhammer,2: Rare,Mace_1H,"{6.5, 37.5}",Physical,"- Vitality {2, 13}
+   - Intelligence {2, 13}","- increased power for mana use {2, 9}%","- Dwarven Infantry
+   - Mountain King Ironheart",- DwarvenHalls Day
+Elder Branch,2: Rare,Staff,"{12.5, 82.5}",Healing,"- Vitality {3, 17}","- Holy Power {3,15}%","- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Elegant Blade,2: Rare,Sword_1H,"{8.5, 49.5}",Physical,"- Reflex {3, 17}",,- Global Loot,
+Elephant Gun,2: Rare,Gun_2H,"{19.5, 128.5}",Physical,,,"- The Gobfather
+   - The Pale Goblin","- DwarvenHalls Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Flanged Mace,2: Rare,Mace_2H,"{18.5, 123.5}",Physical,"- Might {6, 41}",,- Global Loot,
+Flintlock Rifle,2: Rare,Gun_2H,"{15.5, 98.5}",Physical,"- Might {4, 25}
+   - Dexterity {2, 9}",,"- Admiral Blackbeard
+   - Dwarven Warmachine
+   - The Prospector
+   - Councilor Jahsun","- WaterTempleRuins Night
+   - EmeraldJungle Day
+   - ForgottenMines Day
+   - DwarvenHalls Day
+   - EmeraldJungle Night"
+Foestave,2: Rare,Polearm,"{22.5, 147.5}",Physical,"- Might {3, 17}",,- The Black Knight,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Gatecrasher,2: Rare,Mace_2H,"{18.5, 123.5}",Physical,"- Might {4, 25}",- Grants the skill Slam.,"- Hodr, the Frost Giant (Event)","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Gladiator's Spear,2: Rare,Polearm,"{18.5, 123.5}",Physical,"- Might {3, 17}
+   - Dexterity {3, 17}",,"- Lucilla
+   - Maximus
+   - Proximo
+   - Valkyrie Commander","- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Goblin Bone Axe,2: Rare,Axe_2H,"{22.5, 147.5}",Physical,,- Weapon attacks apply 1 stacks of bleeding.,- Global Loot,
+Hero's Blade,2: Rare,Sword_2H,"{18.5, 123.5}",Physical,"- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}",,- Global Loot,
+Hunter's Bow,2: Rare,Bow,"{16.5, 108.5}",Physical,"- Might {3, 17}
+   - Dexterity {3, 17}",,"- Anthulk
+   - The Minotaur",- ForgottenMines Day
+Hunting Rifle,3: Legendary,Gun_2H,"{19.5, 128.5}",Physical,,- Attacks with this weapon apply 1 stack of bleeding.,- Global Loot,
+Hunting Spear,2: Rare,Polearm,"{20.0, 135.5}",Physical,"- Might {2, 9}
+   - Dexterity {4, 25}",,"- Hod
+   - Lagertha
+   - Ragnar
+   - Councilor Jahsun","- EmeraldJungle Night
+   - EmeraldJungle Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Ice-Runed Axe,2: Rare,Axe_1H,"{9.5, 59.5}",Cold,,"- Cold Damage {1.5,7.5}%",- The Dusk King,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Iron Pistol,2: Rare,Gun_1H,"{7.5, 43.5}",Physical,"- Might {2, 9}
+   - Dexterity {2, 9}",,- Blood Mask Boss,"- FreewindForest Night
+   - FreewindForest Day"
+Iron Scepter,2: Rare,Wand,"{5.5, 33.5}",Fire,"- Might {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}",,- Emperor Marcus,
+Knuckle Dagger,2: Rare,Unarmed,"{8.5, 54.5}",Physical,"- Dexterity {2, 9}
+   - Vitality {1, 5}",,- Global Loot,
+Life-Runed Hatchet,2: Rare,Axe_1H,"{9.5, 62.5}",Physical,,- Max Health 10%,"- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Long Bore Handgun,2: Rare,Gun_1H,"{7.5, 45.5}",Physical,"- Might {2, 9}",,- Global Loot,
+Mystic Staff,2: Rare,Staff,"{12.5, 82.5}",Fire,"- Might {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {3, 17}",,- Global Loot,
+Obsidian Blade,2: Rare,Sword_1H,"{9.5, 59.5}",Shadow,,,- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Obsidian Dagger,2: Rare,Sword_1H,"{8.5, 54.5}",Shadow,"- Dexterity {3, 17}",,- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Obsidian Hatchet,2: Rare,Axe_1H,"{8.5, 54.5}",Shadow,,"- Shadow Damage {1.5,7.5}%",- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Paladin's Hammer,2: Rare,Mace_2H,"{19.5, 129.5}",Physical,"- Might {3, 17}
+   - Vitality {2, 9}",,- Paladin,"- ForgottenMines Day
+   - DwarvenHalls Day
+   - CastleGloom Day"
+Pirate Sidearm,2: Rare,Gun_1H,"{7.5, 45.5}",Physical,"- Might {2, 9}
+   - Vitality {2, 9}",,- Global Loot,
+Quarterstaff,2: Rare,Polearm,"{18.5, 123.5}",Physical,"- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",,- The Minotaur,- ForgottenMines Day
+Rapier,2: Rare,Sword_1H,"{8.5, 54.5}",Physical,"- Reflex {3, 17}","- Dodge Counter Damage {6,30}%",- Rogue,"- Emberlands Day
+   - FreewindForest Night
+   - FreewindForest Day"
+Recurve Bow,2: Rare,Bow,"{18.5, 118.5}",Physical,"- Dexterity {2, 9}
+   - Reflex {2, 9}",,- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Ritual Sword,2: Rare,Sword_2H,"{16.5, 105.5}",Physical,"- Might {3, 17}
+   - Intelligence {3, 17}
+   - Reflex {2, 9}",,- The Broker,- Emberlands Day
+Rockbreaker,2: Rare,Mace_2H,"{18.5, 123.5}",Physical,"- Might {3, 17}",- 15% chance to cast Level [level value] {SKL=Fracture} when striking.,"- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Silver-Edged Dagger,2: Rare,Sword_1H,"{9.5, 57.5}",Physical,"- Dexterity {3, 17}",,- Global Loot,
+Silver-Edged Longsword,2: Rare,Sword_1H,"{9.5, 57.5}",Physical,"- Might {3, 17}",,"- Herald of the Abyss
+   - The Dead One","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Silver-Edged Shortsword,2: Rare,Sword_1H,"{9.5, 62.5}",Physical,"- Dexterity {2, 9}",,- Global Loot,
+Sledge Hammer,2: Rare,Mace_2H,"{26.5, 172.5}",Physical,,- Dexterity -25%,"- Lady of the Well
+   - The Scarecrow","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Soldier's Axe,2: Rare,Axe_2H,"{18.5, 123.5}",Physical,"- Might {3, 17}
+   - Vitality {3, 17}",,"- The Butcher
+   - The Jester
+   - Skeleton Knight
+   - Testing Character
+   - The Pale Knight","- DwarvenHalls Day
+   - SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Stalker's Bow,2: Rare,Bow,"{14.5, 94.5}",Physical,"- Dexterity {6, 41}",,- Azug Spikefist,
+Steel Dagger,2: Rare,Sword_1H,"{8.5, 54.5}",Physical,"- Dexterity {3, 17}",,- Global Loot,
+Stiletto,2: Rare,Sword_1H,"{7.5, 47.5}",Physical,,"- Striking with this weapon has a 50% chance to apply 1 stack of 
+   {STA=Bleeding}.",- Global Loot,
+Sultan Sword,2: Rare,Sword_2H,"{18.5, 123.5}",Physical,"- Dexterity {5, 33}",,- The Sultan,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Thief's Blade,2: Rare,Sword_1H,"{8.5, 49.5}",Physical,"- Dexterity {3, 17}",- 25% chance to Steal Status when striking.,- Thief,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Tonfa,2: Rare,FistWeapon,"{6.5, 40.0}",Physical,"- Vitality {2, 13}","- Damage to Physical Source[""MaxHealth""] * .01f
+   - Gain Additional Physical Damage equal to 1% of your Max Health.",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Tribal Headhunter,2: Rare,Sword_2H,"{17.5, 111.5}",Physical,"- Might {2, 9}
+   - Dexterity {2, 9}",- Grants the passive skill Executioner.,"- Avatar of Xotec
+   - Medusa","- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Yari,2: Rare,Polearm,"{22.5, 147.5}",Physical,"- Dexterity {3, 17}",,- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Zweihander,2: Rare,Sword_2H,"{20.0, 135.5}",Physical,"- Might {5, 33}",,- The Black Knight,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Abyssal Staff,3: Legendary,Staff,"{13.5, 89.5}",Shadow,"- Might {3, 18}
+   - Vitality {3, 18}","- Shadow Damage {4,20}%",- The Broker,- Emberlands Day
+Ancient Sword,3: Legendary,Sword_1H,"{9.5, 59.5}",Physical,,- 10% chance to cast Level [level value] {SKL=Curse} when striking.,"- Ancient Guardian
+   - Ancient Slaver","- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Assassin's Edge,3: Legendary,Sword_1H,"{8.5, 54.5}",Physical,"- Dexterity {4, 27}",,"- Blood Mask Boss
+   - Assassin","- FreewindForest Night
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - WaterTempleRuins Night
+   - FreewindForest Day
+   - WaterTempleRuins Day"
+Bagh nakha,3: Legendary,FistWeapon,"{8.5, 48.5}",Physical,,"- Basic attacks have a 20% chance to proc an additional attack once per 
+   turn.",- Global Loot,
+Bishop Staff,3: Legendary,Staff,"{17.5, 115.5}",Healing,"- Vitality {3, 18}
+   - Intelligence {3, 18}","- Holy Power {4,20}%",- The Bishop (Event),"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Bone Cleaver,3: Legendary,Axe_2H,"{24.5, 160.0}",Physical,"- Might {2, 9}
+   - Vitality {2, 9}",- Weapon attacks apply 2 stacks of bleeding.,"- The Bishop (Event)
+   - The Butcher
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Crimson Crusher,3: Legendary,Mace_2H,"{23.5, 153.5}",Shadow,"- Might {2, 9}
+   - Vitality {2, 9}",- % Life Steal 6,- The Baron,- CastleGloom Day
+Crimson Hatchet,3: Legendary,Axe_1H,"{10.5, 64.5}",Shadow,,- % Life Steal 3,"- Samare the Vampire (Event)
+   - The Baron
+   - The Duke",- CastleGloom Day
+Crimson Sceptre,3: Legendary,Staff,"{13.5, 89.5}",Shadow,"- Might {6, 36}",- Mana Steal 5%,- The Countess,- CastleGloom Day
+Crimson Slayer,3: Legendary,Sword_2H,"{25.5, 166.5}",Physical,,"- % Life Steal 6
+   - Weapon attacks apply 2 stacks of bleeding.","- Samare the Vampire (Event)
+   - The Duke",- CastleGloom Day
+Crusader Sword,3: Legendary,Sword_2H,"{20.0, 133.5}",Physical,"- Might {2, 14}
+   - Dexterity {2, 14}
+   - Vitality {2, 14}",,- Global Loot,
+Divinity Staff,3: Legendary,Staff,"{13.5, 89.5}",Lightning,"- Might {3, 18}
+   - Intelligence {3, 18}","- increased power for mana use {4, 27}%",- Global Loot,
+Flayer Blade,3: Legendary,Sword_1H,"{10.5, 64.5}",Physical,,- Striking with this weapon applies 1 stack of {STA=Bleeding}.,"- Councilor Jahsun
+   - Avatar of Xotec
+   - Medusa","- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Foe-Crusher,3: Legendary,Mace_2H,"{20.0, 133.5}",Physical,"- Might {3, 18}
+   - Vitality {3, 18}",- 10% chance to cast Level [level value] {SKL=Slam} on striking.,- Mountain King Ironheart,- DwarvenHalls Day
+Forest Glaive,3: Legendary,Polearm,"{20.0, 133.5}",Physical,"- Might {3, 18}
+   - Reflex {3, 18}",- Max Health 20%,- Global Loot,
+Gentleman's Pistol,3: Legendary,Gun_1H,"{8.5, 49.5}",Physical,"- Reflex {3, 18}","- Dodge Counter Damage {6,30}%",- Blood Mask Boss,"- FreewindForest Night
+   - FreewindForest Day"
+Gilded Axe,3: Legendary,Axe_2H,"{22.5, 146.5}",Physical,"- Might {3, 18}
+   - Vitality {3, 18}",,"- Olgoi, Devourer of Treasure
+   - Captain of the Ruby Rum","- WaterTempleRuins Day
+   - DwarvenHalls Day"
+Gilded Hatchet,3: Legendary,Axe_1H,"{9.5, 59.5}",Physical,"- Might {2, 9}
+   - Vitality {2, 9}",,- Global Loot,
+Gilded Rapier,3: Legendary,Sword_1H,"{9.5, 59.5}",Physical,"- Reflex {3, 18}","- Dodge Counter Damage {8,40}%","- Olgoi, Devourer of Treasure
+   - Captain of the Emerald Eel","- WaterTempleRuins Day
+   - DwarvenHalls Day"
+Gilded Scepter,3: Legendary,Wand,"{6.5, 36.5}",Healing,"- Might {2, 9}
+   - Intelligence {2, 9}","- Holy Power {2,10}%","- Herald of the Abyss
+   - Emperor Marcus","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Gilded Spear,3: Legendary,Polearm,"{20.0, 133.5}",Physical,"- Might {3, 18}
+   - Dexterity {4, 27}",,- Global Loot,
+Gilded Staff,3: Legendary,Staff,"{13.5, 89.5}",Fire,"- Might {6, 36}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}",,"- Olgoi, Devourer of Treasure",- DwarvenHalls Day
+Gladius,3: Legendary,Sword_1H,"{10.5, 67.5}",Physical,"- Dexterity {3, 18}",,"- Lucilla
+   - Proximo",
+Goblin Shaman Staff,3: Legendary,Staff,"{13.5, 89.5}",Fire,"- Might {4, 27}
+   - Intelligence {2, 9}","- Fire Damage {3,15}%
+   - Holy Power {3,15}%","- Goblin Shaman
+   - The Gobfather
+   - Iceclaw Witch Doctor
+   - Pale Witch Doctor
+   - The Pale Goblin","- DwarvenHalls Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Gold Cestus,3: Legendary,FistWeapon,"{8.5, 48.5}",Physical,"- Dexterity {2, 14}","- Additional Weapon Damage Source[""Dexterity""] * .075f
+   - Gain Additional Weapon Damage equal to 7.5% of your Dexterity.",- Unchained Efreet,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Golden Cross,3: Legendary,Wand,"{8.5, 54.5}",Healing,,"- Holy Power {2,10}%",- The Bishop (Event),"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Golden Scepter,3: Legendary,Wand,"{6.5, 36.5}",Fire,"- Might {3, 18}
+   - Intelligence {2, 9}",,- Global Loot,
+Griffin Horn,3: Legendary,Bow,"{13.5, 85.5}",Physical,"- Dexterity {4, 27}","- Additional Weapon Damage Source[""Dexterity""] * .30f
+   - Gain Additional Weapon Damage equal to 30% of your Dexterity.",- Global Loot,
+Hand Cannon,3: Legendary,Gun_1H,"{9.5, 58.5}",Fire,,,"- Admiral Blackbeard
+   - The Prospector","- WaterTempleRuins Night
+   - ForgottenMines Day"
+Holy Blade,3: Legendary,Sword_1H,"{10.5, 64.5}",Holy,"- Might {3, 18}","- Holy Power {4,20}%",- The Bishop (Event),"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Ivory Musket,3: Legendary,Gun_2H,"{21.5, 138.5}",Fire,,,- Councilor Jahsun,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Minotaur Axe,3: Legendary,Axe_2H,"{20.0, 133.5}",Physical,"- Might {4, 27}
+   - Vitality {3, 18}",,"- Anthulk
+   - The Minotaur",- ForgottenMines Day
+Naginata,3: Legendary,Polearm,"{16.5, 107.5}",Physical,"- Dexterity {4, 27}","- Additional Weapon Damage Source[""Dexterity""] * .30f
+   - Gain Additional Weapon Damage equal to 30% of your Dexterity.","- Ronin
+   - The Grandmaster","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Oasis Glaive,3: Legendary,Polearm,"{20.0, 133.5}",Physical,"- Vitality {3, 18}
+   - Intelligence {3, 18}",- Max Mana 20%,- Global Loot,
+Obsidian Cestus,4: Mythic,FistWeapon,"{9.5, 58.5}",Shadow,,"- Shadow Damage {2,10}%
+   - % Life Steal 4",- Global Loot,
+Obsidian Talon,3: Legendary,FistWeapon,"{7.5, 43.5}",Shadow,,- Striking with this weapon applies 1 stack of Poison.,- Global Loot,
+Ornate Sword,3: Legendary,Sword_1H,"{9.5, 61.5}",Physical,"- Might {2, 9}
+   - Vitality {2, 9}",,- Global Loot,
+Ruby Battleaxe,3: Legendary,Axe_2H,"{20.0, 133.5}",Fire,"- Might {4, 27}
+   - Vitality {3, 18}",,"- Lord Infernicus (Event)
+   - The Forgemaster",- Emberlands Day
+Ruby Glaive,3: Legendary,Polearm,"{16.5, 107.5}",Fire,"- Might {3, 18}
+   - Intelligence {3, 18}","- Fire Damage {4,20}%",- Global Loot,
+Ruby Halberd,3: Legendary,Polearm,"{24.5, 160.0}",Fire,,"- Fire Damage {4,20}%",- Dwarven Warmachine,- DwarvenHalls Day
+Ruby Sword,3: Legendary,Sword_1H,"{8.5, 54.5}",Fire,,"- Fire Damage {4,20}%
+   - 10% chance to apply Level [level value] {SKL=Immolate} on hit.",- The Broker,- Emberlands Day
+Ruby Tonfa,3: Legendary,FistWeapon,"{7.5, 43.5}",Fire,"- Might {2, 9}
+   - Intelligence {1, 5}","- Damage to Fire Source[""Might""] * .1f
+   - Gain Added Damage to Fire equal to 10% of your Might.","- Lord Infernicus (Event)
+   - The Forgemaster",- Emberlands Day
+Sai,3: Legendary,Sword_1H,"{8.5, 48.5}",Physical,"- Reflex {2, 14}","- Additional Weapon Damage Source[""Reflex""] * .075f
+   - Gain Additional Weapon Damage equal to 7.5% of your Reflex.",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Sand Spear,3: Legendary,Polearm,"{20.0, 133.5}",Physical,"- Might {3, 18}
+   - Dexterity {3, 18}","- Damage and Healing {3,15}%","- Unchained Efreet
+   - The Sultan","- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Sapphire Cestus,3: Legendary,FistWeapon,"{8.5, 54.5}",Cold,"- Might {2, 9}
+   - Intelligence {1, 5}","- Damage to Cold Source[""Might""] * .1f
+   - Gain Added Damage to Cold equal to 10% of your Might.",- Global Loot,
+Sapphire Claymore,3: Legendary,Sword_2H,"{20.0, 133.5}",Cold,"- Might {3, 18}
+   - Dexterity {2, 9}
+   - Vitality {3, 18}",,- Global Loot,
+Sapphire Poleaxe,3: Legendary,Polearm,"{24.5, 160.0}",Cold,,"- Cold Damage {4,20}%",- Global Loot,
+Sapphire Spear,3: Legendary,Polearm,"{16.5, 107.5}",Cold,"- Might {2, 9}
+   - Intelligence {2, 9}
+   - Reflex {3, 18}","- Cold Damage {4,20}%",- Global Loot,
+Sapphire Sword,3: Legendary,Sword_1H,"{8.5, 54.5}",Cold,,"- Cold Damage {2,10}%
+   - 10% chance to cast Level [level value] {SKL=Frost Shard} on hit.",- Global Loot,
+Sharpshooter,3: Legendary,Gun_2H,"{16.5, 107.5}",Physical,"- Dexterity {7, 45}",,"- Lady of the Well
+   - The Scarecrow
+   - Captain of the Sapphire Sea","- WaterTempleRuins Day
+   - SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Shield Crusher,3: Legendary,Mace_2H,"{23.5, 153.5}",Physical,"- Might {6, 36}",,- Global Loot,
+Silver Shot,3: Legendary,Gun_1H,"{10.5, 62.5}",Physical,,,"- The Butcher
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Skull Mace,3: Legendary,Wand,"{6.5, 36.5}",Shadow,"- Might {3, 18}","- Summon Damage {2.5,12.5}%
+   - Summon Limit 1",- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Sky Spear,3: Legendary,Polearm,"{20.0, 133.5}",Physical,"- Vitality {3, 18}
+   - Intelligence {3, 18}","- Damage and Healing {3,15}%",- Global Loot,
+Slayer Blade,3: Legendary,Sword_1H,"{11.5, 69.5}",Physical,"- Might {2, 9}",,"- The Butcher
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Spike Fist,3: Legendary,FistWeapon,"{7.5, 43.5}",Physical,"- Vitality {2, 14}","- Return Damage Physical Source[""MaxHealth""] * .01f
+   - Gain Added Return Damage Physical equal to 1% of your Max Health.",- Azug Spikefist,
+Stone-Cleaver,3: Legendary,Axe_2H,"{24.5, 160.0}",Physical,"- Might {4, 27}
+   - Vitality {3, 18}",,- Mountain King Ironheart,- DwarvenHalls Day
+Sword Guard,3: Legendary,Sword_2H,"{24.5, 160.0}",Physical,"- Reflex {6, 36}",,- The Black Knight,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Topaz Cestus,3: Legendary,FistWeapon,"{7.5, 43.5}",Lightning,,"- Damage to Lightning Source[""Might""] * .1f
+   - Gain Added Damage to Lightning equal to 10% of your Might.",- Tlaloc the Storm,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Topaz Greataxe,3: Legendary,Axe_2H,"{20.0, 133.5}",Lightning,"- Might {3, 18}
+   - Dexterity {4, 27}",,- Ragnar,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Topaz Greatsword,3: Legendary,Sword_2H,"{20.0, 133.5}",Lightning,"- Dexterity {4, 27}
+   - Vitality {3, 18}",,- Global Loot,
+Topaz Polearm,3: Legendary,Polearm,"{22.5, 146.5}",Lightning,,"- Lightning Damage {4,20}%",- Global Loot,
+Topaz Sword,3: Legendary,Sword_1H,"{8.5, 54.5}",Lightning,,"- Lightning Damage {2,10}%
+   - 8% chance on striking to cast Level [level value] {SKL=Shock}.",- Global Loot,
+Topaz Sword-Staff,3: Legendary,Polearm,"{16.5, 107.5}",Lightning,"- Dexterity {3, 18}
+   - Intelligence {3, 18}","- Lightning Damage {4,20}%",- Global Loot,
+Twisted Dagger,3: Legendary,Sword_1H,"{7.5, 43.5}",Shadow,,"- Shadow Damage {2,10}%
+   - Striking with this weapon applies 2 stack of Poison.","- The Jester
+   - Twisted Soul of the Swamp","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Vanquisher Blade,3: Legendary,Sword_1H,"{8.5, 54.5}",Physical,"- Might {4, 27}",,- Global Loot,
+Vanquisher Sword,3: Legendary,Sword_2H,"{20.0, 133.5}",Physical,"- Might {6, 40}",,"- Lady of the Well
+   - The Scarecrow
+   - Avatar of Xotec
+   - Medusa","- SunkenSwamplands Night
+   - WaterTempleRuins Night
+   - EmeraldJungle Day
+   - CastleGloom Day
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - SunkenSwamplands Day"
+Wrecking Ball,3: Legendary,FistWeapon,"{6.5, 40.0}",Physical,"- Might {2, 9}",- 10% chance to cast Quaking Fist on striking.,- Azug Spikefist,
+Abaddon,4: Mythic,Mace_2H,"{26.5, 172.5}",Shadow,"- Might {3, 20}
+   - Intelligence {3, 20}","- Shadow Damage {5,25}%
+   - 20% chance to cast Level [level value] {SKL=Raise Servant of Abaddon} 
+   on enemy death.","- Black Dragon
+   - The Dusk King","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - CastleGloom Day"
+Ancient Staff,4: Mythic,Staff,"{14.5, 96.5}",Fire,"- Intelligence {9, 58}",- Max Mana 25%,- Global Loot,
+Apocalypse,4: Mythic,Sword_2H,"{21.5, 143.5}",Fire,"- Might {6, 39}","- Fire Damage {5,25}%","- Lord Infernicus (Event)
+   - Red Dragon",- Emberlands Day
+Arcane Pillar,4: Mythic,Staff,"{14.5, 96.5}",Fire,"- Might {10, 67}",,- The Sultan,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Arcane Sceptre,4: Mythic,Wand,"{6.5, 39.5}",Fire,"- Might {5, 34}",,- The Sultan,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Big Game Hunter,4: Mythic,Gun_2H,"{30.5, 200.0}",Physical,,- Movement Points -1,- Councilor Jahsun,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Black Crusade,4: Mythic,Bow,"{21.5, 138.5}",Physical,"- Might {2, 10}
+   - Dexterity {2, 10}
+   - Vitality {2, 10}",- Attacks with this weapon cause 2 stacks of Bleeding.,- The Black Knight,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Champion Blade,4: Mythic,Axe_2H,"{26.5, 172.5}",Physical,"- Vitality {5, 29}",- Grants the passive skill {SKL=Colossus}.,- Maximus,
+Cold Steel Axe,4: Mythic,Axe_1H,"{9.5, 58.5}",Cold,"- Might {2, 10}
+   - Vitality {2, 10}","- Cold Damage {2.5,12.5}%
+   - 10% chance to cast Level [level value] {SKL=Ice Lance} on striking.",- Blue Dragon,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Coldsteel Vanquisher,4: Mythic,Gun_1H,"{8.5, 53.5}",Cold,"- Might {3, 20}",,"- Blue Dragon
+   - The Prospector
+   - Olgoi, Devourer of Treasure","- ForgottenMines Day
+   - DwarvenHalls Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Crimson Brand,4: Mythic,Sword_1H,"{10.5, 66.5}",Shadow,"- Might {2, 10}
+   - Dexterity {2, 10}",- Life Steal 4%,"- Samare the Vampire (Event)
+   - The Duke",- CastleGloom Day
+Crystal Spire,4: Mythic,Staff,"{14.5, 96.5}",Cold,"- Might {3, 15}
+   - Dexterity {3, 15}
+   - Vitality {3, 15}
+   - Intelligence {3, 15}
+   - Reflex {3, 15}",,- Crystal Golem,- ForgottenMines Day
+Dark God's Sceptre,4: Mythic,Staff,"{14.5, 96.5}",Shadow,"- Might {5, 29}","- Shadow Damage {5,25}%
+   - Mana Steal 5%","- Black Dragon
+   - The Countess
+   - The Bishop (Event)","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Dead One's Scythe,4: Mythic,Wand,"{6.5, 39.5}",Shadow,"- Might {3, 20}","- Summon Damage {3,15}%
+   - Summon Limit 1","- The Dead One
+   - Lady of the Well
+   - The Scarecrow","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Dragon Fist,4: Mythic,FistWeapon,"{9.5, 58.5}",Shadow,,"- 5% chance to cast Level [level value] {SKL=Thunder Bolt} when hitting 
+   an enemy with any ability.
+   - 5% chance to cast Level [level value] {SKL=Frost Nova} when hitting an 
+   enemy with any ability.
+   - 5% chance to cast Level [level value] {SKL=Fireball} when hitting an 
+   enemy with any ability.","- Black Dragon
+   - Blue Dragon
+   - Green Dragon
+   - Red Dragon","- FreewindForest Night
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - FreewindForest Day
+   - CastleGloom Day
+   - Emberlands Day"
+Dwarven Lord's Sceptre,4: Mythic,Wand,"{6.5, 39.5}",Fire,"- Vitality {3, 20}","- Damage and Healing {2.5,12.5}%",- Mountain King Ironheart,- DwarvenHalls Day
+Earthshaker,4: Mythic,Mace_2H,"{21.5, 143.5}",Physical,"- Might {3, 20}
+   - Vitality {3, 20}",- 10% chance to cast Level [level value] {SKL=Stunning Slam} on striking.,"- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Ember King's Might,4: Mythic,Sword_2H,"{19.5, 129.5}",Fire,"- Might {2, 10}
+   - Vitality {2, 10}","- Fire Damage {5,25}%
+   - 15% chance to cast Level [level value] {SKL=Detonate} on striking.",- The Ember King,- Emberlands Day
+Emberstone Staff,4: Mythic,Staff,"{14.5, 96.5}",Fire,"- Might {3, 20}
+   - Intelligence {3, 20}","- Fire Damage {5,25}%
+   - 20% chance to cast Level [level value] {SKL=Burning Ground} when 
+   hitting with any ability.",- The Broker,- Emberlands Day
+Excalibur,4: Mythic,Sword_2H,"{26.5, 172.5}",Holy,"- Might {3, 20}
+   - Vitality {3, 20}","- Holy Power Source[""Might""] * .4f%
+   - Gain Increased Holy Power equal to 40% of your Might.",- Drops from the Sword in the Stone event,
+Executioner Axe,4: Mythic,Axe_2H,"{26.5, 172.5}",Physical,"- Might {2, 10}
+   - Vitality {2, 10}",- Weapon attacks apply 2 stacks of bleeding.,- Global Loot,
+Fencer's Gift,4: Mythic,Sword_1H,"{10.5, 63.5}",Physical,"- Reflex {3, 20}","- Dodge Counter Damage {10,50}%",- The Prospector,- ForgottenMines Day
+Flame Grasp,4: Mythic,Wand,"{6.5, 39.5}",Fire,"- Intelligence {5, 29}","- Damage to Fire Source[""Intelligence""] * .20f
+   - Gain Added Damage to Fire equal to 20% of your Intelligence.","- The Mad Mage (Event)
+   - Red Dragon",- Emberlands Day
+Frost Grasp,4: Mythic,Wand,"{6.5, 39.5}",Cold,"- Intelligence {5, 29}","- Damage to Cold Source[""Intelligence""] * .20f
+   - Gain Added Damage to Cold equal to 20% of your Intelligence.","- Blue Dragon
+   - The Mad Mage (Event)","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Fury Staff,4: Mythic,Polearm,"{26.5, 172.5}",Lightning,"- Dexterity {10, 67}",,- Tlaloc the Storm,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Ghost Hunter,4: Mythic,Gun_2H,"{22.5, 149.5}",Shadow,"- Might {2, 10}
+   - Dexterity {2, 10}",- Grants the skill {SKL=Spectral Mark}.,- Admiral Blackbeard,- WaterTempleRuins Night
+Gobfather's Smasher,4: Mythic,Mace_2H,"{26.5, 172.5}",Physical,"- Might {3, 20}
+   - Vitality {3, 20}",,- The Gobfather,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Goblin Chieftain Axe,4: Mythic,Axe_2H,"{27.5, 179.5}",Physical,"- Might {5, 29}
+   - Vitality {2, 10}",- Casts {SKL=Rally} at the start of each turn.,"- Azug Spikefist
+   - Iceclaw Chieftain
+   - The Pale Goblin",- DwarvenHalls Day
+Golden Valkyrie Spear,4: Mythic,Polearm,"{24.5, 158.5}",Physical,"- Might {3, 20}
+   - Vitality {3, 20}",- Applies Seal of Might at the start of battle.,- Valkyrie Commander,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Grandfather Odachi,4: Mythic,Sword_2H,"{17.5, 115.5}",Physical,"- Might {3, 20}
+   - Vitality {2, 10}","- Additional Weapon Damage Source[""Might""] * .4f
+   - Gain Additional Weapon Damage equal to 40% of your Might.",- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Hailstone Staff,4: Mythic,Staff,"{14.5, 96.5}",Cold,"- Might {3, 20}
+   - Intelligence {3, 20}","- Cold Damage {5,25}%
+   - 15% chance to cast Level [level value] {SKL=Frost Nova} when hitting 
+   with any ability.","- Hodr, the Frost Giant (Event)","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Harvester,4: Mythic,Axe_2H,"{21.5, 143.5}",Physical,"- Might {3, 20}
+   - Vitality {3, 20}","- 20% chance to cast Level [level value] {SKL=Reaper's Scythe} on 
+   striking.","- The Black Knight
+   - Lady of the Well
+   - The Scarecrow","- SunkenSwamplands Night
+   - WyrmrestDesert Day
+   - CastleGloom Day
+   - WyrmrestDesert Night
+   - SunkenSwamplands Day"
+Heavenly Blade,4: Mythic,Sword_2H,"{27.5, 179.5}",Physical,"- Might {2, 10}
+   - Dexterity {2, 10}
+   - Vitality {2, 10}
+   - Intelligence {2, 10}
+   - Reflex {2, 10}",,- Unchained Efreet,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Holy Symbol,4: Mythic,Wand,"{9.5, 58.5}",Healing,"- Might {2, 10}","- Holy Power {2.5,12.5}%",- Herald of the Abyss,"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Ice King's Axe,4: Mythic,Axe_2H,"{21.5, 143.5}",Cold,"- Might {3, 20}
+   - Vitality {3, 20}","- Cold Damage {5,25}%
+   - 20% chance to cast Level [level value] {SKL=Breath of Winter} on 
+   striking.",- The Dusk King,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Kingsblade,4: Mythic,Sword_1H,"{9.5, 58.5}",Physical,"- Might {1, 5}
+   - Dexterity {1, 5}
+   - Vitality {1, 5}
+   - Intelligence {1, 5}
+   - Reflex {1, 5}",,- Global Loot,
+Kingslayer,4: Mythic,Sword_1H,"{10.5, 63.5}",Physical,"- Dexterity {5, 29}",,"- The Butcher
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Last Word,4: Mythic,Gun_1H,"{7.5, 43.5}",Physical,,"- Basic attacks have a 25% chance to proc an additional attack once per 
+   turn.",- Global Loot,
+Laying on Hands,4: Mythic,FistWeapon,"{11.5, 69.5}",Healing,"- Might {2, 10}
+   - Intelligence {1, 5}","- Healing Given Source[""Might""] * .5f
+   - Gain Additional Healing to Heals equal to 50% of your Might.",- Global Loot,
+Living Axe,4: Mythic,Axe_2H,"{21.5, 143.5}",Physical,"- Vitality {3, 20}
+   - Reflex {3, 20}","- Health Per Turn {14, 168}","- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Logan's Paw,4: Mythic,FistWeapon,"{7.5, 46.5}",Physical,"- Vitality {3, 15}","- Health Per Turn {7, 84}
+   - Damage to Physical Source[""MaxHealth""] * .025f
+   - Gain Additional Physical Damage equal to 2.5% of your Max Health.",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Magedraw,4: Mythic,Bow,"{12.5, 80.0}",Physical,,- Gain Level [level value] {SKL=Enchant Fire}.,- Crystal Golem,- ForgottenMines Day
+Medusa Staff,4: Mythic,Staff,"{14.5, 96.5}",Shadow,"- Might {3, 20}
+   - Vitality {3, 20}",- Grants the skill {SKL=Petrify}.,"- Anthulk
+   - The Minotaur
+   - Medusa","- WaterTempleRuins Night
+   - EmeraldJungle Day
+   - ForgottenMines Day
+   - WaterTempleRuins Day
+   - EmeraldJungle Night"
+Mjolnir,4: Mythic,Mace_1H,"{9.5, 58.5}",Lightning,"- Might {2, 10}
+   - Vitality {2, 10}","- Lightning Damage {2.5,12.5}%
+   - 10% chance to cast Level [level value] {SKL=Thunder Bolt} on striking.","- Lagertha
+   - Ragnar
+   - Green Dragon","- FreewindForest Night
+   - FreewindForest Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Mourning Star,4: Mythic,Mace_1H,"{7.5, 46.5}",Physical,,"- Return Damage Physical Source[""Armor""] * .02f
+   - Gain Added Return Damage Physical equal to 2% of your Armor.","- Dark Cultist Attendant
+   - The Gobfather
+   - The Pale Goblin","- SunkenSwamplands Night
+   - WyrmrestDesert Day
+   - CastleGloom Day
+   - DwarvenHalls Day
+   - WyrmrestDesert Night
+   - SunkenSwamplands Day"
+Ninjato,4: Mythic,Sword_1H,"{7.5, 46.5}",Physical,"- Dexterity {2, 10}
+   - Vitality {1, 5}","- Additional Weapon Damage Source[""Dexterity""] * .10f
+   - Gain Additional Weapon Damage equal to 10% of your Dexterity.",- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Oculus Stone,4: Mythic,Wand,"{6.5, 39.5}",Lightning,"- Might {3, 15}
+   - Intelligence {2, 10}
+   - Reflex {2, 10}",,"- The Minotaur
+   - Lady of the Well
+   - The Scarecrow","- ForgottenMines Day
+   - SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Peacekeeper,4: Mythic,Gun_2H,"{21.5, 138.5}",Physical,"- Might {6, 39}",,"- The Sultan
+   - Medusa","- WaterTempleRuins Night
+   - EmeraldJungle Day
+   - WyrmrestDesert Day
+   - WaterTempleRuins Day
+   - WyrmrestDesert Night
+   - EmeraldJungle Night"
+Phantom Piercer,4: Mythic,Sword_1H,"{11.5, 69.5}",Shadow,"- Reflex {3, 20}","- 10% chance to cast Level [level value] {SKL=Reaper's Scythe} on 
+   striking.",- Admiral Blackbeard,- WaterTempleRuins Night
+Phoenix Claymore,4: Mythic,Sword_2H,"{21.5, 143.5}",Fire,"- Vitality {3, 20}","- Fire Damage {5,25}%
+   - Return Damage Fire {6, 67}
+   - Grants the passive {SKL=Glory}. Gain Level [level value] {SKL=Enchant 
+   Fire} while holding this weapon.","- Red Dragon
+   - The Broker",- Emberlands Day
+Problem Solver,4: Mythic,Gun_1H,"{11.5, 74.5}",Physical,,,- Global Loot,
+Shadow Stalker Bow,4: Mythic,Bow,"{21.5, 138.5}",Shadow,"- Dexterity {6, 39}","- 10% chance to cast Level [level value] {SKL=Spectral Chains} on 
+   striking. 10% chance to cast Level [level value] {SKL=Blind} on striking.",- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Shiny Blue Crusher,4: Mythic,Mace_1H,"{7.5, 43.5}",Cold,"- Vitality {2, 10}
+   - Intelligence {2, 10}","- Cold Damage {2.5,12.5}%",- Global Loot,
+Shiny Orange Basher,4: Mythic,Mace_1H,"{7.5, 43.5}",Lightning,"- Dexterity {2, 10}
+   - Intelligence {2, 10}","- Lightning Damage {2.5,12.5}%",- Global Loot,
+Shiny Red Smasher,4: Mythic,Mace_1H,"{7.5, 43.5}",Fire,"- Might {2, 10}
+   - Intelligence {2, 10}","- Fire Damage {2.5,12.5}%",- Global Loot,
+Siegebreaker,4: Mythic,Mace_2H,"{26.5, 172.5}",Physical,"- Might {2, 10}
+   - Vitality {2, 10}",- Striking with this weapon applies {STA=Fracture} to the target.,"- Hodr, the Frost Giant (Event)","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Slayer Axe,4: Mythic,Axe_2H,"{30.5, 200.0}",Physical,,,- The Butcher,"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Spectral Hammer,4: Mythic,Gun_1H,"{9.5, 58.5}",Shadow,,"- Shadow Damage {2.5,12.5}%
+   - 10% chance to shoot a Ghostly Cannon Ball on striking.",- Admiral Blackbeard,- WaterTempleRuins Night
+Sun Staff,4: Mythic,Staff,"{21.5, 143.5}",Healing,"- Might {3, 20}","- Holy Power {5,25}%",- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Thunder Grasp,4: Mythic,Wand,"{6.5, 39.5}",Lightning,"- Intelligence {5, 29}","- Damage to Lightning Source[""Intelligence""] * .20f
+   - Gain Added Damage to Lightning equal to 20% of your Intelligence.","- Green Dragon
+   - The Mad Mage (Event)","- FreewindForest Night
+   - FreewindForest Day"
+Thunderforce,4: Mythic,Bow,"{15.5, 98.5}",Lightning,"- Dexterity {3, 20}
+   - Reflex {2, 10}","- Lightning Damage {5,25}%
+   - 15% Chance to cast Level [level value] {SKL=Chain Lightning} when 
+   striking with this weapon.",- Global Loot,
+Thunderstone Staff,4: Mythic,Staff,"{14.5, 96.5}",Lightning,"- Dexterity {3, 20}
+   - Intelligence {3, 20}","- Lightning Damage {5,25}%
+   - 10% chance to proc a Level [level value] {SKL=Thunder Bolt} when 
+   hitting with any ability.","- Tlaloc the Storm
+   - Green Dragon","- FreewindForest Night
+   - WaterTempleRuins Night
+   - EmeraldJungle Day
+   - FreewindForest Day
+   - WaterTempleRuins Day
+   - EmeraldJungle Night"
+Trophy Hunter,4: Mythic,Bow,"{23.5, 155.5}",Physical,"- Dexterity {3, 20}",- Grants the passive skill {SKL=Trophy Hunter}.,- Councilor Jahsun,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Volcanic,4: Mythic,Gun_1H,"{9.5, 58.5}",Fire,,"- Fire Damage {2.5,12.5}%","- Dwarven Warmachine
+   - Red Dragon","- DwarvenHalls Day
+   - Emberlands Day"
+Warmachine Gauntlet,4: Mythic,FistWeapon,"{11.5, 69.5}",Fire,"- Might {2, 10}
+   - Vitality {1, 5}",- 10% chance to cast Level [level value] {SKL=Meteor} when Striking.,- Dwarven Warmachine,- DwarvenHalls Day
+Windstrike,4: Mythic,Bow,"{14.5, 92.5}",Physical,"- Might {5, 29}","- Additional Weapon Damage Source[""Might""] * .35f
+   - Gain Additional Weapon Damage equal to 35% of your Might.",- Black Dragon,- CastleGloom Day
+Winged Axe,4: Mythic,Axe_1H,"{8.5, 52.5}",Physical,,"- Basic attacks have a 25% chance to proc an additional attack once per 
+   turn.",- Valkyrie Commander,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Witch's Broom,4: Mythic,Staff,"{14.5, 96.5}",Shadow,"- Might {3, 20}
+   - Vitality {3, 20}",- Shadow damage you deal applies 2 stacks of @Poison@.,"- The Risen Witch (Event)
+   - The Witch","- SunkenSwamplands Day
+   - SunkenSwamplands Night"
+Rabbit's Spear,4: Mythic,Polearm,{140},Physical,"- Dexterity {20}
+   - Reflex {20}","- Skills Granted {Momentum III, Falcon Dash}",- The Ronin,"- FrostwroughtMountains Day
+   - FrostwroughtMountains Night"
+Ksvaldir,4: Mythic,Sword_2H,{135},Physical,- Dexterity {39},"- Dodge Counter Damage {100}%
+   - Dodge Counter Attack Chance {100}%
+   - Life Steal 5%
+   - Applies Hunger Ksvaldir: Sacrifice 10% of your max health per turn",- The Countess,"- CastleGloom Day
+   - CastleGloom Night"

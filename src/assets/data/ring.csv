@@ -1,0 +1,186 @@
+Name,Rarity,Armor,Magic Armor,Base Stats,Attributes,Dropped By,Locations
+Amber Ring,1: Uncommon,,,"- Dexterity {2, 8}",- Resist Lightning 10%,- Global Loot,
+Brass Loop,1: Uncommon,"{4, 23}",,"- Dexterity {2, 12}",,- Global Loot,
+Bronze Ring,1: Uncommon,"{4, 23}",,"- Might {2, 12}",,- Global Loot,
+Conduit Ring,1: Uncommon,,,,"- Lightning Damage {2,10}%",- Global Loot,
+Copper Ring,1: Uncommon,,"{4, 23}","- Intelligence {2, 12}",,- Global Loot,
+Friendship Band,1: Uncommon,,,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Goblin Bone Ring,1: Uncommon,,,"- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Iron Band,1: Uncommon,"{10, 68}",,,,- Global Loot,
+Opal Ring,1: Uncommon,,,"- Might {2, 8}",- Resist Fire 10%,- Global Loot,
+Pearl Ring,1: Uncommon,,,"- Intelligence {2, 8}",- Resist Cold 10%,- Global Loot,
+Promise Ring,1: Uncommon,,,"- Might {2, 8}
+   - Vitality {2, 8}",,"- Lady of the Well
+   - The Scarecrow","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Spiked Ring,1: Uncommon,,,,"- Return Damage Physical {2, 26}",- Global Loot,
+Trainer's Band,1: Uncommon,,,"- Intelligence {2, 8}","- Summon Health {3,15}%",- Global Loot,
+Tungsten Ring,1: Uncommon,"{7, 45}","{7, 45}",,,- Global Loot,
+Blighted Band,2: Rare,,,"- Might {2, 9}","- Shadow Damage {3,15}%",- Global Loot,
+Bone Ring,2: Rare,,,"- Intelligence {2, 9}","- Summon Health {4,20}%",- The Bishop,"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Diamond Ring,2: Rare,,,"- Vitality {2, 9}","- Resist Cold 5%
+   - Resist Fire 5%
+   - Resist Lightning 5%",- Global Loot,
+Gold Ring,2: Rare,,,"- Might {1, 5}
+   - Dexterity {1, 5}
+   - Vitality {1, 5}
+   - Intelligence {1, 5}
+   - Reflex {1, 5}",,- Global Loot,
+Mending Band,2: Rare,,,,"- Health Per Turn {6, 72}",- Global Loot,
+Ring of Haste,3: Legendary,,,"- Dexterity {2, 9}","Grants Fire Skill ""Haste""",- The Sun Queen,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Ring of Protection,2: Rare,,,"- Vitality {2, 9}",- Resist Physical 10%,- Global Loot,
+Ruby Ring,2: Rare,,,"- Might {2, 9}","- Fire Damage {3,15}%","- Lord Infernicus (Event)
+   - Captain of the Ruby Rum
+   - Spellweaver Flamebearer
+   - Fire Mage
+   - The Forgemaster","- SunkenSwamplands Night
+   - WaterTempleRuins Night
+   - WyrmrestDesert Day
+   - WaterTempleRuins Day
+   - WyrmrestDesert Night
+   - Emberlands Day
+   - SunkenSwamplands Day"
+Sapphire Ring,2: Rare,,,"- Intelligence {2, 9}","- Cold Damage {3,15}%","- The Dusk King
+   - Captain of the Sapphire Sea
+   - Spellweaver Frostbringer
+   - Frost Mage","- FreewindForest Night
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - WaterTempleRuins Night
+   - FreewindForest Day
+   - WaterTempleRuins Day
+   - Emberlands Day"
+Silver Band,2: Rare,"{8, 49}","{8, 49}",,,"- The Butcher
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Steel Ring,2: Rare,"{4, 25}","{4, 25}",,"- Return Damage Physical {2, 29}",- Global Loot,
+Thief's Ring,3: Legendary,,,"- Dexterity {2, 9}",- Skills Granted {Steal Action},"- Samara the Vampire (Event)
+   - The Duke
+   - Thief","- EmeraldJungle Night
+   - EmeraldJungle Day
+   - CastleGloom Day"
+Topaz Ring,2: Rare,,,"- Dexterity {2, 9}","- Lightning Damage {3,15}%","- Captain of the Emerald Eel
+   - Spellweaver Stormcaller
+   - Thunder Mage
+   - Apparition","- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Warding Ring,2: Rare,"{8, 49}","{8, 49}","- Vitality {2, 9}",,"- Ursa
+   - Forest Giant","- FreewindForest Night
+   - FreewindForest Day"
+Wedding Band,2: Rare,,,"- Might {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}",,- Global Loot,
+Bleeding Band,3: Legendary,,,"- Might {2, 9}
+   - Vitality {2, 9}",- Weapon attacks apply 1 stack of bleeding.,"- Anthulk
+   - The Minotaur",- ForgottenMines Day
+Dark Steel Ring,3: Legendary,"{8, 54}","{8, 54}","- Might {2, 9}","- Physical Damage {4,20}%",- Global Loot,
+Elemental Loop,3: Legendary,,,"- Vitality {3, 18}","- Damage to Cold {1, 12}
+   - Damage to Fire {1, 12}
+   - Damage to Lightning {1, 12}",- Crystal Golem,- ForgottenMines Day
+Gladiator's Mark,3: Legendary,,,"- Vitality {3, 18}","- Damage to Physical {1, 16}","- Lucilla
+   - Proximo",
+Living Band,3: Legendary,,,"- Might {2, 9}
+   - Vitality {2, 9}","- Health Per Turn {6, 78}","- Ursa
+   - Burning Treant
+   - Forest Giant
+   - Forest Keeper
+   - Forest Treant
+   - Forest Watcher
+   - Frozen Treant
+   - Trial of Honor","- FreewindForest Night
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - FreewindForest Day
+   - Emberlands Day"
+Mark of Nobility,3: Legendary,,,"- Might {1, 7}
+   - Dexterity {1, 7}
+   - Vitality {1, 7}
+   - Intelligence {1, 7}
+   - Reflex {1, 7}",,- Global Loot,
+Meteorite Band,3: Legendary,,,"- Vitality {3, 18}","- Damage to Fire {1, 16}",- Ember Golem,- Emberlands Day
+Mithril Loop,3: Legendary,"{8, 54}","{8, 54}","- Might {3, 18}
+   - Vitality {2, 9}",,- Global Loot,
+Orichalcum Band,3: Legendary,,,"- Might {2, 9}
+   - Intelligence {2, 9}","- increased power for mana use {15, 40}%
+   - Mana Costs {10, 20}%",- Global Loot,
+Purifying Band,3: Legendary,,,"- Intelligence {3, 18}",,- Global Loot,
+Ring of Alacrity,3: Legendary,,,"- Dexterity {2, 9}
+   - Reflex {2, 9}",- Movement Points 2,- Blood Mask Boss,"- FreewindForest Night
+   - FreewindForest Day"
+Ring of Vision,3: Legendary,,,"- Might {2, 9}
+   - Dexterity {2, 9}","- Skill Range 2
+   - Blind Immunity 1",- Global Loot,
+Titanium Band,3: Legendary,"{4, 27}","{4, 27}","- Vitality {2, 9}","- Return Damage Physical {3, 31}",- Global Loot,
+Abyssal Binding,4: Mythic,,,"- Might {2, 10}","- Damage and Healing {5,25}%
+   - Max Health -15%",- Herald of the Abyss,"- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Adamant Band,4: Mythic,"{13, 86}","{13, 86}","- Might {2, 10}
+   - Vitality {2, 10}",- Damage Reduction 5%,"- Lord Infernicus (Event)
+   - The Forgemaster",- Emberlands Day
+Band of Blades,4: Mythic,"{15, 100}","{15, 100}","- Vitality {3, 20}","- Return Damage Physical Source[""Armor""] * .02f
+   - Gain Added Return Damage Physical equal to 2% of your Armor.",- Global Loot,
+Band of Freedom,4: Mythic,,,"- Dexterity {2, 10}
+   - Reflex {2, 10}","- Rooted Immunity 1
+   - Opportunity Attack Immunity 1
+   - Chilled Immunity 1
+   - Movement Points 2",- Global Loot,
+Black Dragon Scale,4: Mythic,"{11, 72}","{11, 72}","- Vitality {2, 10}","- Return Damage Shadow {3, 34}
+   - Health Per Turn {17, 115}",- Black Dragon,- CastleGloom Day
+Blue Dragon Scale,4: Mythic,"{11, 72}","{11, 72}","- Intelligence {2, 10}","- Return Damage Cold {1, 17}
+   - Health Per Turn {17, 115}",- Blue Dragon,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Emberstone Ring,4: Mythic,,,"- Might {2, 10}","- Fire Damage {5,25}%","- Dwarven Warmachine
+   - Red Dragon","- DwarvenHalls Day
+   - Emberlands Day"
+Ethereal Loop,4: Mythic,,,"- Reflex {6, 39}",,- Global Loot,
+Green Dragon Scale,4: Mythic,"{11, 72}","{11, 72}","- Dexterity {2, 10}","- Return Damage Lightning {3, 34}
+   - Health Per Turn {17, 115}",- Green Dragon,"- FreewindForest Night
+   - FreewindForest Day"
+Hailstone Ring,4: Mythic,,,"- Intelligence {2, 10}","- Cold Damage {5,25}%",- Blue Dragon,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Heart Signet,4: Mythic,,,"- Vitality {6, 39}",,- Global Loot,
+Iron Fortress Band,4: Mythic,"{9, 58}","{9, 58}",,"- Resist Physical 8%
+   - Resist Cold 8%
+   - Resist Fire 8%
+   - Resist Lightning 8%","- The Gobfather
+   - The Pale Goblin","- DwarvenHalls Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day"
+King's Signet,4: Mythic,,,"- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}
+   - Reflex {2, 9}",,- Global Loot,
+Red Dragon Scale,4: Mythic,"{11, 72}","{11, 72}","- Might {2, 10}","- Return Damage Fire {3, 34}
+   - Health Per Turn {17, 115}",- Red Dragon,- Emberlands Day
+Ring of Brilliance,4: Mythic,,,"- Intelligence {6, 39}",,- Global Loot,
+Ring of Cunning,4: Mythic,,,"- Dexterity {6, 39}",,- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Ring of Power,4: Mythic,,,"- Might {6, 39}",,- The Broker,- Emberlands Day
+Sunstone Ring,4: Mythic,,,"- Might {3, 20}
+   - Intelligence {3, 20}","- 10% chance to cast Level [level value] {SKL=Blinding Light} when 
+   hitting with any ability.",- Avatar of Xotec,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Thunderstone Ring,4: Mythic,,,"- Dexterity {2, 10}","- Lightning Damage {5,25}%","- Ragnar
+   - Green Dragon","- FreewindForest Night
+   - FreewindForest Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Claw of Kuvonn,4: Mythic,,,"- Summon Limit {1}
+   - Summon Resistance {5%}
+   - Summon Damage {20%}
+   - Summon Health {20%}",- All creatures you summon have Ghost Armor applied,"- The Dead One
+   - The Countess","- CastleGloom Day
+   - CastleGloom Night"

@@ -1,0 +1,435 @@
+Name,Rarity,Armor,Magic Armor,Base Stats,Attributes,Dropped By,Locations
+Leather Doublet,0: Common,"{6, 41}",,"- Might {1, 7}
+   - Reflex {1, 7}",,- Global Loot,
+Leather Jerkin,0: Common,"{2, 11}","{2, 11}","- Might {2, 14}",,- Global Loot,
+Novice Gi,0: Common,"{3, 21}","{3, 21}",,"- Max Health {15, 102}",- Global Loot,
+Primitive Rags,0: Common,"{6, 41}",,,,- Global Loot,
+Simple Robe,0: Common,"{3, 21}","{3, 21}","- Intelligence {2, 14}",,- Global Loot,
+Toga,0: Common,,"{6, 41}",,,- Global Loot,
+Traveler's Coat,0: Common,"{6, 41}","{3, 21}","- Vitality {2, 14}",,- Global Loot,
+Blood Mask Tunic,1: Uncommon,"{5, 34}","{5, 34}","- Might {2, 12}
+   - Dexterity {2, 12}
+   - Reflex {2, 8}",,- Global Loot,
+Breastplate,1: Uncommon,"{14, 90}","{14, 90}","- Might {2, 8}","- Return Damage Physical {2, 26}",- Global Loot,
+Canary Coat,1: Uncommon,"{5, 34}","{5, 34}","- Vitality {2, 12}
+   - Intelligence {2, 12}
+   - Reflex {2, 8}",,- Global Loot,
+Canary Tunic,1: Uncommon,"{4, 23}","{4, 23}","- Dexterity {3, 15}
+   - Intelligence {4, 23}",,- Global Loot,
+Chain Mail,1: Uncommon,"{10, 68}","{17, 113}","- Might {2, 8}
+   - Vitality {2, 8}",,- Global Loot,
+Competitor's Garb,1: Uncommon,"{4, 23}","{4, 23}",,"- Max Health {17, 113}
+   - Additional Weapon Damage {1, 13}",- Global Loot,
+Enchanter's Robe,1: Uncommon,"{3, 18}","{4, 27}","- Might {3, 15}
+   - Intelligence {4, 23}",,- Global Loot,
+Fire Garb,1: Uncommon,"{4, 23}","{4, 23}",,"- Max Mana {17, 113}
+   - Damage to Fire {1, 13}",- Global Loot,
+Humble Garb,1: Uncommon,"{4, 23}","{4, 23}",,"- Max Mana {17, 113}
+   - Healing Given {1, 13}",- Global Loot,
+Ice Garb,1: Uncommon,"{4, 23}","{4, 23}",,"- Max Mana {17, 113}
+   - Damage to Cold {1, 13}",- Global Loot,
+Leather Armor,1: Uncommon,"{7, 45}","{4, 23}","- Dexterity {3, 15}
+   - Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Lightning Garb,1: Uncommon,"{4, 23}","{4, 23}",,"- Max Mana {17, 113}
+   - Damage to Lightning {1, 13}",- Global Loot,
+Navy Coat,1: Uncommon,"{5, 34}","{5, 34}","- Might {2, 8}
+   - Vitality {3, 15}
+   - Reflex {2, 8}",,- Global Loot,
+Navy Robes,1: Uncommon,"{4, 23}","{4, 23}","- Might {2, 8}
+   - Vitality {3, 15}
+   - Intelligence {3, 15}",,- Global Loot,
+Olive Coat,1: Uncommon,"{4, 23}","{7, 45}","- Dexterity {3, 15}
+   - Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Olive Tunic,1: Uncommon,"{5, 34}","{5, 34}","- Dexterity {3, 15}
+   - Intelligence {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Outlaw Coat,1: Uncommon,"{7, 45}","{4, 23}","- Might {2, 8}
+   - Dexterity {2, 8}
+   - Vitality {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Sand Sultan Tunic,1: Uncommon,"{5, 34}","{5, 34}","- Dexterity {3, 15}
+   - Intelligence {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Scarlet Coat,1: Uncommon,"{4, 23}","{4, 23}","- Might {3, 15}
+   - Vitality {2, 8}
+   - Reflex {3, 15}",,- Global Loot,
+Scarlet Robes,1: Uncommon,"{4, 23}","{4, 23}","- Might {4, 23}
+   - Intelligence {3, 15}",,- Global Loot,
+Stone Wraps,1: Uncommon,"{10, 68}","{10, 68}",,"- Max Health {17, 113}",- Global Loot,
+Studded Leather,1: Uncommon,"{7, 45}","{7, 45}","- Might {2, 8}
+   - Dexterity {3, 15}
+   - Reflex {2, 8}",,- Global Loot,
+Tunic,1: Uncommon,"{4, 23}","{4, 23}","- Vitality {2, 12}
+   - Intelligence {2, 12}
+   - Reflex {2, 8}",,- Global Loot,
+Violet Coat,1: Uncommon,"{4, 23}","{7, 45}","- Might {2, 8}
+   - Dexterity {2, 8}
+   - Intelligence {2, 8}
+   - Reflex {2, 8}",,- Global Loot,
+Violet Robes,1: Uncommon,"{4, 23}","{4, 23}","- Might {3, 15}
+   - Intelligence {2, 8}
+   - Reflex {3, 15}",,- Global Loot,
+Animal Furs,2: Rare,"{8, 49}","{8, 49}","- Might {2, 9}
+   - Vitality {2, 9}
+   - Reflex {2, 9}","- Damage to Physical {1, 14}","- Hod
+   - Lagertha
+   - Ragnar
+   - Anthulk
+   - The Minotaur","- ForgottenMines Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Archer's Garb,2: Rare,"{4, 25}","{4, 25}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}","- Skill Range 1
+   - Damage to Physical {1, 14}",- Global Loot,
+Assassin's Garb,2: Rare,"{4, 25}","{4, 25}","- Dexterity {4, 25}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",- 10% chance to cast Hide in Shadows whenever an enemy dies.,- Assassin,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Assistant's Attire,2: Rare,"{3, 15}","{6, 35}","- Dexterity {6, 41}",,- Global Loot,
+Challenger's Garb,2: Rare,"{4, 25}","{4, 25}",,"- Max Health {18, 123}
+   - Additional Weapon Damage {1, 14}",- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Cleric's Garb,2: Rare,"{9, 62}","{9, 62}","- Might {3, 17}
+   - Vitality {3, 17}","- Holy Power {3,15}%","- Cleric
+   - Valkyrie Commander","- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Crimson Coat,2: Rare,"{4, 25}","{4, 25}","- Might {3, 17}
+   - Dexterity {2, 13}
+   - Reflex {3, 17}",,"- Samara the Vampire (Event)
+   - The Duke",- CastleGloom Day
+Crusader Chainmail,2: Rare,"{15, 98}","{17, 111}","- Might {2, 9}
+   - Vitality {2, 9}",- Movement Points 1,"- The Dusk King
+   - Crusader","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - SunkenSwamplands Night
+   - WyrmrestDesert Day
+   - WyrmrestDesert Night
+   - SunkenSwamplands Day"
+Cultist Robes,2: Rare,"{2, 13}","{6, 37}","- Vitality {2, 9}
+   - Intelligence {2, 9}","- Summon Damage {2,10}%
+   - Summon Health {2,10}%
+   - 10% chance upon being hit to grant Ghost Armor.","- Dark Cultist Attendant
+   - Dark Cultist Conjuror
+   - Dark Cultist Servant
+   - Herald of the Abyss
+   - The Dead One","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Emerald Cross Tunic,2: Rare,"{11, 74}","{11, 74}","- Dexterity {3, 17}
+   - Vitality {3, 17}",,- Councilor Jahsun,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Fighter's Half-Plate,2: Rare,"{15, 98}","{15, 98}","- Might {2, 9}
+   - Vitality {2, 9}",- Resist Physical 8%,"- Hodr, the Frost Giant (Event)
+   - Fighter","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - CastleGloom Day
+   - ForgottenMines Day
+   - DwarvenHalls Day"
+Fire Wraps,2: Rare,"{4, 25}","{4, 25}",,"- Max Mana {18, 123}
+   - Damage to Fire {1, 14}","- The Grandmaster
+   - Lord Infernicus (Event)
+   - The Forgemaster","- Emberlands Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Full Platemail,2: Rare,"{13, 86}","{13, 86}",,"- Resist Cold 5%
+   - Resist Fire 5%
+   - Resist Lightning 5%
+   - Resist Physical 5%",- The Baron,- CastleGloom Day
+Gentleman's Vest,2: Rare,"{8, 49}","{8, 49}","- Vitality {2, 9}
+   - Reflex {3, 17}","- Dodge Counter Damage {6,30}%",- Blood Mask Boss,"- FreewindForest Night
+   - FreewindForest Day"
+Guardian's Way,2: Rare,"{4, 25}","{4, 25}","- Might {3, 17}","- Max Health {18, 123}
+   - Armor Source[""Might""] * 1f%
+   - Magic Armor Source[""Might""] * 1f
+   - Gain Armor and Magic Armor equal to your Might.",- Global Loot,
+Hunter's Trappings,2: Rare,"{8, 49}","{8, 49}","- Vitality {4, 25}","- Damage to Physical {1, 14}",- Huntress,"- ForgottenMines Day
+   - DwarvenHalls Day
+   - CastleGloom Day"
+Ice Wraps,2: Rare,"{4, 25}","{4, 25}",,"- Max Mana {18, 123}
+   - Damage to Cold {1, 14}",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Lightning Wraps,2: Rare,"{4, 25}","{4, 25}",,"- Max Mana {18, 123}
+   - Damage to Lightning {1, 14}",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Lionheart Breastplate,2: Rare,"{11, 74}","{11, 74}","- Might {3, 17}
+   - Vitality {3, 17}",,- Global Loot,
+Lionheart Leather,2: Rare,"{8, 49}","{8, 49}","- Dexterity {2, 9}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",,- Global Loot,
+Lionheart Plate,2: Rare,"{18, 123}","{18, 123}","- Might {2, 9}
+   - Vitality {2, 9}",,- Emperor Marcus,
+Magus Robe,2: Rare,"{3, 20}","{5, 30}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Intelligence {2, 9}","- Cold Damage {2,10}%
+   - Fire Damage {2,10}%
+   - Lightning Damage {2,10}%","- Spellweaver Flamebearer
+   - Spellweaver Frostbringer
+   - Spellweaver Stormcaller","- WaterTempleRuins Night
+   - WaterTempleRuins Day"
+Nobleman's Vest,2: Rare,"{8, 49}","{8, 49}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Reflex {2, 9}","- Dodge Counter Damage {6,30}%",- Global Loot,
+Paladin Platemail,2: Rare,"{15, 98}","{15, 98}","- Might {2, 9}
+   - Vitality {2, 9}",- Grants the wearer the ability to cast Healing Hand.,- Paladin,"- ForgottenMines Day
+   - DwarvenHalls Day
+   - CastleGloom Day"
+Peaceful Garb,2: Rare,,,,"- Max Mana {18, 123}
+   - Healing Given {1, 14}",- Global Loot,
+Pupil's Attire,2: Rare,"{3, 15}","{6, 35}","- Might {6, 41}",,- Unchained Efreet,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Ranger Tunic,2: Rare,"{4, 25}","{4, 25}","- Might {3, 21}
+   - Dexterity {3, 21}",- Skill Range 1,- Ranger,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Scholar's Attire,2: Rare,"{3, 15}","{6, 35}","- Intelligence {6, 41}",,"- The Countess
+   - Lady of the Well
+   - The Scarecrow
+   - The Sultan","- SunkenSwamplands Night
+   - WyrmrestDesert Day
+   - CastleGloom Day
+   - WyrmrestDesert Night
+   - SunkenSwamplands Day"
+Smouldering Robes,2: Rare,"{5, 30}","{5, 30}","- Might {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}","- Fire Damage {3,15}%","- Lord Infernicus (Event)
+   - The Ember King
+   - The Forgemaster",- Emberlands Day
+Spikemail,2: Rare,"{17, 111}","{17, 111}","- Vitality {3, 17}","- Return Damage Physical {2, 29}","- The Gobfather
+   - Azug Spikefist
+   - The Pale Goblin
+   - Warrior
+   - The Risen Witch (Event)
+   - The Witch
+   - Twisted Soul of the Swamp","- SunkenSwamplands Night
+   - EmeraldJungle Day
+   - WyrmrestDesert Day
+   - DwarvenHalls Day
+   - WyrmrestDesert Night
+   - EmeraldJungle Night
+   - SunkenSwamplands Day"
+Stalker's Leather,2: Rare,"{5, 30}","{5, 30}","- Dexterity {5, 33}
+   - Reflex {2, 9}",- 10% chance to cast Stealth on turn start.,- Global Loot,
+Student's Gi,2: Rare,"{4, 25}","{4, 25}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}
+   - Reflex {2, 9}",,- Global Loot,
+Swashbuckler Vest,2: Rare,"{8, 49}","{8, 49}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Reflex {3, 17}",,"- Admiral Blackbeard
+   - The Prospector
+   - Rogue","- FreewindForest Night
+   - WaterTempleRuins Night
+   - FreewindForest Day
+   - ForgottenMines Day
+   - Emberlands Day"
+Thief's Garb,2: Rare,"{5, 30}","{5, 30}","- Dexterity {3, 17}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",- Grants the ability Steal Action.,- Thief,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Tlaloc Garments,2: Rare,"{3, 15}","{6, 35}","- Dexterity {4, 25}
+   - Intelligence {2, 9}","- Lightning Damage {3,15}%",- Tlaloc the Storm,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Traveler's Robe,2: Rare,"{4, 25}","{11, 74}","- Vitality {3, 17}
+   - Reflex {3, 17}",,- Global Loot,
+Warrior's Path,2: Rare,"{4, 25}","{4, 25}","- Might {6, 41}","- Max Health {18, 123}",- Ronin,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Arena Plate,3: Legendary,"{16, 107}","{16, 107}","- Might {2, 9}
+   - Reflex {2, 9}","- Resist Physical 10%
+   - Casts Warrior's Boon on the wearer when dropped below 30% hp. Can 
+   trigger once every 5 turns.","- Lucilla
+   - Proximo
+   - Azug Spikefist",
+Blackguard Chainmail,3: Legendary,"{14, 93}","{14, 93}","- Might {3, 18}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",,- The Black Knight,"- SunkenSwamplands Day
+   - WyrmrestDesert Night
+   - WyrmrestDesert Day
+   - SunkenSwamplands Night"
+Bladed Mail,3: Legendary,"{16, 107}","{16, 107}","- Vitality {3, 18}","- Return Damage Physical {3, 31}",- Azug Spikefist,
+Champion's Garb,3: Legendary,"{4, 27}","{4, 27}",,"- Max Health {20, 133}
+   - Additional Weapon Damage {1, 16}",- Global Loot,
+Dark Steel Platemail,3: Legendary,"{14, 93}","{14, 93}","- Might {2, 9}","- Physical Damage {4,20}%",- Global Loot,
+Duelist's Vest,3: Legendary,"{8, 54}","{8, 54}","- Vitality {2, 9}
+   - Reflex {3, 18}","- Dodge Counter Damage {8,40}%",- Blood Mask Boss,"- FreewindForest Night
+   - FreewindForest Day"
+Dwarven Platemail,3: Legendary,"{16, 107}","{16, 107}","- Vitality {2, 9}","- Physical Damage {4,20}%","- Dwarven Shield
+   - Dwarven Sword Maiden
+   - Mountain King Ironheart",- DwarvenHalls Day
+Elemental Gi,3: Legendary,"{4, 27}","{4, 27}",,"- Max Mana {20, 133}
+   - Damage to Cold {1, 12}
+   - Damage to Fire {1, 12}
+   - Damage to Lightning {1, 12}",- Crystal Golem,- ForgottenMines Day
+Fire Gi,3: Legendary,"{4, 27}","{4, 27}",,"- Max Mana {20, 133}
+   - Damage to Fire {1, 16}",- Global Loot,
+Flame Vestments,3: Legendary,"{4, 27}","{4, 27}","- Might {3, 18}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}","- Fire Damage {4,20}%
+   - Applies Level [level value] {SKL=Fire Shield} when struck.",- The Ember King,- Emberlands Day
+Frost Mantle,3: Legendary,"{4, 27}","{4, 27}","- Might {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {3, 18}","- Cold Damage {4,20}%
+   - Applies Level [level value] {SKL=Frost Armor} when struck.","- Hodr, the Frost Giant (Event)","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Gladiator's Garb,3: Legendary,"{5, 32}","{5, 32}","- Might {2, 9}
+   - Vitality {2, 9}
+   - Reflex {3, 18}",- Grants the passive Quick Hands.,"- Lucilla
+   - Maximus
+   - Proximo",
+Golden Fleece,3: Legendary,"{12, 80}","{12, 80}","- Vitality {2, 9}
+   - Reflex {2, 9}","- Resist Cold 10%
+   - Resist Fire 10%
+   - Resist Lightning 10%
+   - Damage to Physical {1, 16}","- Hod
+   - Ragnar
+   - Anthulk
+   - The Minotaur","- ForgottenMines Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Harmonious Garb,3: Legendary,,,,"- Max Mana {20, 133}
+   - Healing Given {1, 16}",- Global Loot,
+Ice Gi,3: Legendary,,,,"- Max Mana {20, 133}
+   - Damage to Cold {1, 16}",- Global Loot,
+Knight's Full Plate,3: Legendary,"{14, 93}","{14, 93}",,"- Resist Cold 8%
+   - Resist Fire 8%
+   - Resist Lightning 8%
+   - Resist Physical 8%",- Knight,"- Emberlands Day
+   - FreewindForest Night
+   - FreewindForest Day"
+Lightning Gi,3: Legendary,"{4, 27}","{4, 27}",,"- Max Mana {20, 133}
+   - Damage to Lightning {1, 16}",- Tlaloc the Storm,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Master's Gi,3: Legendary,"{4, 27}","{4, 27}","- Might {3, 18}
+   - Dexterity {3, 18}
+   - Vitality {3, 18}
+   - Intelligence {3, 18}
+   - Reflex {3, 18}",,- Global Loot,
+Plague Jacket,3: Legendary,"{4, 27}","{4, 27}","- Vitality {4, 27}
+   - Reflex {3, 18}","- Shadow Damage {4,20}%
+   - Attacks apply 1 stack of poison.","- Plague Doctor
+   - The Risen Witch (Event)
+   - The Witch
+   - Twisted Soul of the Swamp","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Praetorian Cuirass,3: Legendary,"{18, 120}","{18, 120}","- Might {2, 9}
+   - Vitality {2, 9}
+   - Reflex {2, 9}",- Movement Points 2,"- Emperor Marcus
+   - Olgoi, Devourer of Treasure",- DwarvenHalls Day
+Professional Finery,3: Legendary,"{4, 27}","{4, 27}","- Dexterity {6, 36}","- Max Health {20, 133}",- Global Loot,
+Shadowstalker Body Armor,3: Legendary,"{4, 27}","{4, 27}","- Dexterity {7, 45}
+   - Reflex {2, 9}",- 15% chance to cast Stealth on turn start.,- Global Loot,
+Stag Plate,3: Legendary,"{16, 107}","{16, 107}","- Vitality {2, 9}
+   - Reflex {3, 18}",- Grants the passive Disengage.,- Global Loot,
+Summoner's Robe,3: Legendary,"{4, 27}","{4, 27}","- Vitality {2, 9}
+   - Intelligence {2, 9}","- Summon Damage {3,15}%
+   - Summon Health {3,15}%",- The Countess,- CastleGloom Day
+Sunwalker Robes,3: Legendary,"{3, 16}","{6, 38}","- Might {3, 18}
+   - Vitality {3, 18}","- Holy Power {4,20}%",- The Sultan,"- WyrmrestDesert Night
+   - WyrmrestDesert Day"
+Thunder Robes,3: Legendary,"{4, 27}","{4, 27}","- Dexterity {3, 18}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}","- Lightning Damage {4,20}%
+   - Applies Level [level value] {SKL=Lightning Shield} when struck.",- Tlaloc the Storm,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - EmeraldJungle Night
+   - EmeraldJungle Day"
+Wizard's Robe,3: Legendary,"{4, 22}","{5, 32}","- Might {2, 9}
+   - Dexterity {2, 9}
+   - Vitality {2, 9}
+   - Intelligence {2, 9}","- Cold Damage {3,15}%
+   - Fire Damage {3,15}%
+   - Lightning Damage {3,15}%",- Global Loot,
+Adamant Platemail,4: Mythic,"{21, 143}","{21, 143}","- Might {2, 10}
+   - Vitality {2, 10}",- Damage Reduction 10%,- The Ember King,- Emberlands Day
+Arcane Robes,4: Mythic,"{5, 29}","{5, 29}","- Might {10, 67}",,"- Herald of the Abyss
+   - Unchained Efreet","- SunkenSwamplands Night
+   - WyrmrestDesert Day
+   - CastleGloom Day
+   - WyrmrestDesert Night
+   - SunkenSwamplands Day"
+Black Belt,4: Mythic,"{5, 29}","{5, 29}","- Reflex {10, 67}",,- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Bone Jester Jacket,4: Mythic,"{9, 58}","{9, 58}","- Vitality {2, 10}
+   - Reflex {3, 20}","- Dodge Counter Damage {10,50}%","- Samara the Vampire (Event)
+   - The Duke
+   - The Jester","- SunkenSwamplands Night
+   - SunkenSwamplands Day
+   - CastleGloom Day"
+Dead One's Robes,4: Mythic,"{4, 23}","{6, 35}","- Vitality {2, 10}
+   - Intelligence {2, 10}","- Summon Resistance 10%
+   - Summon Damage {4,20}%
+   - Summon Health {4,20}%",- The Dusk King,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Emperor's Cuirass,4: Mythic,"{15, 100}","{15, 100}","- Might {2, 10}
+   - Dexterity {2, 10}
+   - Vitality {2, 10}
+   - Intelligence {2, 10}
+   - Reflex {2, 10}",- Casts Bless on the wearer.,- Emperor Marcus,
+Energy Vestments,4: Mythic,"{2, 12}","{7, 46}","- Intelligence {10, 67}",,- Global Loot,
+Fallen Cleric Robes,4: Mythic,"{15, 100}","{15, 100}","- Might {3, 15}
+   - Intelligence {3, 15}","- Shadow Damage {5,25}%
+   - 10% chance on hit to cast Level [level value] {SKL=Consumption}",- The Countess,- CastleGloom Day
+Forgemaster's Links,4: Mythic,"{15, 100}","{21, 143}","- Might {5, 29}
+   - Vitality {2, 10}","- Fire Damage {5,25}%
+   - The wearer gains Level [level value] {SKL=Fire Shield}.",- The Forgemaster,- Emberlands Day
+Golden Valkyrie Plate,4: Mythic,"{9, 58}","{9, 58}","- Might {2, 10}
+   - Dexterity {2, 10}","- Skill Range 3
+   - Basic attacks have a 25% chance to proc an additional attack once per 
+   turn.",- Valkyrie Commander,"- WaterTempleRuins Night
+   - WaterTempleRuins Day
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Grandmaster's Gi,4: Mythic,"{5, 29}","{5, 29}",,"- Damage to Physical {1, 13}
+   - Damage to Cold {1, 13}
+   - Damage to Fire {1, 13}
+   - Damage to Lightning {1, 13}",- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Inner Strength,4: Mythic,"{5, 29}","{5, 29}","- Might {7, 48}","- Max Health {21, 143}",- Global Loot,
+Iron Thorn Cuirass,4: Mythic,"{17, 115}","{17, 115}","- Might {2, 10}
+   - Vitality {3, 20}","- Return Damage Physical Source[""Armor""] * .02f
+   - Gain Added Return Damage Physical equal to 2% of your Armor.",- Azug Spikefist,
+Leviathan Plate,4: Mythic,"{17, 115}","{17, 115}","- Might {5, 29}
+   - Vitality {3, 15}","- Health Per Turn {7, 84}","- Black Dragon
+   - Blue Dragon
+   - Green Dragon
+   - Red Dragon","- FreewindForest Night
+   - FrostwroughtMountain Night
+   - FrostwroughtMountain Day
+   - FreewindForest Day
+   - CastleGloom Day
+   - Emberlands Day"
+Night Stalker Leathers,4: Mythic,"{5, 29}","{5, 29}","- Dexterity {7, 48}
+   - Reflex {3, 20}",- 20% chance to cast Stealth on turn start.,- Global Loot,
+Ninja Gear,4: Mythic,"{5, 29}","{5, 29}","- Dexterity {10, 67}",,- The Grandmaster,"- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Resolve,4: Mythic,"{5, 29}","{5, 29}","- Vitality {10, 67}",,- Global Loot,
+Slayer Plate,4: Mythic,"{17, 115}","{17, 115}","- Might {3, 15}
+   - Vitality {3, 15}","- Physical Damage {5,25}%
+   - % Life Steal 3",- The Baron,- CastleGloom Day
+Warlord Mantle,4: Mythic,"{9, 58}","{9, 58}","- Might {2, 10}
+   - Vitality {2, 10}
+   - Reflex {2, 10}","- Damage to Physical {1, 17}","- Hod
+   - Lagertha
+   - Ragnar","- FrostwroughtMountain Night
+   - FrostwroughtMountain Day"
+Will to Survive,4: Mythic,"{5, 29}","{5, 29}","- Might {3, 20}","- Max Health {21, 143}
+   - Armor Source[""Might""] * 3f
+   - Magic Armor Source[""Might""] * 3f
+   - Gain Armor and Magic Armor equal to 2x your Might. 10% chance upon 
+   getting hit to cast Level [level value] {SKL=Pain Suppression}.",- Councilor Jahsun,"- EmeraldJungle Night
+   - EmeraldJungle Day"
+Tundra Regalia,0: Common,"{6, 41}","{6, 41}",,,- Global Loot,
+Woodland Regalia,0: Common,"{6, 41}","{6, 41}",,,- Global Loot,
