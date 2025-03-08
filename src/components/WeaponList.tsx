@@ -1,28 +1,30 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
-import { type Weapon } from "../types/item";
-import { useCharacterContext } from "../context/CharacterContext";
+import { Weapon } from "../types/item";
+import { useSortContext } from "../context/SortContext";
 import { useSortedItems } from "../hooks/useSortedItems";
 import { ItemTileContainer, ItemTileList } from "./ItemTile";
 import { SortControls } from "./SortControls";
+import { useCharacterContext } from "../context/CharacterContext";
 
 export const WeaponList = ({ data }: { data: Weapon[] }) => {
-  const { sortedItems: sortedWeapons, ...controls } = useSortedItems(data);
+  const { sortField, sortOrder, statFilter, showDetails, setCurrentItemType } =
+    useSortContext();
+  const { sortedItems } = useSortedItems(
+    data,
+    sortField,
+    sortOrder,
+    statFilter
+  );
 
-  const [showDetails, setShowDetails] = useState(false);
+  useEffect(() => {
+    setCurrentItemType("Weapon");
+  }, [setCurrentItemType]);
 
   return (
     <ItemTileList>
-      <SortControls
-        itemType="Weapon"
-        {...controls}
-        setShowDetails={() => setShowDetails((wasShowing) => !wasShowing)}
-        showDetails={showDetails}
-        setSortOrder={() =>
-          controls.setSortOrder((order) => (order === "asc" ? "desc" : "asc"))
-        }
-      />
-      {sortedWeapons.map((item) => (
+      <SortControls itemType="Weapon" />
+      {sortedItems.map((item) => (
         <WeaponTile item={item} showDetails={showDetails} />
       ))}
     </ItemTileList>
@@ -72,29 +74,29 @@ const WeaponTile = ({
       <div className="damageType">{damageType} Damage</div>
       <div className="baseStats">
         {baseStats.map((stat) => (
-          <div className="stats">
+          <div className="stats" key={stat.label}>
             <span>+{stat.max}&nbsp;</span>
             <span>{stat.label}</span>
           </div>
         ))}
       </div>
       <div className="attributes">
-        {attributes.map((attribute) => (
-          <div>{attribute}</div>
+        {attributes.map((attribute, index) => (
+          <div key={index}>{attribute}</div>
         ))}
       </div>
       {showDetails && (
         <>
           <div className="droppedBy">
             Dropped by:
-            {droppedBy.map((mobName) => (
-              <div>{mobName}</div>
+            {droppedBy.map((mobName, index) => (
+              <div key={index}>{mobName}</div>
             ))}
           </div>
           <div className="location">
             Location:
-            {location.map((zone) => (
-              <div>{zone}</div>
+            {location.map((zone, index) => (
+              <div key={index}>{zone}</div>
             ))}
           </div>
         </>

@@ -1,27 +1,29 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
 import { type Armor } from "../types/item";
+import { useCharacterContext } from "../context/CharacterContext";
+import { useSortContext } from "../context/SortContext";
 import { useSortedItems } from "../hooks/useSortedItems";
 import { ItemTileContainer, ItemTileList } from "./ItemTile";
 import { SortControls } from "./SortControls";
-import { useCharacterContext } from "../context/CharacterContext";
 
 export const ArmorList = ({ data }: { data: Armor[] }) => {
-  const { sortedItems, ...controls } = useSortedItems(data);
+  const { sortField, sortOrder, statFilter, showDetails, setCurrentItemType } =
+    useSortContext();
+  const { sortedItems } = useSortedItems(
+    data,
+    sortField,
+    sortOrder,
+    statFilter
+  );
 
-  const [showDetails, setShowDetails] = useState(false);
+  useEffect(() => {
+    setCurrentItemType("Armor");
+  }, [setCurrentItemType]);
 
   return (
     <ItemTileList>
-      <SortControls
-        itemType="Armor"
-        {...controls}
-        setShowDetails={() => setShowDetails((wasShowing) => !wasShowing)}
-        showDetails={showDetails}
-        setSortOrder={() =>
-          controls.setSortOrder((order) => (order === "asc" ? "desc" : "asc"))
-        }
-      />
+      <SortControls itemType="Armor" />
       {sortedItems.map((item) => (
         <ArmorTile item={item} showDetails={showDetails} />
       ))}
