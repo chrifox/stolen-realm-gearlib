@@ -1,11 +1,15 @@
-import { DataLayer } from "./DataLayer";
+import { CharacterContextProvider } from "./context/CharacterContext";
+import { Layout } from "./components/Layout";
+import ErrorBoundary from "./components/ErrorBoundary";
+
 import "./App.css";
-import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
   return (
     <ErrorBoundary>
-      <DataLayer />
+      <CharacterContextProvider>
+        <Layout />
+      </CharacterContextProvider>
     </ErrorBoundary>
   );
 }

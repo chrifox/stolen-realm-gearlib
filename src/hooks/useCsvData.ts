@@ -6,7 +6,7 @@ import headCSV from "../assets/data/head.csv?raw";
 import chestCSV from "../assets/data/chestplate.csv?raw";
 import amuletCSV from "../assets/data/amulet.csv?raw";
 import ringCSV from "../assets/data/ring.csv?raw";
-import { parseCSV } from "../parseCSV";
+import { parseCSV } from "../utils/parseCSV";
 import { type StatImprovement, type ValueRange } from "../types/common";
 import { csvItemBase, csvArmor, type csvWeapon } from "../types/csv";
 import {
@@ -14,6 +14,7 @@ import {
   type Armor,
   type WeaponType,
   type Weapon,
+  ArmorType,
 } from "../types/item";
 
 const removeWhitespace = (str: string) => str.replace(/\s+/g, "");
@@ -101,11 +102,12 @@ function processWeaponData(csvWeapons: csvWeapon[]): Weapon[] {
   });
 }
 
-function processArmorData(csvShields: csvArmor[]): Armor[] {
+function processArmorData(csvShields: csvArmor[], type: ArmorType): Armor[] {
   return csvShields.map((shield) => {
     const commonData = processItemData(shield);
     return {
       ...commonData,
+      type,
       armor: shield.Armor ? getValueRange(shield.Armor) : { min: -1, max: 0 },
       magicArmor: shield["Magic Armor"]
         ? getValueRange(shield["Magic Armor"])
@@ -124,11 +126,11 @@ export function useCsvData() {
 
   useEffect(() => {
     setWeaponData(processWeaponData(parseCSV<csvWeapon>(weaponCSV)));
-    setShieldData(processArmorData(parseCSV<csvArmor>(shieldCSV)));
-    setHeadData(processArmorData(parseCSV<csvArmor>(headCSV)));
-    setChestData(processArmorData(parseCSV<csvArmor>(chestCSV)));
-    setAmuletData(processArmorData(parseCSV<csvArmor>(amuletCSV)));
-    setRingData(processArmorData(parseCSV<csvArmor>(ringCSV)));
+    setShieldData(processArmorData(parseCSV<csvArmor>(shieldCSV), "Shield"));
+    setHeadData(processArmorData(parseCSV<csvArmor>(headCSV), "Head"));
+    setChestData(processArmorData(parseCSV<csvArmor>(chestCSV), "Chest"));
+    setAmuletData(processArmorData(parseCSV<csvArmor>(amuletCSV), "Amulet"));
+    setRingData(processArmorData(parseCSV<csvArmor>(ringCSV), "Ring"));
   }, []);
 
   return {
