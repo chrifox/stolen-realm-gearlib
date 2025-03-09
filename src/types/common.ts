@@ -6,6 +6,13 @@ export type DamageType =
   | "Shadow"
   | "Lightning";
 
+export type Stat =
+  | "Might"
+  | "Dexterity"
+  | "Vitality"
+  | "Intelligence"
+  | "Reflex";
+
 export type ValueRange = {
   min: number;
   max: number;

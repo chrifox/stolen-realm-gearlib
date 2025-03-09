@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 
-import { type KeyValuePair } from "../types/common";
+import { type DamageType, type Stat, type KeyValuePair } from "../types/common";
 import { type ItemTier } from "../types/item";
 
 export type SortOrder = "asc" | "desc";
@@ -18,16 +18,25 @@ export const RARITIES: KeyValuePair[] = [
   { value: 0, label: "Common" },
   { value: 1, label: "Uncommon" },
   { value: 2, label: "Rare" },
-  { value: 3, label: "Epic" },
-  { value: 4, label: "Legendary" },
+  { value: 3, label: "Legendary" },
+  { value: 4, label: "Mythic" },
 ];
 
-export const STATS = [
+export const STATS: Stat[] = [
   "Might",
   "Dexterity",
   "Vitality",
   "Intelligence",
   "Reflex",
+];
+
+export const DAMAGE_TYPES: DamageType[] = [
+  "Physical",
+  "Cold",
+  "Fire",
+  "Holy",
+  "Shadow",
+  "Lightning",
 ];
 
 const FilterSortContext = createContext<{
@@ -47,8 +56,10 @@ const FilterSortContext = createContext<{
   // filtering
   rarityFilter: number[];
   setRarityFilter: (rarityValue: number) => void;
-  statFilter: string[];
-  setStatFilter: (stat: string) => void;
+  statFilter: Stat[];
+  setStatFilter: (stat: Stat) => void;
+  damageTypeFilter: DamageType[];
+  setDamageTypeFilter: (damageType: DamageType) => void;
 
   // misc
   tier: ItemTier;
@@ -78,7 +89,8 @@ export const FilterSortContextProvider = ({
   const [tier, setTier] = useState<ItemTier>(3);
 
   const [rarityFilter, setRarityFilter] = useState<number[]>([]);
-  const [statFilter, setStatFilter] = useState<string[]>([]);
+  const [statFilter, setStatFilter] = useState<Stat[]>([]);
+  const [damageTypeFilter, setDamageTypeFilter] = useState<DamageType[]>([]);
 
   function handleSetRarityFilter(rarityValue: number) {
     setRarityFilter((prev: number[]) =>
@@ -88,9 +100,17 @@ export const FilterSortContextProvider = ({
     );
   }
 
-  function handleSetStatFilter(stat: string) {
-    setStatFilter((prev: string[]) =>
+  function handleSetStatFilter(stat: Stat) {
+    setStatFilter((prev: Stat[]) =>
       prev.includes(stat) ? prev.filter((s) => s !== stat) : [...prev, stat]
+    );
+  }
+
+  function handleSetDamageTypeFilter(damageType: DamageType) {
+    setDamageTypeFilter((prev: DamageType[]) =>
+      prev.includes(damageType)
+        ? prev.filter((dt) => dt !== damageType)
+        : [...prev, damageType]
     );
   }
 
@@ -143,6 +163,8 @@ export const FilterSortContextProvider = ({
         setRarityFilter: handleSetRarityFilter,
         statFilter,
         setStatFilter: handleSetStatFilter,
+        damageTypeFilter,
+        setDamageTypeFilter: handleSetDamageTypeFilter,
       }}
     >
       {children}
