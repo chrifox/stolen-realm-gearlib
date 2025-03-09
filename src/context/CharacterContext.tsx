@@ -1,12 +1,21 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { type Armor, type Weapon } from "../types/item"; // Ensure correct imports
 
 function isWeapon(item: any): item is Weapon {
   return (item as Weapon).type?.hands !== undefined;
 }
 
-function isMeleeWeapon(weapon: Weapon) {
-  return ["Axe", "Sword", "Mace", "FistWeapon"].includes(weapon.type.label);
+function is1hMeleeWeapon(weapon: Weapon) {
+  return (
+    ["Axe", "Sword", "Mace", "FistWeapon"].includes(weapon.type.label) &&
+    weapon.type.hands === 1
+  );
 }
 
 function isArmor(item: any): item is Armor {
@@ -99,8 +108,8 @@ export const CharacterContextProvider = ({
             ) {
               return { ...prev, hand2: item }; // Equip second gun to hand2
             }
-            if (isMeleeWeapon(item) && isMeleeWeapon(existingHand1)) {
-              return { ...prev, hand2: item }; // Equip second melee weapon
+            if (is1hMeleeWeapon(item) && is1hMeleeWeapon(existingHand1)) {
+              return { ...prev, hand2: item }; // Equip second melee weapon if 1H
             }
             return { ...prev, hand1: item, hand2: null }; // Replace hand1, clear hand2
           }
@@ -109,7 +118,7 @@ export const CharacterContextProvider = ({
             (item.type.label === "Wand" &&
               existingHand1.type.label === "Wand") ||
             (item.type.label === "Gun" && existingHand1.type.label === "Gun") ||
-            (isMeleeWeapon(item) && isMeleeWeapon(existingHand1))
+            (is1hMeleeWeapon(item) && is1hMeleeWeapon(existingHand1))
           ) {
             return { ...prev, hand1: item, hand2: existingHand2 }; // Replace hand1 but keep hand2
           }

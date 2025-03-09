@@ -57,6 +57,10 @@ const EquippedItem = styled.div<{ $rarity?: number }>`
     $rarity ? theme.colors.rarity[$rarity] : "#777"};
   border: 1px solid #211a19;
 
+  .offhand-2h {
+    opacity: 50%;
+  }
+
   &:hover {
     outline: 1px solid #302725;
   }
@@ -121,6 +125,9 @@ export const Character = () => {
 
   const equipmentBonuses = getEquipmentBonuses();
 
+  const has2hWeaponEquipped =
+    equipment.hand1 && equipment.hand1.type.hands === 2;
+
   return (
     <CharacterContainer>
       <form className="stats">
@@ -149,12 +156,23 @@ export const Character = () => {
       </form>
 
       <div className="equipment">
-        {equipmentSlots.map(([slot, item]) => (
-          <EquippedItem $rarity={item?.rarity.value}>
-            <span>{item?.name ?? "Empty"}</span>
-            <button onClick={() => unequipItem(slot)}>X</button>
-          </EquippedItem>
-        ))}
+        {equipmentSlots.map(([slot, item]) => {
+          const show2hFader = slot === "hand2" && !item && has2hWeaponEquipped;
+          return (
+            <EquippedItem
+              $rarity={
+                show2hFader ? equipment.hand1?.rarity.value : item?.rarity.value
+              }
+            >
+              {show2hFader ? (
+                <span className="offhand-2h">{equipment.hand1?.name}</span>
+              ) : (
+                <span>{item?.name ?? "Empty"}</span>
+              )}
+              <button onClick={() => unequipItem(slot)}>X</button>
+            </EquippedItem>
+          );
+        })}
       </div>
 
       <div className="bonuses">
