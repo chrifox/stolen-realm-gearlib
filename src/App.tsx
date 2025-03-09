@@ -1,6 +1,6 @@
 import ErrorBoundary from "./components/ErrorBoundary";
 import { CharacterContextProvider } from "./context/CharacterContext";
-import { SortContextProvider } from "./context/SortContext";
+import { FilterSortContextProvider } from "./context/FilterSortContext";
 import { Layout } from "./components/Layout";
 
 import "./App.css";
@@ -9,9 +9,9 @@ function App() {
   return (
     <ErrorBoundary>
       <CharacterContextProvider>
-        <SortContextProvider>
+        <FilterSortContextProvider>
           <Layout />
-        </SortContextProvider>
+        </FilterSortContextProvider>
       </CharacterContextProvider>
     </ErrorBoundary>
   );

@@ -66,8 +66,8 @@ export const CharacterContextProvider = ({
   const [equipment, setEquipment] = useState<Equipment>({
     hand1: null,
     hand2: null,
-    head: null,
     chestplate: null,
+    head: null,
     ring: null,
     amulet: null,
   });

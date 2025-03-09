@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import { useSortContext } from "../context/SortContext";
+import { useFilterSortContext } from "../context/FilterSortContext";
 import { useCsvData } from "../hooks/useCsvData";
 
 import { Character } from "./Character";
@@ -13,7 +13,7 @@ const LayoutContainer = styled.div`
 `;
 
 export function Layout() {
-  const { tier } = useSortContext();
+  const { tier } = useFilterSortContext();
   const { weaponData, armorData } = useCsvData(tier);
 
   return (
