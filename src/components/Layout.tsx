@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
 
+import { useSortContext } from "../context/SortContext";
 import { useCsvData } from "../hooks/useCsvData";
-import { WeaponList } from "./WeaponList";
-import { ArmorList } from "./ArmorList";
+
 import { Character } from "./Character";
 import { Tabs } from "./Tabs";
+import { ItemList } from "./ItemList";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -12,8 +13,8 @@ const LayoutContainer = styled.div`
 `;
 
 export function Layout() {
-  const { weaponData, shieldData, headData, chestData, amuletData, ringData } =
-    useCsvData();
+  const { tier } = useSortContext();
+  const { weaponData, armorData } = useCsvData(tier);
 
   return (
     <LayoutContainer>
@@ -28,12 +29,34 @@ export function Layout() {
           "Amulets",
         ]}
       >
-        <Tabs.Tab>{weaponData && <WeaponList data={weaponData} />}</Tabs.Tab>
-        <Tabs.Tab>{shieldData && <ArmorList data={shieldData} />}</Tabs.Tab>
-        <Tabs.Tab>{headData && <ArmorList data={headData} />}</Tabs.Tab>
-        <Tabs.Tab>{chestData && <ArmorList data={chestData} />}</Tabs.Tab>
-        <Tabs.Tab>{ringData && <ArmorList data={ringData} />}</Tabs.Tab>
-        <Tabs.Tab>{amuletData && <ArmorList data={amuletData} />}</Tabs.Tab>
+        <Tabs.Tab>
+          {weaponData && <ItemList itemType="Weapon" data={weaponData} />}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          {armorData["Shield"] && (
+            <ItemList itemType="Armor" data={armorData["Shield"]} />
+          )}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          {armorData["Head"] && (
+            <ItemList itemType="Armor" data={armorData["Head"]} />
+          )}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          {armorData["Chest"] && (
+            <ItemList itemType="Armor" data={armorData["Chest"]} />
+          )}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          {armorData["Ring"] && (
+            <ItemList itemType="Armor" data={armorData["Ring"]} />
+          )}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          {armorData["Amulet"] && (
+            <ItemList itemType="Armor" data={armorData["Amulet"]} />
+          )}
+        </Tabs.Tab>
       </Tabs>
     </LayoutContainer>
   );

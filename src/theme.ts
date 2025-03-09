@@ -16,5 +16,10 @@ export const theme = {
       cold: "skyblue",
       holy: "yellow",
     },
+    tier: {
+      1: "limegreen",
+      2: "aqua",
+      3: "red",
+    },
   },
 };

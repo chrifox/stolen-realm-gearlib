@@ -5,11 +5,12 @@ import {
   EquipmentSlot,
   useCharacterContext,
 } from "../context/CharacterContext";
-import { type Armor, type Weapon } from "../types/item";
+
 import { type StatImprovement, type ValueRange } from "../types/common";
+import { type EquippedArmor, type EquippedWeapon } from "../types/item";
 
 const CharacterContainer = styled.div`
-  min-width: 240px;
+  min-width: 280px;
 
   .stats,
   .equipment,
@@ -17,7 +18,7 @@ const CharacterContainer = styled.div`
     display: flex;
     flex-flow: column nowrap;
     gap: 4px;
-    padding: 8px;
+    padding: 16px;
   }
 
   .stats {
@@ -37,6 +38,10 @@ const CharacterContainer = styled.div`
     }
   }
 
+  .equipment {
+    user-select: none;
+  }
+
   .bonuses {
     .stat-bonuses {
       color: ${({ theme }) => theme.colors.stats};
@@ -44,7 +49,7 @@ const CharacterContainer = styled.div`
   }
 `;
 
-const EquippedItem = styled.div<{ $rarity?: number }>`
+const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -55,6 +60,14 @@ const EquippedItem = styled.div<{ $rarity?: number }>`
 
   &:hover {
     outline: 1px solid #302725;
+  }
+
+  .tier-label {
+    color: ${({ theme, $tier }) => theme.colors.tier[$tier]};
+  }
+
+  .offhand-2h {
+    opacity: 50%;
   }
 
   button {
@@ -112,7 +125,7 @@ export const Character = () => {
   const statNames = Object.keys(stats) as (keyof typeof stats)[];
   const equipmentSlots = Object.entries(equipment) as [
     EquipmentSlot,
-    Weapon | Armor | null
+    EquippedWeapon | EquippedArmor | null
   ][];
 
   const equipmentBonuses = getEquipmentBonuses();
@@ -145,12 +158,40 @@ export const Character = () => {
       </form>
 
       <div className="equipment">
-        {equipmentSlots.map(([slot, item]) => (
-          <EquippedItem $rarity={item?.rarity.value}>
-            <span>{item?.name ?? "Empty"}</span>
-            <button onClick={() => unequipItem(slot)}>X</button>
-          </EquippedItem>
-        ))}
+        {equipmentSlots.map(([slot, item]) => {
+          const has2hWeaponEquipped =
+            equipment.hand1 && equipment.hand1.type.hands === 2;
+          const show2hFader = slot === "hand2" && !item && has2hWeaponEquipped;
+          const itemTier = item ? item.tier : 0;
+          return (
+            <EquippedItem
+              key={slot}
+              $tier={
+                show2hFader && equipment.hand1 ? equipment.hand1.tier : itemTier
+              }
+              $rarity={
+                show2hFader ? equipment.hand1?.rarity.value : item?.rarity.value
+              }
+            >
+              {show2hFader ? (
+                <span className="offhand-2h">
+                  {equipment.hand1?.name}
+                  {equipment.hand1 && equipment.hand1.tier > 0 && (
+                    <span className="tier-label">*</span>
+                  )}
+                </span>
+              ) : (
+                <span>
+                  {item?.name ?? "Empty"}
+                  {item && item.tier > 0 && (
+                    <span className="tier-label">*</span>
+                  )}
+                </span>
+              )}
+              <button onClick={() => unequipItem(slot)}>X</button>
+            </EquippedItem>
+          );
+        })}
       </div>
 
       <div className="bonuses">

@@ -1,12 +1,20 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-import { type Armor, type Weapon } from "../types/item"; // Ensure correct imports
+import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  type EquippedArmor,
+  type EquippedWeapon,
+  type Armor,
+  type Weapon,
+} from "../types/item"; // Ensure correct imports
 
 function isWeapon(item: any): item is Weapon {
   return (item as Weapon).type?.hands !== undefined;
 }
 
-function isMeleeWeapon(weapon: Weapon) {
-  return ["Axe", "Sword", "Mace", "FistWeapon"].includes(weapon.type.label);
+function is1hMeleeWeapon(weapon: Weapon) {
+  return (
+    ["Axe", "Sword", "Mace", "FistWeapon"].includes(weapon.type.label) &&
+    weapon.type.hands === 1
+  );
 }
 
 function isArmor(item: any): item is Armor {
@@ -22,12 +30,12 @@ export type EquipmentSlot =
   | "amulet";
 
 type Equipment = {
-  hand1: Weapon | null; // Must be a Weapon
-  hand2: Weapon | Armor | null; // Can be a Weapon or Shield
-  head: Armor | null;
-  chestplate: Armor | null;
-  ring: Armor | null;
-  amulet: Armor | null;
+  hand1: EquippedWeapon | null; // Must be a Weapon
+  hand2: EquippedWeapon | EquippedArmor | null; // Can be a Weapon or Shield
+  head: EquippedArmor | null;
+  chestplate: EquippedArmor | null;
+  ring: EquippedArmor | null;
+  amulet: EquippedArmor | null;
 };
 
 type Stats = {
@@ -41,7 +49,7 @@ type Stats = {
 type CharacterContextType = {
   equipment: Equipment;
   stats: Stats;
-  equipItem: (item: Weapon | Armor) => void; // Removed slot from here
+  equipItem: (item: EquippedWeapon | EquippedArmor) => void; // Removed slot from here
   unequipItem: (slot: EquipmentSlot) => void;
   updateStat: (label: string, value: number) => void;
 };
@@ -71,7 +79,7 @@ export const CharacterContextProvider = ({
     reflex: 8,
   });
 
-  const equipItem = (item: Weapon | Armor) => {
+  const equipItem = (item: EquippedWeapon | EquippedArmor) => {
     setEquipment((prev) => {
       if (isWeapon(item)) {
         if (item.type.hands === 2) {
@@ -99,8 +107,8 @@ export const CharacterContextProvider = ({
             ) {
               return { ...prev, hand2: item }; // Equip second gun to hand2
             }
-            if (isMeleeWeapon(item) && isMeleeWeapon(existingHand1)) {
-              return { ...prev, hand2: item }; // Equip second melee weapon
+            if (is1hMeleeWeapon(item) && is1hMeleeWeapon(existingHand1)) {
+              return { ...prev, hand2: item }; // Equip second melee weapon if 1H
             }
             return { ...prev, hand1: item, hand2: null }; // Replace hand1, clear hand2
           }
@@ -109,7 +117,7 @@ export const CharacterContextProvider = ({
             (item.type.label === "Wand" &&
               existingHand1.type.label === "Wand") ||
             (item.type.label === "Gun" && existingHand1.type.label === "Gun") ||
-            (isMeleeWeapon(item) && isMeleeWeapon(existingHand1))
+            (is1hMeleeWeapon(item) && is1hMeleeWeapon(existingHand1))
           ) {
             return { ...prev, hand1: item, hand2: existingHand2 }; // Replace hand1 but keep hand2
           }

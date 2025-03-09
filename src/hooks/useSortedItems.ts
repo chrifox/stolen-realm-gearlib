@@ -1,35 +1,27 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import { Armor, Weapon } from "../types/item";
 import { StatImprovement } from "../types/common";
+import { SortOrder } from "../context/SortContext";
 
-type SortOrder = "asc" | "desc";
-
-export function useSortedItems(items: Weapon[] | Armor[]) {
-  const [sortField, setSortField] = useState<string>("rarity");
-  const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
-  const [statFilter, setStatFilter] = useState<string>("");
-
-  // if stat filter changes set stat sort
-  useEffect(() => {
-    if (statFilter) {
-      setSortField("stat");
-    }
-  }, [statFilter]);
-
-  useEffect(() => {
-    if (sortField !== "stat") {
-      setStatFilter("");
-    }
-  }, [sortField]);
-
-  const sortItems = (
-    items: any[],
-    field: string,
-    order: SortOrder,
-    attribute?: string
-  ) => {
-    return items.sort((a, b) => {
+const sortItems = (
+  items: any[],
+  searchTerm: string,
+  field: string,
+  order: SortOrder,
+  attribute?: string
+) => {
+  return items
+    .filter(
+      (item) =>
+        !searchTerm ||
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.attributes
+          .join("")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
       let valueA: any, valueB: any;
 
       switch (field) {
@@ -42,16 +34,16 @@ export function useSortedItems(items: Weapon[] | Armor[]) {
           valueB = b.rarity.value;
           break;
         case "attackPower":
-          valueA = a.attackPower.max;
-          valueB = b.attackPower.max;
+          valueA = a.attackPower?.max;
+          valueB = b.attackPower?.max;
           break;
         case "armor":
-          valueA = a.armor.max;
-          valueB = b.armor.max;
+          valueA = a.armor?.max;
+          valueB = b.armor?.max;
           break;
         case "magicArmor":
-          valueA = a.magicArmor.max;
-          valueB = b.magicArmor.max;
+          valueA = a.magicArmor?.max;
+          valueB = b.magicArmor?.max;
           break;
         case "stat": {
           valueA =
@@ -75,21 +67,20 @@ export function useSortedItems(items: Weapon[] | Armor[]) {
         return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
       }
     });
-  };
+};
 
+export function useSortedItems(
+  items: Armor[] | Weapon[],
+  searchTerm: string,
+  sortField: string,
+  sortOrder: SortOrder,
+  statFilter: string
+) {
   const sortedItems = useMemo(() => {
-    return sortItems(items, sortField, sortOrder, statFilter);
-  }, [items, sortField, sortOrder, statFilter]);
+    return sortItems(items, searchTerm, sortField, sortOrder, statFilter);
+  }, [items, searchTerm, sortField, sortOrder, statFilter]);
 
   return {
     sortedItems,
-
-    setSortField,
-
-    sortOrder,
-    setSortOrder,
-
-    statFilter,
-    setStatFilter,
   };
 }

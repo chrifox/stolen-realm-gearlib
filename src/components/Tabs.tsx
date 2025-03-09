@@ -13,6 +13,7 @@ export function Tabs({ tabs, children }: TabsProps) {
       <div className="tabs">
         {tabs.map((tab, index) => (
           <button
+            key={`tab-${tab}-${index}`}
             className={`tab ${activeTabIndex === index ? "active" : ""}`}
             onClick={() => setActiveTabIndex(index)}
           >

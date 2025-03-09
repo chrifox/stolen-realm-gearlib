@@ -1,9 +1,16 @@
 import {
-  DamageType,
-  KeyValuePair,
-  StatImprovement,
-  ValueRange,
+  type DamageType,
+  type KeyValuePair,
+  type StatImprovement,
+  type ValueRange,
 } from "./common";
+
+export type ItemGUID = {
+  label: string;
+  guid: string;
+};
+
+export type ItemTier = 0 | 1 | 2 | 3;
 
 export type ItemBase = {
   name: string;
@@ -21,6 +28,7 @@ export type WeaponType =
   | { label: "FistWeapon" | "Wand"; hands: 1 }; // Always 1H
 
 export type Weapon = {
+  guid: string;
   type: WeaponType;
   attackPower: { min: number; max: number };
   damageType: DamageType;
@@ -29,7 +37,11 @@ export type Weapon = {
 export type ArmorType = "Shield" | "Head" | "Chest" | "Amulet" | "Ring";
 
 export type Armor = {
+  guid: string;
   type: ArmorType;
   armor: ValueRange;
   magicArmor: ValueRange;
 } & ItemBase;
+
+export type EquippedWeapon = Weapon & { tier: ItemTier };
+export type EquippedArmor = Armor & { tier: ItemTier };
