@@ -1,4 +1,6 @@
 import ErrorBoundary from "./components/ErrorBoundary";
+import { CharacterContextProvider } from "./context/CharacterContext";
+import { SortContextProvider } from "./context/SortContext";
 import { Layout } from "./components/Layout";
 
 import "./App.css";
@@ -6,7 +8,11 @@ import "./App.css";
 function App() {
   return (
     <ErrorBoundary>
-      <Layout />
+      <CharacterContextProvider>
+        <SortContextProvider>
+          <Layout />
+        </SortContextProvider>
+      </CharacterContextProvider>
     </ErrorBoundary>
   );
 }

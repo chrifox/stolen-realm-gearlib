@@ -1,10 +1,33 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
+import { type ItemTier } from "../types/item";
 
 export type SortOrder = "asc" | "desc";
 
 export type ItemType = "Armor" | "Weapon";
 
-const SortContext = createContext<any>(null);
+const SortContext = createContext<{
+  sortField: string;
+  setSortField: Dispatch<SetStateAction<string>>;
+  sortOrder: "asc" | "desc";
+  setSortOrder: () => void;
+  statFilter: string;
+  setStatFilter: Dispatch<SetStateAction<string>>;
+  showDetails: boolean;
+  setShowDetails: () => void;
+  setCurrentItemType: Dispatch<SetStateAction<ItemType>>;
+  searchTerm: string;
+  setSearchTerm: Dispatch<SetStateAction<string>>;
+  tier: ItemTier;
+  setTier: Dispatch<SetStateAction<ItemTier>>;
+} | null>(null);
 
 export const useSortContext = () => {
   const context = useContext(SortContext);
@@ -25,6 +48,7 @@ export const SortContextProvider = ({
   const [statFilter, setStatFilter] = useState<string>("");
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [currentItemType, setCurrentItemType] = useState<ItemType>("Weapon");
+  const [tier, setTier] = useState<ItemTier>(3);
 
   useEffect(() => {
     if (statFilter) {
@@ -67,6 +91,8 @@ export const SortContextProvider = ({
         setCurrentItemType,
         searchTerm,
         setSearchTerm,
+        tier,
+        setTier,
       }}
     >
       {children}

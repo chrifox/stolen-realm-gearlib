@@ -1,18 +1,20 @@
 import { styled } from "styled-components";
 
 import { useCharacterContext } from "../context/CharacterContext";
-import { ItemType } from "../context/SortContext";
+import { type ItemType } from "../context/SortContext";
 
-import { Armor, Weapon } from "../types/item";
+import { type ItemTier, type Armor, type Weapon } from "../types/item";
 
 type ItemTileProps = {
   item: Weapon | Armor;
   itemType: ItemType;
   showDetails: boolean;
+  tier: ItemTier;
 };
 
 const ItemTileContainer = styled.div<{
   $rarity: number;
+  $tier: number;
   $damageType?: string;
 }>`
   display: flex;
@@ -28,6 +30,10 @@ const ItemTileContainer = styled.div<{
   .name {
     color: ${({ theme, $rarity }) => theme.colors.rarity[$rarity]};
     font-size: 18px;
+
+    .tier-label {
+      color: ${({ theme, $tier }) => theme.colors.tier[$tier]};
+    }
   }
 
   .rarity-type {
@@ -64,22 +70,43 @@ const ItemTileContainer = styled.div<{
   .stats {
     color: ${({ theme }) => theme.colors.stats};
   }
+
+  .guid {
+    color: #777;
+    font-size: 12px;
+    margin-top: auto;
+  }
 `;
 
-export const ItemTile = ({ item, itemType, showDetails }: ItemTileProps) => {
+export const ItemTile = ({
+  item,
+  itemType,
+  showDetails,
+  tier,
+}: ItemTileProps) => {
   const { equipItem } = useCharacterContext();
 
   const handleEquipItem = () => {
-    equipItem(item);
+    equipItem({ ...item, tier });
   };
+
+  function keyGen(label: string, index: number): string {
+    return `${item.guid}-${label}-${index}`;
+  }
+
+  const canBeTiered = item.rarity.value > 1;
 
   return (
     <ItemTileContainer
       $rarity={item.rarity.value}
       $damageType={"damageType" in item ? item?.damageType : undefined}
+      $tier={tier}
       onClick={handleEquipItem}
     >
-      <div className="name">{item.name.toUpperCase()}</div>
+      <div className="name">
+        {item.name.toUpperCase()}
+        {canBeTiered && tier > 0 && <span className="tier-label">*</span>}
+      </div>
       <div className="rarity-type">
         {item.rarity.label}{" "}
         {typeof item.type === "object" ? item.type.label : item.type}
@@ -114,8 +141,8 @@ export const ItemTile = ({ item, itemType, showDetails }: ItemTileProps) => {
         </div>
       ) : null}
       <div className="baseStats">
-        {item.baseStats.map((stat) => (
-          <div className="stats" key={stat.label}>
+        {item.baseStats.map((stat, index) => (
+          <div key={keyGen("baseStats", index)} className="stats">
             <span>+{stat.max}&nbsp;</span>
             <span>{stat.label}</span>
           </div>
@@ -123,7 +150,7 @@ export const ItemTile = ({ item, itemType, showDetails }: ItemTileProps) => {
       </div>
       <div className="attributes">
         {item.attributes.map((attribute, index) => (
-          <div key={index}>{attribute}</div>
+          <div key={keyGen("attribute", index)}>{attribute}</div>
         ))}
       </div>
       {showDetails && (
@@ -131,15 +158,16 @@ export const ItemTile = ({ item, itemType, showDetails }: ItemTileProps) => {
           <div className="droppedBy">
             Dropped by:
             {item.droppedBy.map((mobName, index) => (
-              <div key={index}>{mobName}</div>
+              <div key={keyGen("droppedBy", index)}>{mobName}</div>
             ))}
           </div>
           <div className="location">
             Location:
             {item.location.map((zone, index) => (
-              <div key={index}>{zone}</div>
+              <div key={keyGen("location", index)}>{zone}</div>
             ))}
           </div>
+          <div className="guid">{item.guid}</div>
         </>
       )}
     </ItemTileContainer>

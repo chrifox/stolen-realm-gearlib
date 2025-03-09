@@ -30,6 +30,7 @@ export const ItemList = ({ data, itemType }: ItemListProps) => {
     statFilter,
     showDetails,
     setCurrentItemType,
+    tier,
   } = useSortContext();
 
   const { sortedItems } = useSortedItems(
@@ -53,6 +54,7 @@ export const ItemList = ({ data, itemType }: ItemListProps) => {
           item={item}
           itemType={itemType}
           showDetails={showDetails}
+          tier={tier}
         />
       ))}
     </ItemTileList>

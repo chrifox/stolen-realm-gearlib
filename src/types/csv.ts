@@ -1,5 +1,10 @@
 import { DamageType } from "./common";
 
+export type csvItemGUID = {
+  Name: string;
+  GUID: string;
+};
+
 export type csvItemBase = {
   Name: string;
   Rarity: string; // "number: name"

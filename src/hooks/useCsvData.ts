@@ -6,16 +6,26 @@ import headCSV from "../assets/data/head.csv?raw";
 import chestCSV from "../assets/data/chestplate.csv?raw";
 import amuletCSV from "../assets/data/amulet.csv?raw";
 import ringCSV from "../assets/data/ring.csv?raw";
+import itemGUIDCSV from "../assets/data/GUIDs.csv?raw";
+
 import { parseCSV } from "../utils/parseCSV";
 import { type StatImprovement, type ValueRange } from "../types/common";
-import { csvItemBase, csvArmor, type csvWeapon } from "../types/csv";
+import {
+  type csvItemBase,
+  type csvArmor,
+  type csvWeapon,
+  type csvItemGUID,
+} from "../types/csv";
 import {
   type ItemBase,
   type Armor,
   type WeaponType,
   type Weapon,
-  ArmorType,
+  type ArmorType,
+  type ItemTier,
+  type ItemGUID,
 } from "../types/item";
+import { modifyTier } from "../utils/modifyTier";
 
 const removeWhitespace = (str: string) => str.replace(/\s+/g, "");
 const removeCurlyBrackets = (str: string) => str.replace(/[{}]/g, "");
@@ -69,76 +79,132 @@ function mapWeaponType(type: string): WeaponType {
   } as WeaponType;
 }
 
-function processItemData<T extends csvItemBase>(item: T): ItemBase {
-  const rarityParts = removeWhitespace(item.Rarity).split(":");
-  const rarity = { label: rarityParts[1], value: parseInt(rarityParts[0]) };
-  const baseStats = convertBaseStats(item["Base Stats"]);
-  const attributes = splitField(item.Attributes ?? "", "- ");
-  const droppedBy = splitField(item["Dropped By"], "- ");
-  const location = splitField(
-    (item.Locations ?? "").replaceAll("\n", ""),
-    "- "
-  );
+function processItemData<T extends csvItemBase>(
+  item: T,
+  tier: ItemTier
+): ItemBase {
+  const [value, label] = removeWhitespace(item.Rarity).split(":");
+  const rarity = { label, value: parseInt(value) };
+
+  const baseStats = convertBaseStats(item["Base Stats"]).map((s) => ({
+    ...s,
+    min: modifyTier(s.min, tier),
+    max: modifyTier(s.max, tier),
+  }));
 
   return {
     name: item.Name,
     rarity,
     baseStats,
-    attributes,
-    droppedBy,
-    location,
+    attributes: splitField(item.Attributes ?? "", "- "),
+    droppedBy: splitField(item["Dropped By"], "- "),
+    location: splitField((item.Locations ?? "").replaceAll("\n", ""), "- "),
   };
 }
 
-function processWeaponData(csvWeapons: csvWeapon[]): Weapon[] {
+function processGuidData(csvGUIDs: csvItemGUID[]): ItemGUID[] {
+  return csvGUIDs.map(({ Name, GUID }) => ({ label: Name, guid: GUID }));
+}
+
+function processWeaponData(
+  csvWeapons: csvWeapon[],
+  GUIDs: ItemGUID[],
+  tier: ItemTier
+): Weapon[] {
   return csvWeapons.map((weapon) => {
-    const commonData = processItemData(weapon);
+    const guid =
+      GUIDs.find(
+        ({ label }) => label.toLowerCase() === weapon.Name.toLowerCase()
+      )?.guid ?? "";
+    const commonData = processItemData(weapon, tier);
+    const attackPower = getValueRange(weapon["Attack Power"]);
+
     return {
+      guid,
       ...commonData,
-      attackPower: getValueRange(weapon["Attack Power"]),
+      attackPower: modifyTieredRange(attackPower, tier),
       damageType: weapon["Damage Type"],
       type: mapWeaponType(weapon.Type),
     };
   });
 }
 
-function processArmorData(csvShields: csvArmor[], type: ArmorType): Armor[] {
-  return csvShields.map((shield) => {
-    const commonData = processItemData(shield);
+function processArmorData(
+  csvArmor: csvArmor[],
+  type: ArmorType,
+  GUIDs: ItemGUID[],
+  tier: ItemTier
+): Armor[] {
+  return csvArmor.map((armor) => {
+    const guid =
+      GUIDs.find(
+        ({ label }) => label.toLowerCase() === armor.Name.toLowerCase()
+      )?.guid ?? "";
+    const commonData = processItemData(armor, tier);
+    const baseArmor = armor.Armor
+      ? getValueRange(armor.Armor)
+      : { min: -1, max: 0 };
+    const baseMagicArmor = armor.Armor
+      ? getValueRange(armor.Armor)
+      : { min: -1, max: 0 };
+
     return {
+      guid,
       ...commonData,
       type,
-      armor: shield.Armor ? getValueRange(shield.Armor) : { min: -1, max: 0 },
-      magicArmor: shield["Magic Armor"]
-        ? getValueRange(shield["Magic Armor"])
-        : { min: -1, max: 0 },
+      armor: modifyTieredRange(baseArmor, tier),
+      magicArmor: modifyTieredRange(baseMagicArmor, tier),
     };
   });
 }
 
-export function useCsvData() {
+function modifyTieredRange(
+  range: { min: number; max: number },
+  tier: ItemTier
+) {
+  return {
+    min: modifyTier(range.min, tier),
+    max: modifyTier(range.max, tier),
+  };
+}
+
+export function useCsvData(tier: ItemTier) {
+  const [itemGUIDs, setItemGUIDs] = useState<ItemGUID[]>();
   const [weaponData, setWeaponData] = useState<Weapon[] | null>();
-  const [shieldData, setShieldData] = useState<Armor[] | null>();
-  const [headData, setHeadData] = useState<Armor[] | null>();
-  const [chestData, setChestData] = useState<Armor[] | null>();
-  const [amuletData, setAmuletData] = useState<Armor[] | null>();
-  const [ringData, setRingData] = useState<Armor[] | null>();
+  const [armorData, setArmorData] = useState<Record<ArmorType, Armor[] | null>>(
+    {} as Record<ArmorType, Armor[] | null>
+  );
 
   useEffect(() => {
-    setWeaponData(processWeaponData(parseCSV<csvWeapon>(weaponCSV)));
-    setShieldData(processArmorData(parseCSV<csvArmor>(shieldCSV), "Shield"));
-    setHeadData(processArmorData(parseCSV<csvArmor>(headCSV), "Head"));
-    setChestData(processArmorData(parseCSV<csvArmor>(chestCSV), "Chest"));
-    setAmuletData(processArmorData(parseCSV<csvArmor>(amuletCSV), "Amulet"));
-    setRingData(processArmorData(parseCSV<csvArmor>(ringCSV), "Ring"));
+    setItemGUIDs(processGuidData(parseCSV<csvItemGUID>(itemGUIDCSV)));
   }, []);
 
-  return {
-    weaponData,
-    shieldData,
-    headData,
-    chestData,
-    amuletData,
-    ringData,
-  };
+  useEffect(() => {
+    if (!itemGUIDs) return;
+
+    setWeaponData(
+      processWeaponData(parseCSV<csvWeapon>(weaponCSV), itemGUIDs, tier)
+    );
+
+    const armorTypes: Record<ArmorType, string> = {
+      Shield: shieldCSV,
+      Head: headCSV,
+      Chest: chestCSV,
+      Amulet: amuletCSV,
+      Ring: ringCSV,
+    };
+
+    const processedArmorData = Object.fromEntries(
+      (Object.entries(armorTypes) as [ArmorType, string][]).map(
+        ([type, csv]) => [
+          type,
+          processArmorData(parseCSV<csvArmor>(csv), type, itemGUIDs, tier),
+        ]
+      )
+    ) as Record<ArmorType, Armor[] | null>;
+
+    setArmorData(processedArmorData);
+  }, [itemGUIDs, tier]);
+
+  return { weaponData, armorData };
 }

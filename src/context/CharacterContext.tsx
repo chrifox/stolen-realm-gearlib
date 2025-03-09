@@ -1,11 +1,10 @@
+import { createContext, useContext, useState, type ReactNode } from "react";
 import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from "react";
-import { type Armor, type Weapon } from "../types/item"; // Ensure correct imports
+  type EquippedArmor,
+  type EquippedWeapon,
+  type Armor,
+  type Weapon,
+} from "../types/item"; // Ensure correct imports
 
 function isWeapon(item: any): item is Weapon {
   return (item as Weapon).type?.hands !== undefined;
@@ -31,12 +30,12 @@ export type EquipmentSlot =
   | "amulet";
 
 type Equipment = {
-  hand1: Weapon | null; // Must be a Weapon
-  hand2: Weapon | Armor | null; // Can be a Weapon or Shield
-  head: Armor | null;
-  chestplate: Armor | null;
-  ring: Armor | null;
-  amulet: Armor | null;
+  hand1: EquippedWeapon | null; // Must be a Weapon
+  hand2: EquippedWeapon | EquippedArmor | null; // Can be a Weapon or Shield
+  head: EquippedArmor | null;
+  chestplate: EquippedArmor | null;
+  ring: EquippedArmor | null;
+  amulet: EquippedArmor | null;
 };
 
 type Stats = {
@@ -50,7 +49,7 @@ type Stats = {
 type CharacterContextType = {
   equipment: Equipment;
   stats: Stats;
-  equipItem: (item: Weapon | Armor) => void; // Removed slot from here
+  equipItem: (item: EquippedWeapon | EquippedArmor) => void; // Removed slot from here
   unequipItem: (slot: EquipmentSlot) => void;
   updateStat: (label: string, value: number) => void;
 };
@@ -80,7 +79,7 @@ export const CharacterContextProvider = ({
     reflex: 8,
   });
 
-  const equipItem = (item: Weapon | Armor) => {
+  const equipItem = (item: EquippedWeapon | EquippedArmor) => {
     setEquipment((prev) => {
       if (isWeapon(item)) {
         if (item.type.hands === 2) {

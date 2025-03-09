@@ -5,8 +5,9 @@ import {
   EquipmentSlot,
   useCharacterContext,
 } from "../context/CharacterContext";
-import { type Armor, type Weapon } from "../types/item";
+
 import { type StatImprovement, type ValueRange } from "../types/common";
+import { type EquippedArmor, type EquippedWeapon } from "../types/item";
 
 const CharacterContainer = styled.div`
   min-width: 280px;
@@ -48,7 +49,7 @@ const CharacterContainer = styled.div`
   }
 `;
 
-const EquippedItem = styled.div<{ $rarity?: number }>`
+const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -57,12 +58,16 @@ const EquippedItem = styled.div<{ $rarity?: number }>`
     $rarity ? theme.colors.rarity[$rarity] : "#777"};
   border: 1px solid #211a19;
 
-  .offhand-2h {
-    opacity: 50%;
-  }
-
   &:hover {
     outline: 1px solid #302725;
+  }
+
+  .tier-label {
+    color: ${({ theme, $tier }) => theme.colors.tier[$tier]};
+  }
+
+  .offhand-2h {
+    opacity: 50%;
   }
 
   button {
@@ -120,13 +125,10 @@ export const Character = () => {
   const statNames = Object.keys(stats) as (keyof typeof stats)[];
   const equipmentSlots = Object.entries(equipment) as [
     EquipmentSlot,
-    Weapon | Armor | null
+    EquippedWeapon | EquippedArmor | null
   ][];
 
   const equipmentBonuses = getEquipmentBonuses();
-
-  const has2hWeaponEquipped =
-    equipment.hand1 && equipment.hand1.type.hands === 2;
 
   return (
     <CharacterContainer>
@@ -157,17 +159,34 @@ export const Character = () => {
 
       <div className="equipment">
         {equipmentSlots.map(([slot, item]) => {
+          const has2hWeaponEquipped =
+            equipment.hand1 && equipment.hand1.type.hands === 2;
           const show2hFader = slot === "hand2" && !item && has2hWeaponEquipped;
+          const itemTier = item ? item.tier : 0;
           return (
             <EquippedItem
+              key={slot}
+              $tier={
+                show2hFader && equipment.hand1 ? equipment.hand1.tier : itemTier
+              }
               $rarity={
                 show2hFader ? equipment.hand1?.rarity.value : item?.rarity.value
               }
             >
               {show2hFader ? (
-                <span className="offhand-2h">{equipment.hand1?.name}</span>
+                <span className="offhand-2h">
+                  {equipment.hand1?.name}
+                  {equipment.hand1 && equipment.hand1.tier > 0 && (
+                    <span className="tier-label">*</span>
+                  )}
+                </span>
               ) : (
-                <span>{item?.name ?? "Empty"}</span>
+                <span>
+                  {item?.name ?? "Empty"}
+                  {item && item.tier > 0 && (
+                    <span className="tier-label">*</span>
+                  )}
+                </span>
               )}
               <button onClick={() => unequipItem(slot)}>X</button>
             </EquippedItem>

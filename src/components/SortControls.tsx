@@ -2,6 +2,7 @@ import { ChangeEvent } from "react";
 import { styled } from "styled-components";
 
 import { type ItemType, useSortContext } from "../context/SortContext";
+import { ItemTier } from "../types/item";
 
 const SortControlsContainer = styled.div`
   display: flex;
@@ -25,6 +26,8 @@ export const SortControls = ({ itemType }: { itemType: ItemType }) => {
     showDetails,
     searchTerm,
     setSearchTerm,
+    tier,
+    setTier,
   } = useSortContext();
 
   function handleUpdateSearchTerm(event: ChangeEvent<HTMLInputElement>) {
@@ -66,6 +69,15 @@ export const SortControls = ({ itemType }: { itemType: ItemType }) => {
       <button onClick={setShowDetails}>
         {showDetails ? "Hide" : "Show"} details
       </button>
+      <select
+        onChange={(e) => setTier(parseInt(e.target.value) as ItemTier)}
+        value={tier}
+      >
+        <option value={0}>Untiered</option>
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+      </select>
       <label className="search">
         Search:&nbsp;
         <input
