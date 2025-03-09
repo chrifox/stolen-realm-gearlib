@@ -19,6 +19,7 @@ export const SortContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [sortField, setSortField] = useState<string>("rarity");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
   const [statFilter, setStatFilter] = useState<string>("");
@@ -64,6 +65,8 @@ export const SortContextProvider = ({
         setShowDetails: () =>
           setShowDetails((wasShowing: boolean) => !wasShowing),
         setCurrentItemType,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {children}

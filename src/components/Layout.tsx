@@ -7,8 +7,7 @@ import { useCsvData } from "../hooks/useCsvData";
 
 import { Character } from "./Character";
 import { Tabs } from "./Tabs";
-import { WeaponList } from "./WeaponList";
-import { ArmorList } from "./ArmorList";
+import { ItemList } from "./ItemList";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -35,13 +34,23 @@ export function Layout() {
             ]}
           >
             <Tabs.Tab>
-              {weaponData && <WeaponList data={weaponData} />}
+              {weaponData && <ItemList itemType="Weapon" data={weaponData} />}
             </Tabs.Tab>
-            <Tabs.Tab>{shieldData && <ArmorList data={shieldData} />}</Tabs.Tab>
-            <Tabs.Tab>{headData && <ArmorList data={headData} />}</Tabs.Tab>
-            <Tabs.Tab>{chestData && <ArmorList data={chestData} />}</Tabs.Tab>
-            <Tabs.Tab>{ringData && <ArmorList data={ringData} />}</Tabs.Tab>
-            <Tabs.Tab>{amuletData && <ArmorList data={amuletData} />}</Tabs.Tab>
+            <Tabs.Tab>
+              {shieldData && <ItemList itemType="Armor" data={shieldData} />}
+            </Tabs.Tab>
+            <Tabs.Tab>
+              {headData && <ItemList itemType="Armor" data={headData} />}
+            </Tabs.Tab>
+            <Tabs.Tab>
+              {chestData && <ItemList itemType="Armor" data={chestData} />}
+            </Tabs.Tab>
+            <Tabs.Tab>
+              {ringData && <ItemList itemType="Armor" data={ringData} />}
+            </Tabs.Tab>
+            <Tabs.Tab>
+              {amuletData && <ItemList itemType="Armor" data={amuletData} />}
+            </Tabs.Tab>
           </Tabs>
         </LayoutContainer>
       </SortContextProvider>

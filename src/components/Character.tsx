@@ -9,7 +9,7 @@ import { type Armor, type Weapon } from "../types/item";
 import { type StatImprovement, type ValueRange } from "../types/common";
 
 const CharacterContainer = styled.div`
-  min-width: 240px;
+  min-width: 280px;
 
   .stats,
   .equipment,
@@ -17,7 +17,7 @@ const CharacterContainer = styled.div`
     display: flex;
     flex-flow: column nowrap;
     gap: 4px;
-    padding: 8px;
+    padding: 16px;
   }
 
   .stats {
@@ -35,6 +35,10 @@ const CharacterContainer = styled.div`
         }
       }
     }
+  }
+
+  .equipment {
+    user-select: none;
   }
 
   .bonuses {

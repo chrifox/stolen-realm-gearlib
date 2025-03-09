@@ -1,4 +1,18 @@
+import { ChangeEvent } from "react";
+import { styled } from "styled-components";
+
 import { type ItemType, useSortContext } from "../context/SortContext";
+
+const SortControlsContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+
+  .search {
+    margin-left: auto;
+  }
+`;
 
 export const SortControls = ({ itemType }: { itemType: ItemType }) => {
   const {
@@ -9,10 +23,16 @@ export const SortControls = ({ itemType }: { itemType: ItemType }) => {
     statFilter,
     setShowDetails,
     showDetails,
+    searchTerm,
+    setSearchTerm,
   } = useSortContext();
 
+  function handleUpdateSearchTerm(event: ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(event.target.value);
+  }
+
   return (
-    <div className="sort-controls">
+    <SortControlsContainer className="sort-controls">
       Sorting:
       <button onClick={setSortOrder}>{sortOrder}</button>
       <button onClick={() => setSortField("name")}>Name</button>
@@ -46,6 +66,14 @@ export const SortControls = ({ itemType }: { itemType: ItemType }) => {
       <button onClick={setShowDetails}>
         {showDetails ? "Hide" : "Show"} details
       </button>
-    </div>
+      <label className="search">
+        Search:&nbsp;
+        <input
+          type="search"
+          onChange={handleUpdateSearchTerm}
+          value={searchTerm}
+        />
+      </label>
+    </SortControlsContainer>
   );
 };
