@@ -7,58 +7,102 @@ import React, {
   useState,
 } from "react";
 
+import { type KeyValuePair } from "../types/common";
 import { type ItemTier } from "../types/item";
 
 export type SortOrder = "asc" | "desc";
 
 export type ItemType = "Armor" | "Weapon";
 
-const SortContext = createContext<{
+export const RARITIES: KeyValuePair[] = [
+  { value: 0, label: "Common" },
+  { value: 1, label: "Uncommon" },
+  { value: 2, label: "Rare" },
+  { value: 3, label: "Epic" },
+  { value: 4, label: "Legendary" },
+];
+
+export const STATS = [
+  "Might",
+  "Dexterity",
+  "Vitality",
+  "Intelligence",
+  "Reflex",
+];
+
+const FilterSortContext = createContext<{
+  // sorting
   sortField: string;
   setSortField: Dispatch<SetStateAction<string>>;
   sortOrder: "asc" | "desc";
   setSortOrder: () => void;
-  statFilter: string;
-  setStatFilter: Dispatch<SetStateAction<string>>;
+  statSort: string;
+  setStatSort: Dispatch<SetStateAction<string>>;
   showDetails: boolean;
   setShowDetails: () => void;
   setCurrentItemType: Dispatch<SetStateAction<ItemType>>;
   searchTerm: string;
   setSearchTerm: Dispatch<SetStateAction<string>>;
+
+  // filtering
+  rarityFilter: number[];
+  setRarityFilter: (rarityValue: number) => void;
+  statFilter: string[];
+  setStatFilter: (stat: string) => void;
+
+  // misc
   tier: ItemTier;
   setTier: Dispatch<SetStateAction<ItemTier>>;
 } | null>(null);
 
-export const useSortContext = () => {
-  const context = useContext(SortContext);
+export const useFilterSortContext = () => {
+  const context = useContext(FilterSortContext);
   if (!context) {
     throw new Error("useSortContext must be used within a SortProvider");
   }
   return context;
 };
 
-export const SortContextProvider = ({
+export const FilterSortContextProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortField, setSortField] = useState<string>("rarity");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
-  const [statFilter, setStatFilter] = useState<string>("");
-  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [sortField, setSortField] = useState<string>("rarity");
+  const [statSort, setStatSort] = useState<string>("");
   const [currentItemType, setCurrentItemType] = useState<ItemType>("Weapon");
+
+  const [showDetails, setShowDetails] = useState<boolean>(false);
   const [tier, setTier] = useState<ItemTier>(3);
 
+  const [rarityFilter, setRarityFilter] = useState<number[]>([]);
+  const [statFilter, setStatFilter] = useState<string[]>([]);
+
+  function handleSetRarityFilter(rarityValue: number) {
+    setRarityFilter((prev: number[]) =>
+      prev.includes(rarityValue)
+        ? prev.filter((r) => r !== rarityValue)
+        : [...prev, rarityValue]
+    );
+  }
+
+  function handleSetStatFilter(stat: string) {
+    setStatFilter((prev: string[]) =>
+      prev.includes(stat) ? prev.filter((s) => s !== stat) : [...prev, stat]
+    );
+  }
+
   useEffect(() => {
-    if (statFilter) {
+    if (statSort) {
       setSortField("stat");
     }
-  }, [statFilter]);
+  }, [statSort]);
 
   useEffect(() => {
     if (sortField !== "stat") {
-      setStatFilter("");
+      setStatSort("");
     }
   }, [sortField]);
 
@@ -77,25 +121,31 @@ export const SortContextProvider = ({
   }, [currentItemType, sortField]);
 
   return (
-    <SortContext.Provider
+    <FilterSortContext.Provider
       value={{
         sortField,
         setSortField,
         sortOrder,
         setSortOrder: () => setSortOrder(sortOrder === "asc" ? "desc" : "asc"),
-        statFilter,
-        setStatFilter,
+        statSort,
+        setStatSort,
         showDetails,
         setShowDetails: () =>
           setShowDetails((wasShowing: boolean) => !wasShowing),
         setCurrentItemType,
         searchTerm,
         setSearchTerm,
+
         tier,
         setTier,
+
+        rarityFilter,
+        setRarityFilter: handleSetRarityFilter,
+        statFilter,
+        setStatFilter: handleSetStatFilter,
       }}
     >
       {children}
-    </SortContext.Provider>
+    </FilterSortContext.Provider>
   );
 };

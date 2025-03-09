@@ -10,7 +10,8 @@ import { type StatImprovement, type ValueRange } from "../types/common";
 import { type EquippedArmor, type EquippedWeapon } from "../types/item";
 
 const CharacterContainer = styled.div`
-  min-width: 280px;
+  min-width: 260px;
+  max-width: 260px;
 
   .stats,
   .equipment,

@@ -1,31 +1,57 @@
 import React, { useState } from "react";
+import { css, styled } from "styled-components";
 
 type TabsProps = {
   tabs: string[];
   children: React.ReactNode;
 };
 
+const TabsContainer = styled.div`
+  .tab-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid #211a19;
+    margin-bottom: 4px;
+
+    button {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+`;
+
+const TabButton = styled.button<{ $active?: boolean }>`
+  ${({ $active }) =>
+    $active
+      ? css`
+          background: indigo;
+        `
+      : ""}
+`;
+
 export function Tabs({ tabs, children }: TabsProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
-    <div>
-      <div className="tabs">
+    <TabsContainer>
+      <div className="tab-buttons">
         {tabs.map((tab, index) => (
-          <button
+          <TabButton
             key={`tab-${tab}-${index}`}
-            className={`tab ${activeTabIndex === index ? "active" : ""}`}
             onClick={() => setActiveTabIndex(index)}
+            $active={activeTabIndex === index}
           >
             {tab}
-          </button>
+          </TabButton>
         ))}
       </div>
 
       <div className="tab-content">
         {React.Children.toArray(children)[activeTabIndex]}
       </div>
-    </div>
+    </TabsContainer>
   );
 }
 

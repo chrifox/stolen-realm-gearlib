@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { styled } from "styled-components";
 
-import { ItemType, useSortContext } from "../context/SortContext";
+import { ItemType, useFilterSortContext } from "../context/FilterSortContext";
 
+import { useFilteredItems } from "../hooks/useFilteredItems";
 import { useSortedItems } from "../hooks/useSortedItems";
 
-import { SortControls } from "./SortControls";
 import { Armor, Weapon } from "../types/item";
+import { FilterSortControls } from "./FilterSortControls";
 import { ItemTile } from "./ItemTile";
 
 type ItemListProps = {
@@ -17,7 +18,6 @@ type ItemListProps = {
 const ItemTileList = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   gap: 4px;
   width: 100%;
 `;
@@ -27,18 +27,25 @@ export const ItemList = ({ data, itemType }: ItemListProps) => {
     searchTerm,
     sortField,
     sortOrder,
-    statFilter,
+    statSort,
     showDetails,
     setCurrentItemType,
     tier,
-  } = useSortContext();
+    rarityFilter,
+    statFilter,
+  } = useFilterSortContext();
 
-  const { sortedItems } = useSortedItems(
+  const { filteredItems } = useFilteredItems(
     data,
     searchTerm,
+    rarityFilter,
+    statFilter
+  );
+  const { sortedItems } = useSortedItems(
+    filteredItems,
     sortField,
     sortOrder,
-    statFilter
+    statSort
   );
 
   useEffect(() => {
@@ -47,7 +54,7 @@ export const ItemList = ({ data, itemType }: ItemListProps) => {
 
   return (
     <ItemTileList>
-      <SortControls itemType={itemType} />
+      <FilterSortControls itemType={itemType} />
       {sortedItems.map((item) => (
         <ItemTile
           key={item.name}
