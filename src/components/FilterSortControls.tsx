@@ -2,6 +2,7 @@ import { ChangeEvent } from "react";
 import { css, styled } from "styled-components";
 
 import {
+  DAMAGE_TYPES,
   type ItemType,
   RARITIES,
   STATS,
@@ -61,6 +62,8 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
     setRarityFilter,
     statFilter,
     setStatFilter,
+    damageTypeFilter,
+    setDamageTypeFilter,
   } = useFilterSortContext();
 
   function handleUpdateSearchTerm(event: ChangeEvent<HTMLInputElement>) {
@@ -131,11 +134,11 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
             value={statSort}
           >
             <option value="">None</option>
-            <option value="Might">Might</option>
-            <option value="Dexterity">Dexterity</option>
-            <option value="Vitality">Vitality</option>
-            <option value="Intelligence">Intelligence</option>
-            <option value="Reflex">Reflex</option>
+            {STATS.map((stat) => (
+              <option key={`stat-sort-option-${stat}`} value={stat}>
+                {stat}
+              </option>
+            ))}
           </select>
         </label>
         <label className="search">
@@ -178,6 +181,22 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
             </label>
           ))}
         </fieldset>
+        {itemType === "Weapon" && (
+          <fieldset>
+            <legend>Damage Type:</legend>
+            {DAMAGE_TYPES.map((damageType) => (
+              <label key={damageType} style={{ display: "block" }}>
+                <input
+                  type="checkbox"
+                  value={damageType}
+                  checked={damageTypeFilter.includes(damageType)}
+                  onChange={() => setDamageTypeFilter(damageType)}
+                />
+                {damageType}
+              </label>
+            ))}
+          </fieldset>
+        )}
       </div>
     </FilterSortControlsContainer>
   );

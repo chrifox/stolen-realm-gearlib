@@ -33,13 +33,15 @@ export const ItemList = ({ data, itemType }: ItemListProps) => {
     tier,
     rarityFilter,
     statFilter,
+    damageTypeFilter,
   } = useFilterSortContext();
 
   const { filteredItems } = useFilteredItems(
     data,
     searchTerm,
     rarityFilter,
-    statFilter
+    statFilter,
+    damageTypeFilter
   );
   const { sortedItems } = useSortedItems(
     filteredItems,

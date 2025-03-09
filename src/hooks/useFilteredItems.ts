@@ -1,13 +1,18 @@
 import { useMemo } from "react";
 
-import { type StatImprovement } from "../types/common";
+import {
+  type DamageType,
+  type Stat,
+  type StatImprovement,
+} from "../types/common";
 import { type Armor, type Weapon } from "../types/item";
 
 const filterItems = (
   items: any[],
   searchTerm: string,
   rarityFilter: number[],
-  statFilter: string[]
+  statFilter: Stat[],
+  damageTypeFilter: DamageType[]
 ) => {
   return items.filter((item) => {
     const matchesSearchTerm =
@@ -26,7 +31,16 @@ const filterItems = (
         )
       );
 
-    return matchesSearchTerm && matchesRarityFilter && matchesStatFilter;
+    const matchesDamageTypeFilter =
+      damageTypeFilter.length === 0 ||
+      damageTypeFilter.includes(item.damageType);
+
+    return (
+      matchesSearchTerm &&
+      matchesRarityFilter &&
+      matchesStatFilter &&
+      matchesDamageTypeFilter
+    );
   });
 };
 
@@ -34,11 +48,18 @@ export function useFilteredItems(
   items: Armor[] | Weapon[],
   searchTerm: string,
   rarityFilter: number[],
-  statFilter: string[]
+  statFilter: Stat[],
+  damageTypeFilter: DamageType[]
 ) {
   const filteredItems = useMemo(() => {
-    return filterItems(items, searchTerm, rarityFilter, statFilter);
-  }, [items, searchTerm, rarityFilter, statFilter]);
+    return filterItems(
+      items,
+      searchTerm,
+      rarityFilter,
+      statFilter,
+      damageTypeFilter
+    );
+  }, [items, searchTerm, rarityFilter, statFilter, damageTypeFilter]);
 
   return {
     filteredItems,
