@@ -1,14 +1,10 @@
 import { useMemo } from "react";
 
-import {
-  type DamageType,
-  type Stat,
-  type StatImprovement,
-} from "../types/common";
-import { type Armor, type Weapon } from "../types/item";
+import type { DamageType, Stat, StatImprovement } from "../types/common";
+import type { Armor, Weapon } from "../types/item";
 
 const filterItems = (
-  items: any[],
+  items: Weapon[] | Armor[],
   searchTerm: string,
   rarityFilter: number[],
   statFilter: Stat[],
@@ -33,7 +29,7 @@ const filterItems = (
 
     const matchesDamageTypeFilter =
       damageTypeFilter.length === 0 ||
-      damageTypeFilter.includes(item.damageType);
+      ("damageType" in item && damageTypeFilter.includes(item.damageType));
 
     return (
       matchesSearchTerm &&

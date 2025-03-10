@@ -1,17 +1,18 @@
 import { useMemo } from "react";
 
-import { Armor, Weapon } from "../types/item";
-import { StatImprovement } from "../types/common";
-import { SortOrder } from "../context/FilterSortContext";
+import type { SortOrder } from "../context/FilterSortContext";
+
+import type { StatImprovement } from "../types/common";
+import type { Armor, SortableItem, Weapon } from "../types/item";
 
 const sortItems = (
-  items: any[],
+  items: SortableItem[],
   field: string,
   order: SortOrder,
   statSort?: string
 ) => {
   return items.sort((a, b) => {
-    let valueA: any, valueB: any;
+    let valueA: string | number, valueB: string | number;
 
     switch (field) {
       case "name":
@@ -23,16 +24,16 @@ const sortItems = (
         valueB = b.rarity.value;
         break;
       case "attackPower":
-        valueA = a.attackPower?.max;
-        valueB = b.attackPower?.max;
+        valueA = (a as Weapon).attackPower?.max ?? 0;
+        valueB = (b as Weapon).attackPower?.max ?? 0;
         break;
       case "armor":
-        valueA = a.armor?.max;
-        valueB = b.armor?.max;
+        valueA = (a as Armor).armor?.max;
+        valueB = (b as Armor).armor?.max;
         break;
       case "magicArmor":
-        valueA = a.magicArmor?.max;
-        valueB = b.magicArmor?.max;
+        valueA = (a as Armor).magicArmor?.max;
+        valueB = (b as Armor).magicArmor?.max;
         break;
       case "stat": {
         valueA =
@@ -57,7 +58,7 @@ const sortItems = (
 };
 
 export function useSortedItems(
-  items: Armor[] | Weapon[],
+  items: SortableItem[],
   sortField: string,
   sortOrder: SortOrder,
   statSort: string

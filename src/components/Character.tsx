@@ -1,13 +1,13 @@
-import { ChangeEvent } from "react";
+import { type ChangeEvent } from "react";
 import { styled } from "styled-components";
 
 import {
-  EquipmentSlot,
+  type EquipmentSlot,
   useCharacterContext,
 } from "../context/CharacterContext";
 
-import { type StatImprovement, type ValueRange } from "../types/common";
-import { type EquippedArmor, type EquippedWeapon } from "../types/item";
+import type { StatImprovement, ValueRange } from "../types/common";
+import type { EquippedArmor, EquippedWeapon } from "../types/item";
 
 const CharacterContainer = styled.div`
   min-width: 260px;

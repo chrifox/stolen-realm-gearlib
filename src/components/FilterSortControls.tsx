@@ -1,14 +1,14 @@
-import { ChangeEvent } from "react";
-import { css, styled } from "styled-components";
+import { type ChangeEvent } from "react";
+import { styled } from "styled-components";
 
 import {
-  DAMAGE_TYPES,
   type ItemType,
+  DAMAGE_TYPES,
   RARITIES,
   STATS,
   useFilterSortContext,
 } from "../context/FilterSortContext";
-import { type ItemTier } from "../types/item";
+import type { ItemTier } from "../types/item";
 
 const FilterSortControlsContainer = styled.div`
   width: 100%;
@@ -23,6 +23,9 @@ const FilterSortControlsContainer = styled.div`
     width: 100%;
   }
 
+  .misc-controls {
+  }
+
   .sort-controls {
     .search {
       margin-left: auto;
@@ -30,16 +33,12 @@ const FilterSortControlsContainer = styled.div`
   }
 
   .filter-controls {
+    fieldset {
+      label {
+        display: block;
+      }
+    }
   }
-`;
-
-const SortControlButton = styled.button<{ $active?: boolean }>`
-  ${({ $active }) =>
-    $active
-      ? css`
-          background: forestgreen;
-        `
-      : ""}
 `;
 
 export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
@@ -90,57 +89,41 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
         </label>
       </div>
       <div className="sort-controls">
-        Sorting:
+        Sort:
         <button onClick={setSortOrder}>{sortOrder}</button>
-        <SortControlButton
-          onClick={() => setSortField("name")}
-          $active={sortField === "name"}
-        >
-          Name
-        </SortControlButton>
-        {itemType === "Armor" ? (
-          <>
-            <SortControlButton
-              onClick={() => setSortField("armor")}
-              $active={sortField === "armor"}
-            >
-              Armor
-            </SortControlButton>
-            <SortControlButton
-              onClick={() => setSortField("magicArmor")}
-              $active={sortField === "magicArmor"}
-            >
-              Magic Armor
-            </SortControlButton>
-          </>
-        ) : (
-          <SortControlButton
-            onClick={() => setSortField("attackPower")}
-            $active={sortField === "attackPower"}
-          >
-            Attack Power
-          </SortControlButton>
-        )}
-        <SortControlButton
-          onClick={() => setSortField("rarity")}
-          $active={sortField === "rarity"}
-        >
-          Rarity
-        </SortControlButton>
         <label>
-          Stat:{" "}
-          <select
-            onChange={(e) => setStatSort(e.target.value)}
-            value={statSort}
-          >
-            <option value="">None</option>
-            {STATS.map((stat) => (
-              <option key={`stat-sort-option-${stat}`} value={stat}>
-                {stat}
-              </option>
-            ))}
+          by:{" "}
+          <select onChange={(e) => setSortField(e.target.value)}>
+            <option value="rarity">Rarity</option>
+            <option value="name">Name</option>
+            <option value="stat">Stat</option>
+            {itemType === "Weapon" && (
+              <option value="attackPower">Attack Power</option>
+            )}
+            {itemType === "Armor" && (
+              <>
+                <option value="armor">Armor</option>
+                <option value="magicArmor">Magic Armor</option>
+              </>
+            )}
           </select>
         </label>
+        {sortField === "stat" && (
+          <label>
+            Stat:{" "}
+            <select
+              onChange={(e) => setStatSort(e.target.value)}
+              value={statSort}
+            >
+              <option value="">None</option>
+              {STATS.map((stat) => (
+                <option key={`stat-sort-option-${stat}`} value={stat}>
+                  {stat}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <label className="search">
           Search:&nbsp;
           <input
@@ -152,11 +135,11 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
       </div>
 
       <div className="filter-controls">
-        Filtering:
+        Filter:
         <fieldset>
-          <legend>Rarity:</legend>
+          <legend>Rarity</legend>
           {RARITIES.map((rarity) => (
-            <label key={rarity.value} style={{ display: "block" }}>
+            <label key={rarity.value}>
               <input
                 type="checkbox"
                 value={rarity.value}
@@ -168,9 +151,9 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
           ))}
         </fieldset>
         <fieldset>
-          <legend>Stats:</legend>
+          <legend>Stats</legend>
           {STATS.map((stat) => (
-            <label key={stat} style={{ display: "block" }}>
+            <label key={stat}>
               <input
                 type="checkbox"
                 value={stat}
@@ -183,9 +166,9 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
         </fieldset>
         {itemType === "Weapon" && (
           <fieldset>
-            <legend>Damage Type:</legend>
+            <legend>Damage Type</legend>
             {DAMAGE_TYPES.map((damageType) => (
-              <label key={damageType} style={{ display: "block" }}>
+              <label key={damageType}>
                 <input
                   type="checkbox"
                   value={damageType}

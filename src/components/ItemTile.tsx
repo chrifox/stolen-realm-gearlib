@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { useCharacterContext } from "../context/CharacterContext";
 import { type ItemType } from "../context/FilterSortContext";
 
-import { type ItemTier, type Armor, type Weapon } from "../types/item";
+import type { ItemTier, Armor, Weapon } from "../types/item";
 
 type ItemTileProps = {
   item: Weapon | Armor;

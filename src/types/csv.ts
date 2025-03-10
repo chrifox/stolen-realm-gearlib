@@ -1,4 +1,4 @@
-import { DamageType } from "./common";
+import type { DamageType } from "./common";
 
 export type csvItemGUID = {
   Name: string;

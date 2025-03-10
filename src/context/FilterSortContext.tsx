@@ -134,6 +134,7 @@ export const FilterSortContextProvider = ({
       }
     } else if (currentItemType === "Armor") {
       // Reset fields that are not valid for armor
+      setDamageTypeFilter([]);
       if (sortField === "attackPower") {
         setSortField("rarity");
       }

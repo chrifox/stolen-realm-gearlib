@@ -1,8 +1,8 @@
-import {
-  type DamageType,
-  type KeyValuePair,
-  type StatImprovement,
-  type ValueRange,
+import type {
+  DamageType,
+  KeyValuePair,
+  StatImprovement,
+  ValueRange,
 } from "./common";
 
 export type ItemGUID = {
@@ -42,6 +42,8 @@ export type Armor = {
   armor: ValueRange;
   magicArmor: ValueRange;
 } & ItemBase;
+
+export type SortableItem = Weapon | Armor;
 
 export type EquippedWeapon = Weapon & { tier: ItemTier };
 export type EquippedArmor = Armor & { tier: ItemTier };
