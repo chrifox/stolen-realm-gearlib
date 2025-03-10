@@ -9,9 +9,20 @@ import {
   useFilterSortContext,
 } from "../context/FilterSortContext";
 import type { ItemTier } from "../types/item";
+import { Search } from "./Search";
 
 const FilterSortControlsContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 4px;
   width: 100%;
+
+  section {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 4px;
+  }
 
   .misc-controls,
   .sort-controls,
@@ -20,16 +31,13 @@ const FilterSortControlsContainer = styled.div`
     flex-flow: row wrap;
     align-items: center;
     gap: 4px;
-    width: 100%;
   }
 
   .misc-controls {
+    justify-content: flex-end;
   }
 
   .sort-controls {
-    .search {
-      margin-left: auto;
-    }
   }
 
   .filter-controls {
@@ -71,116 +79,114 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
 
   return (
     <FilterSortControlsContainer className="sort-controls">
-      <div className="misc-controls">
-        <button onClick={setShowDetails}>
-          {showDetails ? "Hide" : "Show"} item details
-        </button>
-        <label>
-          Tier:{" "}
-          <select
-            onChange={(e) => setTier(parseInt(e.target.value) as ItemTier)}
-            value={tier}
-          >
-            <option value={0}>0</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-          </select>
-        </label>
-      </div>
-      <div className="sort-controls">
-        Sort:
-        <button onClick={setSortOrder}>{sortOrder}</button>
-        <label>
-          by:{" "}
-          <select onChange={(e) => setSortField(e.target.value)}>
-            <option value="rarity">Rarity</option>
-            <option value="name">Name</option>
-            <option value="stat">Stat</option>
-            {itemType === "Weapon" && (
-              <option value="attackPower">Attack Power</option>
-            )}
-            {itemType === "Armor" && (
-              <>
-                <option value="armor">Armor</option>
-                <option value="magicArmor">Magic Armor</option>
-              </>
-            )}
-          </select>
-        </label>
-        {sortField === "stat" && (
+      <section>
+        <Search onChange={handleUpdateSearchTerm} value={searchTerm} />
+        <div className="misc-controls">
+          <button onClick={setShowDetails}>
+            {showDetails ? "Hide" : "Show"} details
+          </button>
           <label>
-            Stat:{" "}
+            Tier:{" "}
             <select
-              onChange={(e) => setStatSort(e.target.value)}
-              value={statSort}
+              onChange={(e) => setTier(parseInt(e.target.value) as ItemTier)}
+              value={tier}
             >
-              <option value="">None</option>
-              {STATS.map((stat) => (
-                <option key={`stat-sort-option-${stat}`} value={stat}>
-                  {stat}
-                </option>
-              ))}
+              <option value={0}>0</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
             </select>
           </label>
-        )}
-        <label className="search">
-          Search:&nbsp;
-          <input
-            type="search"
-            onChange={handleUpdateSearchTerm}
-            value={searchTerm}
-          />
-        </label>
-      </div>
+        </div>
+      </section>
 
-      <div className="filter-controls">
-        Filter:
-        <fieldset>
-          <legend>Rarity</legend>
-          {RARITIES.map((rarity) => (
-            <label key={rarity.value}>
-              <input
-                type="checkbox"
-                value={rarity.value}
-                checked={rarityFilter.includes(rarity.value)}
-                onChange={() => setRarityFilter(rarity.value)}
-              />
-              {rarity.label}
+      <section>
+        <div className="sort-controls">
+          Sort:
+          <button onClick={setSortOrder}>{sortOrder}</button>
+          <label>
+            by:{" "}
+            <select onChange={(e) => setSortField(e.target.value)}>
+              <option value="rarity">Rarity</option>
+              <option value="name">Name</option>
+              <option value="stat">Stat</option>
+              {itemType === "Weapon" && (
+                <option value="attackPower">Attack Power</option>
+              )}
+              {itemType === "Armor" && (
+                <>
+                  <option value="armor">Armor</option>
+                  <option value="magicArmor">Magic Armor</option>
+                </>
+              )}
+            </select>
+          </label>
+          {sortField === "stat" && (
+            <label>
+              Stat:{" "}
+              <select
+                onChange={(e) => setStatSort(e.target.value)}
+                value={statSort}
+              >
+                <option value="">None</option>
+                {STATS.map((stat) => (
+                  <option key={`stat-sort-option-${stat}`} value={stat}>
+                    {stat}
+                  </option>
+                ))}
+              </select>
             </label>
-          ))}
-        </fieldset>
-        <fieldset>
-          <legend>Stats</legend>
-          {STATS.map((stat) => (
-            <label key={stat}>
-              <input
-                type="checkbox"
-                value={stat}
-                checked={statFilter.includes(stat)}
-                onChange={() => setStatFilter(stat)}
-              />
-              {stat}
-            </label>
-          ))}
-        </fieldset>
-        {itemType === "Weapon" && (
+          )}
+        </div>
+
+        <div className="filter-controls">
+          Filter:
           <fieldset>
-            <legend>Damage Type</legend>
-            {DAMAGE_TYPES.map((damageType) => (
-              <label key={damageType}>
+            <legend>Rarity</legend>
+            {RARITIES.map((rarity) => (
+              <label key={rarity.value}>
                 <input
                   type="checkbox"
-                  value={damageType}
-                  checked={damageTypeFilter.includes(damageType)}
-                  onChange={() => setDamageTypeFilter(damageType)}
+                  value={rarity.value}
+                  checked={rarityFilter.includes(rarity.value)}
+                  onChange={() => setRarityFilter(rarity.value)}
                 />
-                {damageType}
+                {rarity.label}
               </label>
             ))}
           </fieldset>
-        )}
-      </div>
+          <fieldset>
+            <legend>Stats</legend>
+            {STATS.map((stat) => (
+              <label key={stat}>
+                <input
+                  type="checkbox"
+                  value={stat}
+                  checked={statFilter.includes(stat)}
+                  onChange={() => setStatFilter(stat)}
+                />
+                {stat}
+              </label>
+            ))}
+          </fieldset>
+          {itemType === "Weapon" && (
+            <fieldset>
+              <legend>Damage Type</legend>
+              {DAMAGE_TYPES.map((damageType) => (
+                <label key={damageType}>
+                  <input
+                    type="checkbox"
+                    value={damageType}
+                    checked={damageTypeFilter.includes(damageType)}
+                    onChange={() => setDamageTypeFilter(damageType)}
+                  />
+                  {damageType}
+                </label>
+              ))}
+            </fieldset>
+          )}
+        </div>
+      </section>
     </FilterSortControlsContainer>
   );
 };

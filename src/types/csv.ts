@@ -24,3 +24,11 @@ export type csvArmor = {
   Armor: string;
   "Magic Armor": string;
 } & csvItemBase;
+
+export type csvFortune = {
+  Name: string;
+  Rarity: string;
+  Event: string;
+  GUID: string;
+  Image: string;
+};

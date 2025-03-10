@@ -21,10 +21,10 @@ const ItemTileContainer = styled.div<{
   flex-flow: column nowrap;
   width: 240px;
   padding: 4px;
-  border: 1px solid #211a19;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 
   &:hover {
-    outline: 1px solid #302725;
+    outline: 1px solid ${({ theme }) => theme.colors.borderHover};
   }
 
   .name {

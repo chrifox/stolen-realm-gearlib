@@ -1,12 +1,15 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
-import {
-  type EquippedArmor,
-  type EquippedWeapon,
-  type Armor,
-  type Weapon,
-} from "../types/item"; // Ensure correct imports
 
-function isWeapon(item: any): item is Weapon {
+import type {
+  EquippedArmor,
+  EquippedWeapon,
+  Armor,
+  Weapon,
+} from "../types/item";
+
+import type { Fortune } from "../types/fortune";
+
+function isWeapon(item: unknown): item is Weapon {
   return (item as Weapon).type?.hands !== undefined;
 }
 
@@ -17,7 +20,7 @@ function is1hMeleeWeapon(weapon: Weapon) {
   );
 }
 
-function isArmor(item: any): item is Armor {
+function isArmor(item: unknown): item is Armor {
   return (item as Armor).type !== undefined;
 }
 
@@ -29,6 +32,14 @@ export type EquipmentSlot =
   | "ring"
   | "amulet";
 
+type Stats = {
+  might: number;
+  dexterity: number;
+  vitality: number;
+  intelligence: number;
+  reflex: number;
+};
+
 type Equipment = {
   hand1: EquippedWeapon | null; // Must be a Weapon
   hand2: EquippedWeapon | EquippedArmor | null; // Can be a Weapon or Shield
@@ -38,20 +49,15 @@ type Equipment = {
   amulet: EquippedArmor | null;
 };
 
-type Stats = {
-  might: number;
-  dexterity: number;
-  vitality: number;
-  intelligence: number;
-  reflex: number;
-};
-
 type CharacterContextType = {
-  equipment: Equipment;
   stats: Stats;
+  equipment: Equipment;
+  fortunes: Fortune[];
   equipItem: (item: EquippedWeapon | EquippedArmor) => void; // Removed slot from here
   unequipItem: (slot: EquipmentSlot) => void;
   updateStat: (label: string, value: number) => void;
+  equipFortune: (fortune: Fortune) => void;
+  unequipFortune: (fortune: Fortune) => void;
 };
 
 const CharacterContext = createContext<CharacterContextType | undefined>(
@@ -63,6 +69,13 @@ export const CharacterContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
+  const [stats, setStats] = useState<Stats>({
+    might: 8,
+    dexterity: 8,
+    vitality: 8,
+    intelligence: 8,
+    reflex: 8,
+  });
   const [equipment, setEquipment] = useState<Equipment>({
     hand1: null,
     hand2: null,
@@ -71,13 +84,14 @@ export const CharacterContextProvider = ({
     ring: null,
     amulet: null,
   });
-  const [stats, setStats] = useState<Stats>({
-    might: 8,
-    dexterity: 8,
-    vitality: 8,
-    intelligence: 8,
-    reflex: 8,
-  });
+  const [fortunes, setFortunes] = useState<Fortune[]>([]);
+
+  const updateStat = (label: string, value: number) => {
+    setStats((previousStats) => ({
+      ...previousStats,
+      [label]: value,
+    }));
+  };
 
   const equipItem = (item: EquippedWeapon | EquippedArmor) => {
     setEquipment((prev) => {
@@ -155,16 +169,31 @@ export const CharacterContextProvider = ({
     }));
   };
 
-  const updateStat = (label: string, value: number) => {
-    setStats((previousStats) => ({
-      ...previousStats,
-      [label]: value,
-    }));
+  const equipFortune = (fortune: Fortune) => {
+    setFortunes((equippedFortunes) =>
+      equippedFortunes.some((f) => f.GUID === fortune.GUID) ||
+      equippedFortunes.length >= 4
+        ? equippedFortunes
+        : [...equippedFortunes, fortune]
+    );
+  };
+
+  const unequipFortune = (fortune: Fortune) => {
+    setFortunes((prev) => prev.filter((f) => f.GUID !== fortune.GUID));
   };
 
   return (
     <CharacterContext.Provider
-      value={{ equipment, stats, equipItem, unequipItem, updateStat }}
+      value={{
+        stats,
+        equipment,
+        fortunes,
+        updateStat,
+        equipItem,
+        unequipItem,
+        equipFortune,
+        unequipFortune,
+      }}
     >
       {children}
     </CharacterContext.Provider>

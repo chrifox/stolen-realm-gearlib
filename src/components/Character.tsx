@@ -15,7 +15,8 @@ const CharacterContainer = styled.div`
 
   .stats,
   .equipment,
-  .bonuses {
+  .bonuses,
+  .fortunes {
     display: flex;
     flex-flow: column nowrap;
     gap: 4px;
@@ -48,6 +49,34 @@ const CharacterContainer = styled.div`
       color: ${({ theme }) => theme.colors.stats};
     }
   }
+
+  .equipped-fortunes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    .fortune-tile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      width: 56px;
+      height: 64px;
+      user-select: none;
+
+      &:hover {
+        outline: 1px solid ${({ theme }) => theme.colors.borderHover};
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
@@ -57,10 +86,10 @@ const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
   align-items: center;
   color: ${({ theme, $rarity }) =>
     $rarity ? theme.colors.rarity[$rarity] : "#777"};
-  border: 1px solid #211a19;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 
   &:hover {
-    outline: 1px solid #302725;
+    outline: 1px solid ${({ theme }) => theme.colors.borderHover};
   }
 
   .tier-label {
@@ -77,7 +106,14 @@ const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
 `;
 
 export const Character = () => {
-  const { stats, equipment, unequipItem, updateStat } = useCharacterContext();
+  const {
+    stats,
+    equipment,
+    fortunes,
+    unequipItem,
+    updateStat,
+    unequipFortune,
+  } = useCharacterContext();
 
   function handleUpdateStat(event: ChangeEvent<HTMLInputElement>) {
     const value = parseInt(event.target.value);
@@ -208,6 +244,29 @@ export const Character = () => {
           {equipmentBonuses.attributes.map((bonus, index) => (
             <div key={`attribute-bonus-${index}`}>{bonus}</div>
           ))}
+        </div>
+      </div>
+
+      <div className="fortunes">
+        Fortunes:
+        <div className="equipped-fortunes">
+          {[...fortunes, ...Array(Math.max(0, 4 - fortunes.length)).fill(null)]
+            .slice(0, 4)
+            .map((fortune) =>
+              fortune ? (
+                <div className="fortune-tile">
+                  <img
+                    key={fortune.GUID}
+                    src={`/images${fortune.image}`}
+                    alt={fortune.name}
+                    title={fortune.name}
+                    onClick={() => unequipFortune(fortune)}
+                  />
+                </div>
+              ) : (
+                <div className="fortune-tile">Empty</div>
+              )
+            )}
         </div>
       </div>
     </CharacterContainer>

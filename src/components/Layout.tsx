@@ -6,6 +6,7 @@ import { useCsvData } from "../hooks/useCsvData";
 import { Character } from "./Character";
 import { Tabs } from "./Tabs";
 import { ItemList } from "./ItemList";
+import { FortuneList } from "./FortuneList";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ export function Layout() {
           "Chestplates",
           "Rings",
           "Amulets",
+          "Fortunes",
         ]}
       >
         <Tabs.Tab>
@@ -56,6 +58,9 @@ export function Layout() {
           {armorData["Amulet"] && (
             <ItemList itemType="Armor" data={armorData["Amulet"]} />
           )}
+        </Tabs.Tab>
+        <Tabs.Tab>
+          <FortuneList />
         </Tabs.Tab>
       </Tabs>
     </LayoutContainer>

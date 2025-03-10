@@ -60,6 +60,8 @@ const FilterSortContext = createContext<{
   setStatFilter: (stat: Stat) => void;
   damageTypeFilter: DamageType[];
   setDamageTypeFilter: (damageType: DamageType) => void;
+  hasSkillFilter: boolean;
+  setHasSkillFilter: () => void;
 
   // misc
   tier: ItemTier;
@@ -91,6 +93,7 @@ export const FilterSortContextProvider = ({
   const [rarityFilter, setRarityFilter] = useState<number[]>([]);
   const [statFilter, setStatFilter] = useState<Stat[]>([]);
   const [damageTypeFilter, setDamageTypeFilter] = useState<DamageType[]>([]);
+  const [hasSkillFilter, setHasSkillFilter] = useState<boolean>(false);
 
   function handleSetRarityFilter(rarityValue: number) {
     setRarityFilter((prev: number[]) =>
@@ -166,6 +169,9 @@ export const FilterSortContextProvider = ({
         setStatFilter: handleSetStatFilter,
         damageTypeFilter,
         setDamageTypeFilter: handleSetDamageTypeFilter,
+        hasSkillFilter,
+        setHasSkillFilter: () =>
+          setHasSkillFilter((wasSelected) => !wasSelected),
       }}
     >
       {children}
