@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { styled } from "styled-components";
 
-import { ItemType, useFilterSortContext } from "../context/FilterSortContext";
+import {
+  type ItemType,
+  useFilterSortContext,
+} from "../context/FilterSortContext";
 
 import { useFilteredItems } from "../hooks/useFilteredItems";
 import { useSortedItems } from "../hooks/useSortedItems";
 
-import { Armor, Weapon } from "../types/item";
+import type { Armor, Weapon } from "../types/item";
 import { FilterSortControls } from "./FilterSortControls";
 import { ItemTile } from "./ItemTile";
 
