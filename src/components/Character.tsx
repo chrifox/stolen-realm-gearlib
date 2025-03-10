@@ -8,6 +8,7 @@ import {
 
 import type { StatImprovement, ValueRange } from "../types/common";
 import type { EquippedArmor, EquippedWeapon } from "../types/item";
+import { getFortuneImageUrl } from "../utils/getFortuneImageUrl";
 
 const CharacterContainer = styled.div`
   min-width: 260px;
@@ -257,7 +258,7 @@ export const Character = () => {
                 <div className="fortune-tile">
                   <img
                     key={fortune.GUID}
-                    src={`/images${fortune.image}`}
+                    src={getFortuneImageUrl(fortune.image)}
                     alt={fortune.name}
                     title={fortune.name}
                     onClick={() => unequipFortune(fortune)}
