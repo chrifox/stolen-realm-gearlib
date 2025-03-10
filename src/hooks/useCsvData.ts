@@ -182,7 +182,6 @@ function processFortuneData(csvFortunes: csvFortune[]): Fortune[] {
     },
     source: fortune.Event,
     GUID: fortune.GUID,
-    image: fortune.Image,
   }));
 }
 

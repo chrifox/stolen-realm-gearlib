@@ -30,5 +30,4 @@ export type csvFortune = {
   Rarity: string;
   Event: string;
   GUID: string;
-  Image: string;
 };
