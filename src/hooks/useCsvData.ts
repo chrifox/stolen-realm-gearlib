@@ -7,25 +7,30 @@ import chestCSV from "../assets/data/chestplate.csv?raw";
 import amuletCSV from "../assets/data/amulet.csv?raw";
 import ringCSV from "../assets/data/ring.csv?raw";
 import itemGUIDCSV from "../assets/data/GUIDs.csv?raw";
+import fortuneCSV from "../assets/data/fortune.csv?raw";
 
-import { parseCSV } from "../utils/parseCSV";
-import { type StatImprovement, type ValueRange } from "../types/common";
-import {
-  type csvItemBase,
-  type csvArmor,
-  type csvWeapon,
-  type csvItemGUID,
+import type { StatImprovement, ValueRange } from "../types/common";
+import type {
+  csvItemBase,
+  csvArmor,
+  csvWeapon,
+  csvItemGUID,
+  csvFortune,
 } from "../types/csv";
-import {
-  type ItemBase,
-  type Armor,
-  type WeaponType,
-  type Weapon,
-  type ArmorType,
-  type ItemTier,
-  type ItemGUID,
+import type {
+  ItemBase,
+  ItemGUID,
+  ItemTier,
+  Armor,
+  ArmorType,
+  Weapon,
+  WeaponType,
 } from "../types/item";
+import type { Fortune } from "../types/fortune";
+
 import { modifyTier } from "../utils/modifyTier";
+import { parseCSV } from "../utils/parseCSV";
+import { getRarityValueFromLabel } from "../utils/getRarity";
 
 const removeWhitespace = (str: string) => str.replace(/\s+/g, "");
 const removeCurlyBrackets = (str: string) => str.replace(/[{}]/g, "");
@@ -168,15 +173,30 @@ function modifyTieredRange(
   };
 }
 
-export function useCsvData(tier: ItemTier) {
+function processFortuneData(csvFortunes: csvFortune[]): Fortune[] {
+  return csvFortunes.map((fortune) => ({
+    name: fortune.Name,
+    rarity: {
+      label: fortune.Rarity,
+      value: getRarityValueFromLabel(fortune.Rarity),
+    },
+    source: fortune.Event,
+    GUID: fortune.GUID,
+    image: fortune.Image,
+  }));
+}
+
+export function useCsvData(tier: ItemTier = 3) {
   const [itemGUIDs, setItemGUIDs] = useState<ItemGUID[]>();
   const [weaponData, setWeaponData] = useState<Weapon[] | null>();
   const [armorData, setArmorData] = useState<Record<ArmorType, Armor[] | null>>(
     {} as Record<ArmorType, Armor[] | null>
   );
+  const [fortuneData, setFortuneData] = useState<Fortune[]>([]);
 
   useEffect(() => {
     setItemGUIDs(processGuidData(parseCSV<csvItemGUID>(itemGUIDCSV)));
+    setFortuneData(processFortuneData(parseCSV<csvFortune>(fortuneCSV)));
   }, []);
 
   useEffect(() => {
@@ -206,5 +226,5 @@ export function useCsvData(tier: ItemTier) {
     setArmorData(processedArmorData);
   }, [itemGUIDs, tier]);
 
-  return { weaponData, armorData };
+  return { weaponData, armorData, fortuneData };
 }

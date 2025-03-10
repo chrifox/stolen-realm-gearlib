@@ -8,7 +8,7 @@ const filterItems = (
   searchTerm: string,
   rarityFilter: number[],
   statFilter: Stat[],
-  damageTypeFilter: DamageType[]
+  damageTypeFilter: DamageType[],
 ) => {
   return items.filter((item) => {
     const matchesSearchTerm =

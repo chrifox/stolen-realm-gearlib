@@ -1,5 +1,7 @@
 export const theme = {
   colors: {
+    border: "#211a19",
+    borderHover: "#302725",
     stats: "royalblue",
     rarity: {
       4: "peru",
