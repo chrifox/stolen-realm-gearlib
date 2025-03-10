@@ -3,8 +3,8 @@ import { css, styled } from "styled-components";
 
 import { useCsvData } from "../hooks/useCsvData";
 import { useCharacterContext } from "../context/CharacterContext";
-import { getFortuneImageUrl } from "../utils/getFortuneImageUrl";
 import { FullWidthSearch } from "./Search";
+import { getFortuneImagePath } from "../utils/getImagePath";
 
 const FortuneListContainer = styled.div`
   display: flex;
@@ -79,7 +79,7 @@ export function FortuneList() {
             >
               <div className="name">{fortune.name}</div>
               <img
-                src={getFortuneImageUrl(fortune.image)}
+                src={getFortuneImagePath(fortune.name)}
                 alt={fortune.name}
                 title={fortune.name}
               />

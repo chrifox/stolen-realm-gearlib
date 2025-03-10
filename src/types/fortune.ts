@@ -5,5 +5,4 @@ export type Fortune = {
   rarity: KeyValuePair;
   source: string;
   GUID: string;
-  image: string;
 };

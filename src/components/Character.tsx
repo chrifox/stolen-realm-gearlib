@@ -8,7 +8,7 @@ import {
 
 import type { StatImprovement, ValueRange } from "../types/common";
 import type { EquippedArmor, EquippedWeapon } from "../types/item";
-import { getFortuneImageUrl } from "../utils/getFortuneImageUrl";
+import { getFortuneImagePath } from "../utils/getImagePath";
 
 const CharacterContainer = styled.div`
   min-width: 260px;
@@ -253,19 +253,26 @@ export const Character = () => {
         <div className="equipped-fortunes">
           {[...fortunes, ...Array(Math.max(0, 4 - fortunes.length)).fill(null)]
             .slice(0, 4)
-            .map((fortune) =>
+            .map((fortune, index) =>
               fortune ? (
-                <div className="fortune-tile">
+                <div
+                  key={fortune.GUID}
+                  className="fortune-tile"
+                  onClick={() => unequipFortune(fortune)}
+                >
                   <img
-                    key={fortune.GUID}
-                    src={getFortuneImageUrl(fortune.image)}
+                    src={getFortuneImagePath(fortune.name)}
                     alt={fortune.name}
                     title={fortune.name}
-                    onClick={() => unequipFortune(fortune)}
                   />
                 </div>
               ) : (
-                <div className="fortune-tile">Empty</div>
+                <div
+                  key={`empty-fortune-${index + 1}`}
+                  className="fortune-tile"
+                >
+                  Empty
+                </div>
               )
             )}
         </div>
