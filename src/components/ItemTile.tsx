@@ -29,7 +29,7 @@ const ItemTileContainer = styled.div<{
 
   .name {
     color: ${({ theme, $rarity }) => theme.colors.rarity[$rarity]};
-    font-size: 18px;
+    font-size: 20px;
 
     .tier-label {
       color: ${({ theme, $tier }) => theme.colors.tier[$tier]};
@@ -58,7 +58,7 @@ const ItemTileContainer = styled.div<{
   }
 
   .attackPower {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .attackPower,
@@ -107,14 +107,14 @@ export const ItemTile = ({
         {item.name.toUpperCase()}
         {canBeTiered && tier > 0 && <span className="tier-label">*</span>}
       </div>
-      <div className="rarity-type">
+      <em className="rarity-type">
         {item.rarity.label}{" "}
         {typeof item.type === "object" ? item.type.label : item.type}
         {itemType === "Weapon" &&
           typeof item.type === "object" &&
           "hands" in item.type &&
           ` (${item.type.hands}H)`}
-      </div>
+      </em>
       {itemType === "Weapon" ? (
         "attackPower" in item ? (
           <>
