@@ -2,13 +2,20 @@ import { type ChangeEvent } from "react";
 import { styled } from "styled-components";
 
 import {
+  type Stats,
   type EquipmentSlot,
   useCharacterContext,
 } from "../context/CharacterContext";
 
-import type { StatImprovement, ValueRange } from "../types/common";
 import type { EquippedArmor, EquippedWeapon } from "../types/item";
-import { getFortuneImagePath } from "../utils/getImagePath";
+import {
+  getFortuneImagePath,
+  getItemSlotImagePath,
+} from "../utils/getImagePath";
+import {
+  getEquipmentBonuses,
+  getTotalStatValues,
+} from "../utils/getCharacterInfo";
 
 const CharacterContainer = styled.div`
   min-width: 260px;
@@ -83,14 +90,20 @@ const CharacterContainer = styled.div`
 const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 8px;
   color: ${({ theme, $rarity }) =>
     $rarity ? theme.colors.rarity[$rarity] : "#777"};
   border: 1px solid ${({ theme }) => theme.colors.border};
 
   &:hover {
     outline: 1px solid ${({ theme }) => theme.colors.borderHover};
+  }
+
+  .item-slot {
+    width: 31px;
+    height: 31px;
   }
 
   .tier-label {
@@ -103,6 +116,7 @@ const EquippedItem = styled.div<{ $tier: number; $rarity?: number }>`
 
   button {
     border-radius: 0;
+    margin-left: auto;
   }
 `;
 
@@ -123,72 +137,32 @@ export const Character = () => {
     }
   }
 
-  function getEquipmentBonuses(): {
-    stats: StatImprovement[];
-    attributes: string[];
-  } {
-    let stats: StatImprovement[] = [];
-    let attributes: string[] = [];
-
-    Object.values(equipment).forEach((item) => {
-      if (item?.baseStats) stats = [...stats, ...item.baseStats];
-      if (item?.attributes) attributes = [...attributes, ...item.attributes];
-    });
-
-    const mergedStats: Record<string, ValueRange> = {};
-
-    stats.forEach(({ label, min, max }) => {
-      if (!mergedStats[label]) {
-        mergedStats[label] = { min, max };
-      } else {
-        mergedStats[label].min += min;
-        mergedStats[label].max += max;
-      }
-    });
-
-    // Convert mergedStats back to an array
-    const statsArray: StatImprovement[] = Object.entries(mergedStats).map(
-      ([label, range]) => ({
-        label,
-        ...range,
-      })
-    );
-
-    return {
-      stats: statsArray,
-      attributes,
-    };
-  }
-
-  const statNames = Object.keys(stats) as (keyof typeof stats)[];
   const equipmentSlots = Object.entries(equipment) as [
     EquipmentSlot,
     EquippedWeapon | EquippedArmor | null
   ][];
 
-  const equipmentBonuses = getEquipmentBonuses();
+  const equipmentBonuses = getEquipmentBonuses(equipment);
+  const totalStatValues = getTotalStatValues(stats, equipment);
 
   return (
     <CharacterContainer>
       <form className="stats">
-        {statNames.map((stat) => {
-          const label = stat.charAt(0).toUpperCase() + stat.slice(1);
-          const value = stats[stat];
-          const bonus =
-            equipmentBonuses?.stats.find((s) => s.label === label)?.max ?? 0;
+        {totalStatValues.map((stat) => {
+          const statValue = stats[stat.label.toLowerCase() as keyof Stats];
           return (
-            <label key={stat}>
-              <span>{label}</span>
+            <label key={stat.label}>
+              <span>{stat.label}</span>
               <div className="values">
                 <input
-                  name={stat}
+                  name={stat.label.toLowerCase()}
                   type="number"
-                  value={value}
+                  value={statValue}
                   onChange={handleUpdateStat}
                   min={8}
                 />
 
-                <span>{value + bonus}</span>
+                <span>{stat.value}</span>
               </div>
             </label>
           );
@@ -211,6 +185,12 @@ export const Character = () => {
                 show2hFader ? equipment.hand1?.rarity.value : item?.rarity.value
               }
             >
+              <img
+                className="item-slot"
+                src={getItemSlotImagePath(slot)}
+                alt={slot}
+                title={slot}
+              />
               {show2hFader ? (
                 <span className="offhand-2h">
                   {equipment.hand1?.name}

@@ -32,7 +32,7 @@ export type EquipmentSlot =
   | "ring"
   | "amulet";
 
-type Stats = {
+export type Stats = {
   might: number;
   dexterity: number;
   vitality: number;
@@ -40,7 +40,7 @@ type Stats = {
   reflex: number;
 };
 
-type Equipment = {
+export type Equipment = {
   hand1: EquippedWeapon | null; // Must be a Weapon
   hand2: EquippedWeapon | EquippedArmor | null; // Can be a Weapon or Shield
   head: EquippedArmor | null;

@@ -7,3 +7,7 @@ export function getFortuneImagePath(fortuneName: string): string {
     .replace(/ /g, "_");
   return `${baseURL}images/fortunes/${formattedFortuneName}_fortune.webp`;
 }
+
+export function getItemSlotImagePath(slot: string): string {
+  return `${baseURL}images/item_slots/${slot}.png`;
+}

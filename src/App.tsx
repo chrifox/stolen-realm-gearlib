@@ -3,7 +3,7 @@ import { CharacterContextProvider } from "./context/CharacterContext";
 import { FilterSortContextProvider } from "./context/FilterSortContext";
 import { Layout } from "./components/Layout";
 
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   return (
