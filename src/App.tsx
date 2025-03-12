@@ -3,8 +3,6 @@ import { CharacterContextProvider } from "./context/CharacterContext";
 import { FilterSortContextProvider } from "./context/FilterSortContext";
 import { Layout } from "./components/Layout";
 
-import "./styles/App.css";
-
 function App() {
   return (
     <ErrorBoundary>

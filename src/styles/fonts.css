@@ -1,3 +1,5 @@
+/* Minion Pro */
+
 /* Regular */
 @font-face {
   font-family: "MinionPro";
@@ -66,4 +68,23 @@
     format("opentype");
   font-weight: 700;
   font-style: italic;
+}
+
+/* Trajan Pro */
+
+/* Regular */
+@font-face {
+  font-family: "TrajanPro";
+  src: url("/src/assets/fonts/trajan-pro/TrajanPro-Regular.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: "TrajanPro";
+  src: url("/src/assets/fonts/trajan-pro/TrajanPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
