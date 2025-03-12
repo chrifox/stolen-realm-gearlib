@@ -11,6 +11,9 @@ import { FortuneList } from "./FortuneList";
 const LayoutContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 8px 16px;
 `;
 
 export function Layout() {

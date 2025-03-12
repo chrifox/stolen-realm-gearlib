@@ -1,5 +1,10 @@
 export const theme = {
   colors: {
+    text: {
+      body: "#eee",
+      title: "#bca68b",
+    },
+    background: "#0d0908",
     border: "#211a19",
     borderHover: "#302725",
     stats: "royalblue",
@@ -23,5 +28,9 @@ export const theme = {
       2: "aqua",
       3: "red",
     },
+  },
+  fonts: {
+    body: "MinionPro, sans-serif",
+    title: "TrajanPro, serif",
   },
 };

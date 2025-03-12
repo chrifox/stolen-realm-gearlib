@@ -17,19 +17,12 @@ import {
   getTotalStatValues,
 } from "../utils/getCharacterInfo";
 
+import { Section, SectionHeading } from "./Section";
+
 const CharacterContainer = styled.div`
   min-width: 260px;
   max-width: 260px;
-
-  .stats,
-  .equipment,
-  .bonuses,
-  .fortunes {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 4px;
-    padding: 16px;
-  }
+  padding: 4px 8px;
 
   .stats {
     label {
@@ -40,6 +33,7 @@ const CharacterContainer = styled.div`
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        align-items: center;
 
         input {
           width: 60%;
@@ -69,8 +63,10 @@ const CharacterContainer = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 12px;
       border: 1px solid ${({ theme }) => theme.colors.border};
+      color: ${({ theme }) => theme.colors.text.title};
+      font-family: ${({ theme }) => theme.fonts.title};
+      font-size: 12px;
       width: 56px;
       height: 64px;
       user-select: none;
@@ -147,7 +143,8 @@ export const Character = () => {
 
   return (
     <CharacterContainer>
-      <form className="stats">
+      <Section as="form" className="stats">
+        <SectionHeading>Attributes</SectionHeading>
         {totalStatValues.map((stat) => {
           const statValue = stats[stat.label.toLowerCase() as keyof Stats];
           return (
@@ -167,9 +164,10 @@ export const Character = () => {
             </label>
           );
         })}
-      </form>
+      </Section>
 
-      <div className="equipment">
+      <Section className="equipment">
+        <SectionHeading>Equipped</SectionHeading>
         {equipmentSlots.map(([slot, item]) => {
           const has2hWeaponEquipped =
             equipment.hand1 && equipment.hand1.type.hands === 2;
@@ -210,10 +208,10 @@ export const Character = () => {
             </EquippedItem>
           );
         })}
-      </div>
+      </Section>
 
-      <div className="bonuses">
-        Bonuses:
+      <Section className="bonuses">
+        <SectionHeading>Stats</SectionHeading>
         <div className="stat-bonuses">
           {equipmentBonuses.stats.map((stat) => (
             <div key={`${stat.label}-bonus`}>
@@ -226,10 +224,10 @@ export const Character = () => {
             <div key={`attribute-bonus-${index}`}>{bonus}</div>
           ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="fortunes">
-        Fortunes:
+      <Section className="fortunes">
+        <SectionHeading>Fortunes</SectionHeading>
         <div className="equipped-fortunes">
           {[...fortunes, ...Array(Math.max(0, 4 - fortunes.length)).fill(null)]
             .slice(0, 4)
@@ -256,7 +254,7 @@ export const Character = () => {
               )
             )}
         </div>
-      </div>
+      </Section>
     </CharacterContainer>
   );
 };
