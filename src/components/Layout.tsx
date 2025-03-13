@@ -10,10 +10,16 @@ import { FortuneList } from "./FortuneList";
 
 const LayoutContainer = styled.div`
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: center;
   margin: 0 auto;
   max-width: 1280px;
-  padding: 8px 16px;
+  padding: 8px;
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    flex-flow: row nowrap;
+    padding: 8px 16px;
+  }
 `;
 
 export function Layout() {

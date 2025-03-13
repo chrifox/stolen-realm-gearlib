@@ -20,9 +20,9 @@ import {
 import { Section, SectionHeading } from "./Section";
 
 const CharacterContainer = styled.div`
-  min-width: 260px;
-  max-width: 260px;
   padding: 4px 8px;
+  width: 100%;
+  max-width: 260px;
 
   .stats {
     label {

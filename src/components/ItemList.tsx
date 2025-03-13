@@ -21,8 +21,13 @@ type ItemListProps = {
 const ItemTileList = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: 4px;
   width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const ItemList = ({ data, itemType }: ItemListProps) => {

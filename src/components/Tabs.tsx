@@ -7,12 +7,14 @@ type TabsProps = {
 };
 
 const TabsContainer = styled.div`
+  width: 100%;
+
   .tab-buttons {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 4px;
-    border-bottom: 1px solid #211a19;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
     margin-bottom: 4px;
 
     button {
@@ -26,7 +28,7 @@ const TabButton = styled.button<{ $active?: boolean }>`
   ${({ $active }) =>
     $active
       ? css`
-          background: indigo;
+          background: ${({ theme }) => theme.colors.active};
         `
       : ""}
 `;
