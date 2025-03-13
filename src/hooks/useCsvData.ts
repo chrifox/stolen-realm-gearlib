@@ -176,12 +176,14 @@ function modifyTieredRange(
 function processFortuneData(csvFortunes: csvFortune[]): Fortune[] {
   return csvFortunes.map((fortune) => ({
     name: fortune.Name,
+    description: fortune.Description,
     rarity: {
       label: fortune.Rarity,
       value: getRarityValueFromLabel(fortune.Rarity),
     },
     source: fortune.Event,
     GUID: fortune.GUID,
+    location: fortune.Location,
   }));
 }
 

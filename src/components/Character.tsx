@@ -17,11 +17,11 @@ import {
   getTotalStatValues,
 } from "../utils/getCharacterInfo";
 
-import { Section, SectionHeading } from "./Section";
+import { Section, SectionHeading } from "./styled/Section";
 
 const CharacterContainer = styled.div`
-  padding: 4px 8px;
   width: 100%;
+  height: 100vh;
   max-width: 260px;
 
   .stats {
@@ -68,7 +68,7 @@ const CharacterContainer = styled.div`
       font-family: ${({ theme }) => theme.fonts.title};
       font-size: 12px;
       width: 56px;
-      height: 64px;
+      height: 60px;
       user-select: none;
 
       &:hover {
@@ -176,6 +176,7 @@ export const Character = () => {
           return (
             <EquippedItem
               key={slot}
+              onClick={() => unequipItem(slot)}
               $tier={
                 show2hFader && equipment.hand1 ? equipment.hand1.tier : itemTier
               }
@@ -204,7 +205,6 @@ export const Character = () => {
                   )}
                 </span>
               )}
-              <button onClick={() => unequipItem(slot)}>X</button>
             </EquippedItem>
           );
         })}

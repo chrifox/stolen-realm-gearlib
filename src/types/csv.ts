@@ -27,7 +27,9 @@ export type csvArmor = {
 
 export type csvFortune = {
   Name: string;
+  Description: string;
   Rarity: string;
   Event: string;
   GUID: string;
+  Location: string;
 };

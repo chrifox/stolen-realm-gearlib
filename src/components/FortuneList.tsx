@@ -1,36 +1,36 @@
 import { type ChangeEvent, useState } from "react";
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 
 import { useCsvData } from "../hooks/useCsvData";
 import { useCharacterContext } from "../context/CharacterContext";
 import { FullWidthSearch } from "./Search";
 import { getFortuneImagePath } from "../utils/getImagePath";
+import { Tile } from "./styled/Tile";
 
 const FortuneListContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: 4px;
   width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    justify-content: flex-start;
+  }
 `;
 
-const commonFortuneTileCss = css`
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 4px;
-  padding: 4px;
-  width: 240px;
-`;
-
-const FortuneTile = styled.div`
-  ${commonFortuneTileCss}
+const FortuneTile = styled(Tile)`
+  padding-top: 8px;
 
   .name {
-    font-size: 18px;
+    color: ${({ theme }) => theme.colors.text.title};
+    text-align: center;
   }
 
   img {
     width: 112px;
     height: 128px;
+    margin: 4px auto;
   }
 
   .guid {
@@ -38,10 +38,6 @@ const FortuneTile = styled.div`
     font-size: 12px;
     margin-top: auto;
   }
-`;
-
-const EmptyFortuneTile = styled.div`
-  ${commonFortuneTileCss}
 `;
 
 export function FortuneList() {
@@ -62,6 +58,9 @@ export function FortuneList() {
         .filter(
           (f) =>
             f.name.toLowerCase().includes(fortuneSearchTerm.toLowerCase()) ||
+            f.description
+              .toLowerCase()
+              .includes(fortuneSearchTerm.toLowerCase()) ||
             f.source.toLowerCase().includes(fortuneSearchTerm.toLowerCase())
         )
         .sort((a, b) =>
@@ -71,25 +70,20 @@ export function FortuneList() {
             ? 1
             : 0
         )
-        .map((fortune) =>
-          fortune ? (
-            <FortuneTile
-              key={fortune.GUID}
-              onClick={() => equipFortune(fortune)}
-            >
-              <div className="name">{fortune.name}</div>
-              <img
-                src={getFortuneImagePath(fortune.name)}
-                alt={fortune.name}
-                title={fortune.name}
-              />
-              <div>Source: {fortune.source}</div>
-              <div className="guid">{fortune.GUID}</div>
-            </FortuneTile>
-          ) : (
-            <EmptyFortuneTile />
-          )
-        )}
+        .map((fortune) => (
+          <FortuneTile key={fortune.GUID} onClick={() => equipFortune(fortune)}>
+            <div className="name">{fortune.name}</div>
+            <img
+              src={getFortuneImagePath(fortune.name)}
+              alt={fortune.name}
+              title={fortune.name}
+            />
+            <div className="description">{fortune.description}</div>
+            <div className="source">Event: {fortune.source}</div>
+            <div className="location">Locations: {fortune.location}</div>
+            <div className="guid">{fortune.GUID}</div>
+          </FortuneTile>
+        ))}
     </FortuneListContainer>
   );
 }
