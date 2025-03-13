@@ -4,6 +4,7 @@ import { useCharacterContext } from "../context/CharacterContext";
 import { type ItemType } from "../context/FilterSortContext";
 
 import type { ItemTier, Armor, Weapon } from "../types/item";
+import { Tile } from "./styled/Tile";
 
 type ItemTileProps = {
   item: Weapon | Armor;
@@ -12,24 +13,13 @@ type ItemTileProps = {
   tier: ItemTier;
 };
 
-const ItemTileContainer = styled.div<{
+const ItemTileContainer = styled(Tile)<{
   $rarity: number;
   $tier: number;
   $damageType?: string;
 }>`
-  display: flex;
-  flex-flow: column nowrap;
-  width: 240px;
-  padding: 4px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-
-  &:hover {
-    outline: 1px solid ${({ theme }) => theme.colors.borderHover};
-  }
-
   .name {
     color: ${({ theme, $rarity }) => theme.colors.rarity[$rarity]};
-    font-size: 20px;
 
     .tier-label {
       color: ${({ theme, $tier }) => theme.colors.tier[$tier]};

@@ -12,10 +12,11 @@ const LayoutContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  gap: 4px;
   margin: 0 auto;
-  max-width: 1280px;
   padding: 8px;
-  
+  max-width: 1280px;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     flex-flow: row nowrap;
     padding: 8px 16px;
