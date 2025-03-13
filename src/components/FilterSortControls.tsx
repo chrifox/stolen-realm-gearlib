@@ -13,7 +13,7 @@ import { Search } from "./Search";
 
 const FilterSortControlsContainer = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-between;
   gap: 4px;
   width: 100%;
@@ -37,15 +37,16 @@ const FilterSortControlsContainer = styled.div`
     justify-content: flex-end;
   }
 
-  .sort-controls {
-  }
-
   .filter-controls {
     fieldset {
       label {
         display: block;
       }
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    flex-direction: row-reverse;
   }
 `;
 
@@ -102,7 +103,6 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
 
       <section>
         <div className="sort-controls">
-          Sort:
           <button onClick={setSortOrder}>{sortOrder}</button>
           <label>
             by:{" "}
@@ -123,7 +123,6 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
           </label>
           {sortField === "stat" && (
             <label>
-              Stat:{" "}
               <select
                 onChange={(e) => setStatSort(e.target.value)}
                 value={statSort}
@@ -140,7 +139,6 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
         </div>
 
         <div className="filter-controls">
-          Filter:
           <fieldset>
             <legend>Rarity</legend>
             {RARITIES.map((rarity) => (

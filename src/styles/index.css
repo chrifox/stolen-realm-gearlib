@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: #ddd;
-  background-color: #0d0908;
+  background-color: #130f0d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,7 +16,6 @@
 body {
   margin: 0;
   padding: 0;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -26,7 +25,7 @@ em {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #423836;
   text-decoration: inherit;
 }
 a:hover {
@@ -55,19 +54,15 @@ button {
   transition: border-color 0.2s;
   user-select: none;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:hover, input:hover, select:hover {
+  border-color: #423836;
 }
 
 button,
 input,
 select {
   border-radius: 4px;
-  border: 1px solid #777;
+  border: 1px solid #211a19;
   padding: 0.2em 0.4em;
   font-size: 1em;
   font-family: inherit;

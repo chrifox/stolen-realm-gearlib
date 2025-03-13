@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const Section = styled.section`
+  background: ${({ theme }) => theme.colors.section.background};
   border: 1px solid ${({ theme }) => theme.colors.border};
   display: flex;
   flex-flow: column nowrap;
@@ -11,7 +12,7 @@ export const Section = styled.section`
 `;
 
 export const SectionHeading = styled.div`
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.section.background};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.text.title};
