@@ -5,6 +5,7 @@ import { type ItemType } from "../context/FilterSortContext";
 
 import type { ItemTier, Armor, Weapon } from "../types/item";
 import { Tile } from "./styled/Tile";
+import { canBeTiered } from "../utils/canBeTiered";
 
 type ItemTileProps = {
   item: Weapon | Armor;
@@ -84,8 +85,6 @@ export const ItemTile = ({
     return `${item.guid}-${label}-${index}`;
   }
 
-  const canBeTiered = item.rarity.value > 1;
-
   return (
     <ItemTileContainer
       $rarity={item.rarity.value}
@@ -95,7 +94,9 @@ export const ItemTile = ({
     >
       <div className="name">
         {item.name.toUpperCase()}
-        {canBeTiered && tier > 0 && <span className="tier-label">*</span>}
+        {canBeTiered(item.rarity.value) && tier > 0 && (
+          <span className="tier-label">*</span>
+        )}
       </div>
       <em className="rarity-type">
         {item.rarity.label}{" "}

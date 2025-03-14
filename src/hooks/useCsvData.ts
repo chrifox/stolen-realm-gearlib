@@ -31,6 +31,7 @@ import type { Fortune } from "../types/fortune";
 import { modifyTier } from "../utils/modifyTier";
 import { parseCSV } from "../utils/parseCSV";
 import { getRarityValueFromLabel } from "../utils/getRarity";
+import { canBeTiered } from "../utils/canBeTiered";
 
 const removeWhitespace = (str: string) => str.replace(/\s+/g, "");
 const removeCurlyBrackets = (str: string) => str.replace(/[{}]/g, "");
@@ -93,8 +94,8 @@ function processItemData<T extends csvItemBase>(
 
   const baseStats = convertBaseStats(item["Base Stats"]).map((s) => ({
     ...s,
-    min: modifyTier(s.min, tier),
-    max: modifyTier(s.max, tier),
+    min: canBeTiered(rarity.value) ? modifyTier(s.min, tier) : s.min,
+    max: canBeTiered(rarity.value) ? modifyTier(s.max, tier) : s.max,
   }));
 
   return {
@@ -127,7 +128,11 @@ function processWeaponData(
     return {
       guid,
       ...commonData,
-      attackPower: modifyTieredRange(attackPower, tier),
+      attackPower: modifyTieredRange(
+        attackPower,
+        tier,
+        commonData.rarity.value
+      ),
       damageType: weapon["Damage Type"],
       type: mapWeaponType(weapon.Type),
     };
@@ -157,16 +162,22 @@ function processArmorData(
       guid,
       ...commonData,
       type,
-      armor: modifyTieredRange(baseArmor, tier),
-      magicArmor: modifyTieredRange(baseMagicArmor, tier),
+      armor: modifyTieredRange(baseArmor, tier, commonData.rarity.value),
+      magicArmor: modifyTieredRange(
+        baseMagicArmor,
+        tier,
+        commonData.rarity.value
+      ),
     };
   });
 }
 
 function modifyTieredRange(
   range: { min: number; max: number },
-  tier: ItemTier
+  tier: ItemTier,
+  rarityValue: number
 ) {
+  if (!canBeTiered(rarityValue)) return range;
   return {
     min: modifyTier(range.min, tier),
     max: modifyTier(range.max, tier),
