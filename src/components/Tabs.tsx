@@ -10,17 +10,26 @@ const TabsContainer = styled.div`
   width: 100%;
 
   .tab-buttons {
+    position: sticky;
+    top: 0;
+    z-index: ${({theme}) => theme.zIndex.tabButtons};
+
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 4px;
+    background: ${({ theme }) => theme.colors.background};
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-    margin-bottom: 4px;
+    padding: 8px 8px 0;
 
     button {
+      border-bottom: none;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
+  }
+
+  .tab-content {
   }
 `;
 

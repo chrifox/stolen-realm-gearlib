@@ -19,7 +19,16 @@ const LayoutContainer = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     flex-flow: row nowrap;
-    padding: 8px 16px;
+    padding: 0 16px;
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      z-index: ${({theme}) => theme.zIndex.sidebar};
+
+      background: ${({ theme }) => theme.colors.background};
+      height: fit-content;
+    }
   }
 `;
 
@@ -29,7 +38,9 @@ export function Layout() {
 
   return (
     <LayoutContainer>
-      <Character />
+      <div className="sidebar">
+        <Character />
+      </div>
       <Tabs
         tabs={[
           "Weapons",

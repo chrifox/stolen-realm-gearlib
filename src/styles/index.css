@@ -19,6 +19,10 @@ body {
   min-height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 em {
   font-style: italic;
 }
@@ -54,7 +58,9 @@ button {
   transition: border-color 0.2s;
   user-select: none;
 }
-button:hover, input:hover, select:hover {
+button:hover,
+input:hover,
+select:hover {
   border-color: #423836;
 }
 
