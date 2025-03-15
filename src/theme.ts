@@ -40,4 +40,8 @@ export const theme = {
   breakpoints: {
     sm: 668,
   },
+  zIndex: {
+    tabButtons: 20,
+    sidebar: 15,
+  },
 };

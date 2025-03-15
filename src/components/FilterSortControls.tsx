@@ -16,6 +16,8 @@ const FilterSortControlsContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;
+  background: ${({ theme }) => theme.colors.background};
+  padding: 4px;
   width: 100%;
 
   section {
@@ -79,7 +81,7 @@ export const FilterSortControls = ({ itemType }: { itemType: ItemType }) => {
   }
 
   return (
-    <FilterSortControlsContainer className="sort-controls">
+    <FilterSortControlsContainer>
       <section>
         <Search onChange={handleUpdateSearchTerm} value={searchTerm} />
         <div className="misc-controls">
