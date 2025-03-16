@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 
 import type {
   EquippedArmor,
@@ -8,6 +14,8 @@ import type {
 } from "../types/item";
 
 import type { Fortune } from "../types/fortune";
+import { useUrl } from "../hooks/useUrl";
+import { useNavigate } from "react-router-dom";
 
 function isWeapon(item: unknown): item is Weapon {
   return (item as Weapon).type?.hands !== undefined;
@@ -69,22 +77,34 @@ export const CharacterContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [stats, setStats] = useState<Stats>({
-    might: 8,
-    dexterity: 8,
-    vitality: 8,
-    intelligence: 8,
-    reflex: 8,
-  });
-  const [equipment, setEquipment] = useState<Equipment>({
-    hand1: null,
-    hand2: null,
-    chestplate: null,
-    head: null,
-    ring: null,
-    amulet: null,
-  });
-  const [fortunes, setFortunes] = useState<Fortune[]>([]);
+  const navigate = useNavigate();
+  const {
+    encodeQueryParam,
+    stats: urlStats,
+    equipment: urlEquipment,
+    fortunes: urlFortunes,
+  } = useUrl();
+
+  const [stats, setStats] = useState<Stats>(
+    urlStats || {
+      might: 8,
+      dexterity: 8,
+      vitality: 8,
+      intelligence: 8,
+      reflex: 8,
+    }
+  );
+  const [equipment, setEquipment] = useState<Equipment>(
+    urlEquipment || {
+      hand1: null,
+      hand2: null,
+      chestplate: null,
+      head: null,
+      ring: null,
+      amulet: null,
+    }
+  );
+  const [fortunes, setFortunes] = useState<Fortune[]>(urlFortunes || []);
 
   const updateStat = (label: string, value: number) => {
     setStats((previousStats) => ({
@@ -181,6 +201,24 @@ export const CharacterContextProvider = ({
   const unequipFortune = (fortune: Fortune) => {
     setFortunes((prev) => prev.filter((f) => f.GUID !== fortune.GUID));
   };
+
+  useEffect(() => {
+    const newParams = new URLSearchParams(location.search);
+    newParams.set("stats", encodeQueryParam(stats));
+    navigate(`?${newParams.toString()}`, { replace: true });
+  }, [stats]);
+
+  useEffect(() => {
+    const newParams = new URLSearchParams(location.search);
+    newParams.set("equipment", encodeQueryParam(equipment));
+    navigate(`?${newParams.toString()}`, { replace: true });
+  }, [equipment]);
+
+  useEffect(() => {
+    const newParams = new URLSearchParams(location.search);
+    newParams.set("fortunes", encodeQueryParam(fortunes));
+    navigate(`?${newParams.toString()}`, { replace: true });
+  }, [fortunes]);
 
   return (
     <CharacterContext.Provider
